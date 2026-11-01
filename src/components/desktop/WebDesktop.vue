@@ -197,7 +197,7 @@ const overviewWins = computed<OverviewWin[]>(() => [...wins.value].sort((a, b) =
 }));
 function onMenu(id: string) {
   if (id.startsWith('doc:')) openWin('doc', id.slice(4));
-  else if (id === 'classic') router.push('/classic');
+  else if (id === 'classic') router.push('/');
   else if (id === 'phone-view') router.push('/phone');
   else if (id === 'try-phone') openWin('phone', 'phone');
   else if (id === 'windows') toggle('overview');

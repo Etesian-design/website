@@ -16,7 +16,7 @@ defineProps<{ app: string; active?: 'events' | 'status' | null; count?: number }
 const emit = defineEmits<{ events: []; status: []; select: [id: string] }>();
 const { time, shortDate } = useClock();
 const MENUS: Record<string, XMenuItem[]> = {
-  Go: [{ id: 'doc:overview', label: 'About Etesian', icon: 'star' }, { id: 'doc:progress', label: 'Follow progress', icon: 'info' }, { id: 'classic', label: 'Classic site', icon: 'globe', divider: true }],
+  Go: [{ id: 'doc:overview', label: 'About Etesian', icon: 'star' }, { id: 'doc:progress', label: 'Follow progress', icon: 'info' }, { id: 'classic', label: 'Back to the website', icon: 'globe', divider: true }],
   Explore: listed('menu').filter((d) => d.id !== 'overview').map((d) => ({ id: `doc:${d.id}`, label: d.title, icon: d.icon })),
   View: [{ id: 'main', label: 'Overview', icon: 'grid', keys: 'Super' }, { id: 'windows', label: 'Windows', icon: 'window', keys: 'Super+Tab' }, { id: 'launcher', label: 'Search', icon: 'search', keys: 'Super+Space' }, { id: 'events', label: 'Events', icon: 'calendar', keys: 'Super+N' },
     { id: 'try-phone', label: 'Interactive phone', icon: 'phone', divider: true }, { id: 'phone-view', label: 'Phone layout', icon: 'phone' }],
@@ -37,7 +37,7 @@ function pick(id: string) { open.value = null; emit('select', id); }
     </span>
     <span class="x-mbar__sp"></span>
     <span class="x-mbar__status" aria-label="Status">
-      <a class="site-mbar__link hd-focusable" :href="href('/classic')">Classic site</a>
+      <a class="site-mbar__link hd-focusable" :href="href('/')">Back to the website</a>
       <button type="button" class="x-mbar__events hd-focusable" :class="{ 'is-active': active === 'events' }" :aria-label="`Events: ${count ?? 3} new`" @click="emit('events')"><HdCountBubble :value="count ?? 3" /></button>
       <button type="button" class="x-mbar__sicons hd-focusable" :class="{ 'is-active': active === 'status' }" aria-label="Status menu" :aria-expanded="active === 'status' ? 'true' : 'false'" @click="emit('status')">
         <HdIcon name="wifi" :size="15" /><HdIcon name="bluetooth" :size="15" /><span class="x-mbar__batt"><HdIcon name="battery" :size="17" />82%</span>

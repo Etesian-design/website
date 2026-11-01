@@ -8,6 +8,6 @@ const MOCKS = ['Mail', 'Messages', 'Calendar', 'Music', 'Gallery', 'Notes', 'Bro
 export const PHONE_APPS: PhoneApp[] = [
   ...listed('phone').map((d) => ({ key: d.id, label: d.label, icon: d.icon, color: d.color, doc: d.id })),
   ...MOCKS.map((m) => { const a = mockApp(m); return { key: m, label: m, icon: a.icon, color: a.color, tone: a.tone, mock: m }; }),
-  { key: 'classic', label: 'Classic site', icon: 'globe', color: '#2EA8C7', href: '/classic' },
+  { key: 'classic', label: 'Website', icon: 'globe', color: '#2EA8C7', href: '/' },
 ];
 export const phoneApp = (key: string) => PHONE_APPS.find((a) => a.key === key);

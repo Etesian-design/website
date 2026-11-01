@@ -3,7 +3,7 @@
  * block and field that is wrong. Block types are documented in CONTENT.md.
  */
 
-/** Where a link or button goes: a page id, "try-phone" (the interactive phone), or a URL ("https://…", or a site route such as "/classic"). */
+/** Where a link or button goes: a page id, "try-phone" (the interactive phone), or a URL ("https://…", or a site route such as "/try"). */
 export type Target = string;
 export interface Action { label: string; target: Target; primary?: boolean; icon?: string }
 export interface Item { title: string; text: string; icon: string; color?: string }

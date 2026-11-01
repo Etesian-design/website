@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * The classic site: a traditional scrolling page built from the design repo's web components (the "Web" story:
+ * The website (/, on every screen; once called the classic site): a traditional scrolling page built from the design repo's web components (the "Web" story:
  * HdSiteHeader, HdHero, HdContainer, HdFooter), with the same content as the desktop windows and phone pages.
  */
 import { href } from '../lib/base';
@@ -29,11 +29,11 @@ const hero = (doc('overview').blocks.find((b) => b.type === 'hero') ?? { title: 
 const links = SECTIONS.map((d) => ({ label: d.label, href: `#sec-${d.id}`, icon: d.icon }));
 const footer = [
   { title: 'Etesian', links: SECTIONS.map((d) => ({ label: d.title, href: `#sec-${d.id}` })) },
-  { title: 'Views', links: [{ label: 'Desktop view', href: href('/desktop') }, { label: 'Phone view', href: href('/phone') }, { label: 'Classic site', href: href('/classic') }] },
+  { title: 'Views', links: [{ label: 'Try the desktop', href: href('/desktop') }, { label: 'Try the phone', href: href('/phone') }] },
 ];
-/** the screen is only known in the browser: the generated page says "Desktop view" until it has hydrated */
-const osLabel = computed(() => (isHydrated.value && $q.screen.width < 820 ? 'Phone view' : 'Desktop view'));
-usePageMeta('Etesian · Classic site', 'Etesian, a calm, gesture-first interface: the phone, the apps, the widgets, the design language and Etesian for KDE Plasma.', '/classic');
+/** the screen is only known in the browser: the generated page says "Try the desktop" until it has hydrated */
+const osLabel = computed(() => (isHydrated.value && $q.screen.width < 820 ? 'Try the phone' : 'Try the desktop'));
+usePageMeta('Etesian', 'Etesian, a calm, gesture-first interface: the phone, the apps, the widgets, the design language and Etesian for KDE Plasma.', '/');
 function scrollTo(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 function open(t: Target) { scrollTo(t === 'try-phone' ? 'sec-try' : `sec-${t as DocId}`); }
 provideNav({ open, shell: 'classic' });
@@ -45,8 +45,8 @@ function onClick(e: MouseEvent) {
 </script>
 <template>
   <div class="classic hd-on-page" @click.capture="onClick">
-    <HdSiteHeader brand="Etesian" :brand-href="href('/classic')" :links="links">
-      <template #actions><HdButton variant="accent" @click="router.push('/')">{{ osLabel }}</HdButton></template>
+    <HdSiteHeader brand="Etesian" :brand-href="href('/')" :links="links">
+      <template #actions><HdButton variant="accent" @click="router.push('/try')">{{ osLabel }}</HdButton></template>
     </HdSiteHeader>
     <main id="main">
       <section class="classic-hero hd-on-home">
@@ -55,8 +55,8 @@ function onClick(e: MouseEvent) {
             <div class="classic-hero__brand"><EtesianMark :size="48" /><span>{{ hero.eyebrow }}</span></div>
             <HdHero :title="hero.title" :lead="hero.lead">
               <template #actions>
-                <HdButton variant="accent" @click="router.push('/')">{{ osLabel }}</HdButton>
-                <HdButton icon="phone" @click="open('try-phone')">Try the phone</HdButton>
+                <HdButton variant="accent" @click="router.push('/try')">{{ osLabel }}</HdButton>
+                <HdButton v-if="osLabel !== 'Try the phone'" icon="phone" @click="open('try-phone')">Try the phone</HdButton>
               </template>
             </HdHero>
           </div>
