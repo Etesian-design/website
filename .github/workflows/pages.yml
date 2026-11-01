@@ -30,8 +30,7 @@ jobs:
       # the base path Pages serves the site under: "/website" on etesian-design.github.io, "" once a custom domain is set
       - id: pages
         uses: actions/configure-pages@v5
-      # npm install, not npm ci: it fetches the published @etesian-design packages and brings the lockfile up to date
-      - run: npm install --no-audit --no-fund
+      - run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the site
