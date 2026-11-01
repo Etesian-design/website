@@ -6,8 +6,8 @@
  * pure N9 menu, as a fresh phone has it (the toggle strip is an optional addition). Tap below it or swipe it up to close.
  */
 import { ref } from 'vue';
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 const emit = defineEmits<{ close: [] }>();
 const ringer = ref(2); // Silent | Beep | Ringing
 const volume = ref(66);

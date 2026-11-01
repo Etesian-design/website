@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /** A live, inert copy of an open window at its own size, for the Overview, the windows switcher and the dock's hover preview. */
-import XMiniApp from '@etesian/stories/explorations/parts/XMiniApp.vue';
-import XFit from '@etesian/stories/explorations/parts/XFit.vue';
+import XMiniApp from '@etesian-design/shell/parts/XMiniApp.vue';
+import XFit from '@etesian-design/shell/parts/XFit.vue';
 import PhoneUI from '../phone/PhoneUI.vue';
 import PageRenderer from '../blocks/PageRenderer.vue';
 import { doc, type DocId } from '../../content/site';

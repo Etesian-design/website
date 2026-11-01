@@ -6,12 +6,11 @@
  * the window's own shape, its title under it). Its right-click menu (WebDesktop) opens the dock settings (XDockSettings): edge, icon size and
  * visibility; auto-hidden, it slides off its edge and comes back when the pointer reaches that edge.
  */
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
-import HdTooltip from '@etesian/components/HdTooltip.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
+import HdTooltip from '@etesian-design/vue/components/HdTooltip.vue';
 import { ref, computed, watch, onBeforeUnmount } from 'vue';
-import { GAP, dockThickness, type DockPos } from '@etesian/stories/explorations/desktop2/geometry';
-import '@etesian/stories/explorations/desktop2/XDock.vue';
+import { GAP, dockThickness, type DockPos } from '@etesian-design/shell/desktop/geometry';
 
 export interface DockItem { key: string; title: string; icon: string; color: string; tone?: 'light' | 'dark'; w: number; h: number }
 const props = withDefaults(defineProps<{ items: DockItem[]; active?: string; launcherActive?: boolean; position?: DockPos; size?: number; autoHide?: boolean; panel?: boolean; editing?: boolean; launcher?: boolean; trash?: boolean; previews?: boolean }>(),

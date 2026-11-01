@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /** App root: one Etesian colour-mode scope (hybrid, the N9 default) and the font chosen from the design repo's free alternatives. */
-import HdTheme from '@etesian/components/HdTheme.vue';
+import HdTheme from '@etesian-design/vue/components/HdTheme.vue';
 import { siteFont } from './lib/font';
 import { useMeta } from 'quasar';
 /* defaults for every generated page; each page sets its own title and description over them (lib/meta.ts) */

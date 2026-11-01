@@ -4,13 +4,13 @@ import { ref, watch, defineAsyncComponent } from 'vue';
 import { useHydration } from 'quasar';
 import { useClock } from '../../lib/clock';
 import SettingsDemo from './SettingsDemo.vue';
-import HdLockScreenStack from '@etesian/components/HdLockScreenStack.vue';
-import BelleWidget from '@etesian/stories/belle/BelleWidget.vue';
-import XFit from '@etesian/stories/explorations/parts/XFit.vue';
+import HdLockScreenStack from '@etesian-design/vue/components/HdLockScreenStack.vue';
+import BelleWidget from '@etesian-design/shell/widgets/BelleWidget.vue';
+import XFit from '@etesian-design/shell/parts/XFit.vue';
 import type { Block } from '../../content/schema';
 import { useNav } from '../../lib/nav';
 const PhoneUI = defineAsyncComponent(() => import('../phone/PhoneUI.vue'));
-const DesktopV2 = defineAsyncComponent(() => import('@etesian/stories/explorations/desktop2/DesktopV2.vue'));
+const DesktopV2 = defineAsyncComponent(() => import('@etesian-design/shell/desktop/DesktopV2.vue'));
 const props = defineProps<{ block: Extract<Block, { type: 'demo' }> }>();
 const nav = useNav();
 /* the clocks show the viewer's time: drawn once the page runs in the browser, never baked into the generated page */

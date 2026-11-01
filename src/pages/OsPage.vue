@@ -4,6 +4,7 @@
  * The screen size is only known in the browser, so the generated page (SSG) carries a plain summary of the site with
  * links, and the desktop or the phone takes over once the page has hydrated (as Quasar's SSG code caveats ask).
  */
+import { href } from '../lib/base';
 import { computed } from 'vue';
 import { useQuasar, useHydration } from 'quasar';
 import { DOCS } from '@/content/site';
@@ -11,7 +12,7 @@ import { usePageMeta } from '@/lib/meta';
 import { useRouter } from 'vue-router';
 import WebDesktop from '@/components/desktop/WebDesktop.vue';
 import PhoneUI from '@/components/phone/PhoneUI.vue';
-import XFit from '@etesian/stories/explorations/parts/XFit.vue';
+import XFit from '@etesian-design/shell/parts/XFit.vue';
 const props = defineProps<{ force?: 'desktop' | 'phone' }>();
 const { isHydrated } = useHydration();
 const DESC = 'Etesian brings the Nokia N9’s ideas back: a calm, gesture-first design language for an Android phone and the KDE Plasma desktop. Try it in your browser.';
@@ -27,8 +28,8 @@ function go(href: string) { void router.push(href); }
   <main v-if="!isHydrated" class="site-pre hd-on-home">
     <h1>Etesian</h1>
     <p>{{ DESC }}</p>
-    <ul><li v-for="d in DOCS" :key="d.id"><a :href="`/classic#sec-${d.id}`">{{ d.title }}</a>: {{ d.summary }}</li></ul>
-    <p><a href="/classic">The classic site</a></p>
+    <ul><li v-for="d in DOCS" :key="d.id"><a :href="href(`/classic#sec-${d.id}`)">{{ d.title }}</a>: {{ d.summary }}</li></ul>
+    <p><a :href="href('/classic')">The classic site</a></p>
   </main>
   <WebDesktop v-else-if="mode === 'desktop'" />
   <div v-else-if="small" class="site-phone"><PhoneUI @navigate="go" /></div>

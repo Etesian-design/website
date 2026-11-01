@@ -1,9 +1,9 @@
 <script setup lang="ts">
 /** "This website" card: in the desktop view it says the visitor is using it; anywhere else it links to the desktop view. */
 import { useRouter } from 'vue-router';
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
-import HdButton from '@etesian/components/HdButton.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
+import HdButton from '@etesian-design/vue/components/HdButton.vue';
 import type { Block } from '../../content/schema';
 import { useInDesktop } from '../../lib/nav';
 defineProps<{ block: Extract<Block, { type: 'site' }> }>();

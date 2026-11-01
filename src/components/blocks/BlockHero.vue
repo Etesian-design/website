@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HdButton from '@etesian/components/HdButton.vue';
+import HdButton from '@etesian-design/vue/components/HdButton.vue';
 import type { Block } from '../../content/schema';
 import { useRouter } from 'vue-router';
 import { useNav, go } from '../../lib/nav';

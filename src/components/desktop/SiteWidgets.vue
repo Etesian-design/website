@@ -6,10 +6,9 @@
  * them. Kept in this browser only (localStorage), so a visitor's own arrangement survives a reload.
  */
 import { ref, watch, onMounted } from 'vue';
-import BelleWidget, { type BelleKind } from '@etesian/stories/belle/BelleWidget.vue';
-import XMailWidget from '@etesian/stories/explorations/desktop2/XMailWidget.vue';
-import XChatsWidget from '@etesian/stories/explorations/desktop2/XChatsWidget.vue';
-import '@etesian/stories/explorations/desktop2/XWidgets.vue';
+import BelleWidget, { type BelleKind } from '@etesian-design/shell/widgets/BelleWidget.vue';
+import XMailWidget from '@etesian-design/shell/desktop/XMailWidget.vue';
+import XChatsWidget from '@etesian-design/shell/desktop/XChatsWidget.vue';
 const props = defineProps<{ left: number; top: number }>();
 const editing = defineModel<boolean>('editing', { default: false });
 

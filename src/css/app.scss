@@ -1,9 +1,12 @@
-// Etesian design tokens, base styles and the free Nokia Pure look-alike fonts, all from the design repo.
-@import '@etesian/styles/tokens.css';
-@import '@etesian/styles/base.css';
-@import '@etesian/styles/font-alternatives.css';
-// Quasar theme from the design repo (load last).
-@import 'etesian-design/quasar/theme.css';
+// Etesian design tokens, base styles and the free Nokia Pure look-alike fonts (@etesian-design/tokens).
+@import '@etesian-design/tokens/styles/tokens.css';
+@import '@etesian-design/tokens/styles/base.css';
+@import '@etesian-design/tokens/styles/font-alternatives.css';
+// The components' and the shell parts' styles (the packages ship them as one stylesheet each).
+@import '@etesian-design/vue/style.css';
+@import '@etesian-design/shell/style.css';
+// Quasar theme (load last).
+@import '@etesian-design/quasar/theme.css';
 @import './doc.scss';
 
 html, body, #q-app { height: 100%; margin: 0; }

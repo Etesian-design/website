@@ -5,11 +5,11 @@
  * switch changes the lock screen above it, as the preview does on the phone.
  */
 import { ref } from 'vue';
-import HdPageHeader from '@etesian/components/HdPageHeader.vue';
-import HdSectionHeader from '@etesian/components/HdSectionHeader.vue';
-import HdListItem from '@etesian/components/HdListItem.vue';
-import HdSwitch from '@etesian/components/HdSwitch.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
+import HdPageHeader from '@etesian-design/vue/components/HdPageHeader.vue';
+import HdSectionHeader from '@etesian-design/vue/components/HdSectionHeader.vue';
+import HdListItem from '@etesian-design/vue/components/HdListItem.vue';
+import HdSwitch from '@etesian-design/vue/components/HdSwitch.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 const glance = ref(false), weather = ref(false), emergency = ref(false);
 </script>
 <template>

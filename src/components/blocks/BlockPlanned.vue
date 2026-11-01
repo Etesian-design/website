@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 import type { Block } from '../../content/schema';
 defineProps<{ block: Extract<Block, { type: 'planned' }> }>();
 </script>

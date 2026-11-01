@@ -163,6 +163,17 @@ async function drag(p, from, to, steps = 12) {
 }
 
 {
+  // content images are public/ paths: they must load on a page below the root too (they once resolved against /classic/)
+  const p = await page({ width: 1440, height: 900 });
+  // with the trailing slash, as GitHub Pages serves it (classic/index.html)
+  await p.goto(`${BASE}/classic/`); await p.waitForTimeout(1500);
+  await p.evaluate(async () => { for (const i of document.images) { i.loading = 'eager'; } await new Promise((r) => setTimeout(r, 1500)); });
+  const broken = await p.evaluate(() => [...document.images].filter((i) => !i.naturalWidth).map((i) => i.getAttribute('src')));
+  if (broken.length) problems.push(`classic: images that do not load: ${broken.join(', ')}`);
+  await p.close();
+}
+
+{
   // the pre-rendered classic page must not draw the hero phone at the unmeasured 25% (a tiny box growing to full size)
   const html = await (await fetch(`${BASE}/classic`)).text();
   const inner = html.match(/class="x-fit__inner"[^>]*style="([^"]*)"/);
