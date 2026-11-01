@@ -9,7 +9,7 @@ export default defineConfig(() => ({
     target: { browser: ['es2022', 'firefox115', 'chrome115', 'safari15'], node: 'node20' },
     // history: every route is its own generated page (quasar build -m ssg)
     vueRouterMode: 'history',
-    // "/" on the custom domain; the Pages workflow sets e.g. "/website/" while the site is served from etesian-design.github.io
+    // "/": the site lives at the root of etesian-design.com (public/CNAME); PUBLIC_PATH only for a local test under a sub-path
     publicPath: process.env.PUBLIC_PATH || '/',
     typescript: { strict: true, vueShim: true },
     extendViteConf(viteConf) {
