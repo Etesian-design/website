@@ -1,0 +1,94 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "KDE Plasma 6.6 and newer",
+   "title": "Etesian for KDE Plasma.",
+   "lead": "The Etesian desktop on KDE Plasma: the same design language as the phone, on laptops and desktops. It installs for the current user, needs no root for the look, and uninstalling puts your own settings and panels back."
+  },
+  {
+   "type": "image",
+   "images": [
+    {
+     "src": "plasma/windows.png",
+     "alt": "Dolphin and Kate with the Etesian header bar, the global menu and the dock",
+     "caption": "Windows with their actions in the header bar, the global menu on top and the dock on the left."
+    },
+    {
+     "src": "plasma/overview.png",
+     "alt": "The Overview: Events on the left, open windows in the middle, apps and search on the right",
+     "caption": "The Overview: Events, open windows, and search as you type."
+    },
+    {
+     "src": "plasma/widgets.png",
+     "alt": "Belle flip clock, word clock and feeds widgets on the desktop",
+     "caption": "Belle desktop widgets: flip clock, word clock and feeds."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "What you get",
+   "color": "#09A7CC",
+   "items": [
+    {
+     "title": "Actions in the title bar",
+     "text": "A native window decoration: the app’s squircle, its title and its main actions in one header bar. One row of chrome, not two.",
+     "icon": "window"
+    },
+    {
+     "title": "Global menu, clock on the right",
+     "text": "The focused app’s menus on the left; Events, status and the clock on the right.",
+     "icon": "menu"
+    },
+    {
+     "title": "A light dock on the left",
+     "text": "Lit squircle icons, live previews of running windows, and an edit mode.",
+     "icon": "grid"
+    },
+    {
+     "title": "Snapping",
+     "text": "Drag a window to show numbered zones, or to the top edge for six layouts. Keyboard shortcuts too.",
+     "icon": "split"
+    },
+    {
+     "title": "Events",
+     "text": "The phone’s Events view: the day, weather, notifications, calendar and feeds, sliding in from the right.",
+     "icon": "calendar"
+    },
+    {
+     "title": "Status menu",
+     "text": "Wi-Fi, Bluetooth, Silent and Focus, volume and brightness, as on the phone.",
+     "icon": "settings"
+    },
+    {
+     "title": "Belle desktop widgets",
+     "text": "Flip clock, word clock, feeds and a mail widget over KMail’s inboxes.",
+     "icon": "clock"
+    },
+    {
+     "title": "The whole look",
+     "text": "Colours from the design tokens, icons, cursors, sounds, wallpaper, splash and login screen, all made for Etesian.",
+     "icon": "photo"
+    },
+    {
+     "title": "Thunderbird",
+     "text": "An Etesian theme for Thunderbird, generated from the same tokens.",
+     "icon": "mail"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Still to come",
+   "paragraphs": [
+    "People and mail in search need KDE PIM. The mail widget reads KMail only for now. Apps with toolbars that hold more than file and edit actions keep their own toolbar."
+   ]
+  },
+  {
+   "type": "demo",
+   "device": "desktop",
+   "caption": "The desktop design Etesian for Plasma follows."
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "blocks": [
+    { "type": "hero", "eyebrow": "The Etesian design language", "title": "Calm, gesture-first, content before chrome.",
+      "lead": "Etesian is a way of designing as much as a piece of software. It starts from what the Nokia N9 got right and carries it to today’s screens." },
+    { "type": "features", "heading": "Principles", "color": "#821DDE", "items": [
+      { "title": "Content before chrome", "text": "Screens show what matters; controls step back. One row of chrome, never two.", "icon": "photo" },
+      { "title": "Gestures, not buttons", "text": "The edges of the screen minimise and close, everywhere, the same way. Nothing in an app imitates them.", "icon": "back" },
+      { "title": "Calm by default", "text": "Nothing shouts for attention. Everything that happened waits in one place: Events.", "icon": "moon" },
+      { "title": "Faithful first", "text": "The N9 behaviour is the default. Every addition is optional and starts switched off.", "icon": "check" } ] },
+    { "type": "features", "heading": "Look and feel", "color": "#3A3A3C", "items": [
+      { "title": "The squircle", "text": "Every thumb-sized shape, from app icons to avatars, is a superellipse measured from the N9’s own icons. Never a circle, never a rounded square.", "icon": "star" },
+      { "title": "Lit from the top", "text": "Icons and buttons are lit objects: a soft gradient, a thin rim, a gentle sheen.", "icon": "settings" },
+      { "title": "Light, large type", "text": "Big, thin headings and plain text. Type follows the system’s size and weight settings.", "icon": "edit" },
+      { "title": "Colour that means something", "text": "Each app has its own colour, used on its main header and icon. Sub pages stay plain.", "icon": "photo" },
+      { "title": "Black home, light pages", "text": "The home views are black; apps are light. Dark and light modes keep the same structure.", "icon": "window" },
+      { "title": "Motion with purpose", "text": "Apps slide in, slide away when minimised and follow the finger when closed. No splash screens.", "icon": "play" } ] },
+    { "type": "text", "heading": "Heritage", "paragraphs": [ "The design language is built from careful study of the N9 (2011): its gestures, proportions and behaviour. Where the N9 had no answer, for larger screens, a pointer or a keyboard, the gaps are filled in the same spirit. Fonts, icons and sounds are open or made for the project." ] }
+  ]
+}

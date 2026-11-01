@@ -1,0 +1,15 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Home-screen widgets",
+   "title": "Belle-style widgets.",
+   "lead": "Widgets are lit objects: glass, brushed metal and paper, each lit from the top. They sit on a four-column grid and resize in whole cells."
+  },
+  {
+   "type": "demo",
+   "device": "widgets",
+   "caption": "Switches, data usage, agenda, latest mail, music, weather with a place picker, clocks, notes and feeds. A modern translucent set is also available."
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Status",
+   "title": "Follow progress.",
+   "lead": "Etesian is being built one part at a time. There are no downloads and no release dates yet."
+  },
+  {
+   "type": "status",
+   "items": [
+    {
+     "part": "Etesian for LineageOS",
+     "state": "In development",
+     "tone": "progress",
+     "detail": "Launcher, home views, lock screen, gestures, status menu, settings and apps running on the device."
+    },
+    {
+     "part": "Optional additions",
+     "state": "In development",
+     "tone": "progress",
+     "detail": "Each on the Settings page of what it changes, with a live preview. All off by default for the pure N9 experience."
+    },
+    {
+     "part": "Boot animation and startup sound",
+     "state": "Done",
+     "tone": "done",
+     "detail": "Made for Etesian."
+    },
+    {
+     "part": "Etesian for KDE Plasma",
+     "state": "In development",
+     "tone": "progress",
+     "detail": "Look, window decoration, dock, Events, snapping and widgets working on Plasma 6.6 and newer."
+    },
+    {
+     "part": "Etesian for the web",
+     "state": "Live",
+     "tone": "done",
+     "detail": "This website. Cloud Companion is experimental."
+    }
+   ]
+  },
+  {
+   "type": "planned",
+   "title": "Downloads",
+   "tag": "Coming soon",
+   "icon": "data",
+   "text": "Phone builds, starting with the F(x)tec Pro1-X, and the KDE Plasma theme will be listed here when they are ready to install."
+  }
+ ]
+}

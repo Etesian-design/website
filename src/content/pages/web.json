@@ -1,0 +1,23 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Web",
+   "title": "Etesian for the web.",
+   "lead": "The design language is a Vue 3 component library, so anything on the web can look and work like Etesian."
+  },
+  {
+   "type": "site",
+   "title": "This website",
+   "icon": "globe",
+   "text": "A working Etesian desktop and phone in the browser, built from the library's own components: drag, snap and resize windows, open Events, swipe through the phone."
+  },
+  {
+   "type": "planned",
+   "title": "Cloud Companion",
+   "icon": "globe",
+   "tag": "Experimental",
+   "text": "A self-hosted server with an Etesian web app for mail, calendar, contacts and a browser, on any device, including old phones that can't handle the modern web."
+  }
+ ]
+}
