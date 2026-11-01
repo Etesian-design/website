@@ -45,7 +45,8 @@ function onClick(e: MouseEvent) {
 </script>
 <template>
   <div class="classic hd-on-page" @click.capture="onClick">
-    <HdSiteHeader brand="Etesian" :brand-href="href('/')" :links="links">
+    <HdSiteHeader brand="Etesian" tone="chrome" :brand-href="href('/')" :links="links">
+      <template #logo><EtesianMark :size="28" /></template>
       <template #actions><HdButton variant="accent" @click="router.push('/try')">{{ osLabel }}</HdButton></template>
     </HdSiteHeader>
     <main id="main">
