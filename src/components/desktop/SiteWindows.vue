@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Windows overview, ported from the design repo's XWindows (Desktop v2 "Super+Tab") to the real browser size, with the
+ * Windows overview, ported from the design repo's XWindows to the real browser size, with the
  * same classes: live cards that keep each window's shape, zoom levels 1 (carousel) to 4 per row, like the phone's Open
  * applications. Ctrl + wheel (or a touchpad pinch) zooms; the wheel moves through the carousel.
  */

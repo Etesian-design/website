@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * The global menu bar of the approved Desktop v2 direction (design repo XMenuBar's markup and classes):
+ * The desktop's global menu bar (design repo XMenuBar's markup and classes):
  * left = the focused window's name and the menus; right = Events count, status icons, then the clock at the far right.
  */
 import { href } from '../../lib/base';
