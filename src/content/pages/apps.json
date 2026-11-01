@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    { "type": "hero", "eyebrow": "N9-style apps", "title": "The everyday apps, rebuilt.",
+      "lead": "Each core app follows the same rules: the app’s own colour on its main header, plain sub pages, a bottom toolbar with Back on the left, squircle icons and light, large type." },
+    { "type": "features", "style": "apps", "items": [
+      { "title": "Contacts", "text": "People first: squircle photos, one list, every way to reach someone on their card.", "icon": "person", "color": "#007DC9" },
+      { "title": "Messaging", "text": "Conversations in N9 bubbles. Inline reply from Events is an optional extra.", "icon": "message", "color": "#09A7CC" },
+      { "title": "Mail", "text": "A calm inbox with the N9 view menu: Inbox, Sent, Drafts and folders from the title.", "icon": "mail", "color": "#0067BC" },
+      { "title": "Calendar", "text": "Month, week and agenda views; today’s entries also appear in Events.", "icon": "calendar", "color": "#EF5500" },
+      { "title": "Music", "text": "Library and now playing, with a Belle-style music widget planned for the home screen.", "icon": "music", "color": "#CC09BA" },
+      { "title": "Gallery", "text": "Photos as they are, edge to edge, with sharing from the toolbar.", "icon": "photo", "color": "#821DDE" },
+      { "title": "Store", "text": "Apps in the same visual language as the rest of the system.", "icon": "star", "color": "#1C51AF" },
+      { "title": "Clock", "text": "Alarms, world clock, timers and stopwatch behind one bottom toolbar.", "icon": "clock", "color": "#F77219" },
+      { "title": "Feeds", "text": "The sources you follow, delivered into the Feeds section of Events.", "icon": "globe", "color": "#FF8500" },
+      { "title": "Settings", "text": "Every stock option, N9 lists, and pull-down to search instead of a search button.", "icon": "settings", "color": "#505050" } ] },
+    { "type": "links", "items": [ { "label": "Open the interactive phone", "target": "try-phone", "text": "Unlock it and tap an app.", "icon": "phone", "color": "#62B700" } ] }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS",
+   "title": "The Nokia N9, re-envisioned for your phone.",
+   "lead": "No home button, no back button, no clutter. Swipe in from any edge to go home, see everything new in one calm list, and let your content fill the screen. Etesian brings the N9's interface to any phone LineageOS 24 supports.",
+   "actions": [
+    {
+     "label": "Try the phone",
+     "target": "try-phone",
+     "primary": true,
+     "icon": "phone"
+    },
+    {
+     "label": "The apps",
+     "target": "apps"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Swipe, don’t press",
+   "color": "#1C51AF",
+   "intro": "There is no home button and no navigation bar. The edges of the screen do the work, the same way on every screen.",
+   "items": [
+    {
+     "title": "Swipe in from the left or right edge",
+     "text": "Minimises the app. It keeps running and waits in Open applications.",
+     "icon": "back"
+    },
+    {
+     "title": "Swipe down from the top edge",
+     "text": "Closes the app: the N9 swipe-down close.",
+     "icon": "chevron-down"
+    },
+    {
+     "title": "Swipe up from the bottom edge and hold",
+     "text": "Peeks the first row of the app grid over the app. Release on an icon to launch it.",
+     "icon": "grid"
+    },
+    {
+     "title": "Swipe sideways on the lock screen",
+     "text": "Unlocks. There is no unlock button.",
+     "icon": "lock"
+    },
+    {
+     "title": "Tap the status bar",
+     "text": "Opens the status menu: profile, volume, connectivity and battery.",
+     "icon": "settings"
+    },
+    {
+     "title": "Pinch in Open applications",
+     "text": "Zooms between a carousel and 2, 3 or 4 cards per row.",
+     "icon": "window"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Three home views",
+   "color": "#3A3A3C",
+   "intro": "Home is three views side by side, plus an optional fourth for widgets. Swipe between them; page dots show where you are.",
+   "items": [
+    {
+     "title": "Events",
+     "text": "Day, date and weather at the top, then notifications and feeds, grouped by source. New notifications slide in under their section.",
+     "icon": "calendar"
+    },
+    {
+     "title": "Applications",
+     "text": "Every app as a lit squircle icon on a four-column grid. Long-press to arrange.",
+     "icon": "grid"
+    },
+    {
+     "title": "Open applications",
+     "text": "Live cards of the running apps, two per row by default. Pinch to zoom; long-press to close or rearrange.",
+     "icon": "window"
+    },
+    {
+     "title": "Widgets",
+     "text": "An optional view for Belle-style widgets: clocks, weather, agenda, mail and more.",
+     "icon": "clock"
+    }
+   ]
+  },
+  {
+   "type": "demo",
+   "device": "lock",
+   "heading": "The lock screen",
+   "text": "A large, thin clock and the full date, with notifications as dark translucent cards at the bottom. The newest show in full and the rest stack beneath them. Nothing pops up over the lock screen. The N9’s “More” style is available as an option. Swipe sideways to unlock."
+  },
+  {
+   "type": "demo",
+   "device": "settings",
+   "heading": "Additions, off by default",
+   "text": "Everything the N9 did not have is optional and starts switched off, so the phone starts as a pure N9 experience. Each addition sits in Settings on the page of what it changes, with a live preview of that part of the phone at the top. Try the Lock screen page here. N9-style replacements keep every option of the stock Android screens they replace."
+  },
+  {
+   "type": "features",
+   "heading": "Settings where you expect them",
+   "color": "#505050",
+   "intro": "Every page of Settings shows what it changes before you change it.",
+   "items": [
+    {
+     "title": "Status menu",
+     "text": "An optional toggle strip and sliders, with an edit mode to add, remove and reorder rows.",
+     "icon": "settings"
+    },
+    {
+     "title": "Open applications",
+     "text": "Carousel, split screen and arranging the cards by hand.",
+     "icon": "window"
+    },
+    {
+     "title": "Lock screen",
+     "text": "Notification style, a glance line and the weather under the clock.",
+     "icon": "lock"
+    },
+    {
+     "title": "Emergency information",
+     "text": "Medical details and emergency contacts, reachable from the lock screen.",
+     "icon": "warning"
+    },
+    {
+     "title": "Sharing",
+     "text": "An N9-style share sheet and sharing a Wi-Fi network as a QR code.",
+     "icon": "share"
+    },
+    {
+     "title": "Toolbar",
+     "text": "The N9 bar under every app, with Back on the left.",
+     "icon": "menu"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "From the first second",
+   "paragraphs": [
+    "A boot animation and a startup sound made for Etesian, in the spirit of the N9 rather than copied from it, set the tone before the lock screen appears."
+   ]
+  }
+ ]
+}

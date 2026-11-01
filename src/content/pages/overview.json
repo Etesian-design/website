@@ -1,0 +1,94 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Desktop · Phone · Web",
+   "title": "The Nokia N9, re-envisioned for every screen.",
+   "lead": "Calm, content-first and built around gestures: the ideas that made the N9 special, taken further. Etesian brings them to the KDE Plasma desktop, to LineageOS phones and to the web, from one design language.",
+   "actions": [
+    {
+     "label": "The desktop",
+     "target": "plasma",
+     "primary": true
+    },
+    {
+     "label": "The phone",
+     "target": "phone"
+    },
+    {
+     "label": "Follow progress",
+     "target": "progress"
+    }
+   ]
+  },
+  {
+   "type": "links",
+   "heading": "Explore",
+   "items": [
+    {
+     "label": "Etesian for KDE Plasma",
+     "target": "plasma",
+     "text": "The design language on the desktop."
+    },
+    {
+     "label": "The phone",
+     "target": "phone",
+     "text": "Gestures, home views, lock screen, settings."
+    },
+    {
+     "label": "Design language",
+     "target": "design",
+     "text": "Calm, gesture-first, content before chrome."
+    },
+    {
+     "label": "Apps",
+     "target": "apps",
+     "text": "The everyday apps, rebuilt in the N9 style."
+    },
+    {
+     "label": "Widgets",
+     "target": "widgets",
+     "text": "Belle-style home-screen widgets."
+    },
+    {
+     "label": "Etesian for the web",
+     "target": "web",
+     "text": "This website, and Cloud Companion."
+    }
+   ]
+  },
+  {
+   "type": "status",
+   "heading": "Where it stands",
+   "items": [
+    {
+     "part": "Etesian for LineageOS",
+     "state": "In development",
+     "tone": "progress"
+    },
+    {
+     "part": "Optional additions",
+     "state": "In development",
+     "tone": "progress"
+    },
+    {
+     "part": "Etesian for KDE Plasma",
+     "state": "In development",
+     "tone": "progress"
+    },
+    {
+     "part": "Etesian for the web",
+     "state": "Live",
+     "tone": "done"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "note": true,
+   "paragraphs": [
+    "Etesian is an independent project and is not affiliated with Nokia. It credits the Nokia N9 (2011) as its inspiration and ships none of its assets: fonts, icons and sounds are open or made for the project."
+   ]
+  }
+ ]
+}

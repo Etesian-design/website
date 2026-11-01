@@ -1,0 +1,16 @@
+// Etesian design tokens, base styles and the free Nokia Pure look-alike fonts, all from the design repo.
+@import '@etesian/styles/tokens.css';
+@import '@etesian/styles/base.css';
+@import '@etesian/styles/font-alternatives.css';
+// Quasar theme from the design repo (load last).
+@import 'etesian-design/quasar/theme.css';
+@import './doc.scss';
+
+html, body, #q-app { height: 100%; margin: 0; }
+body { background: #000; overscroll-behavior: none; }
+a { color: inherit; }
+.site-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* No backdrop blur anywhere on the site: on the GPU it draws bits of whatever is behind (windows, other icons, widgets)
+   inside these surfaces. Their backgrounds are near-opaque, so nothing is lost. Checked by scripts/screenshots.mjs. */
+.x-dock, .x-dock__peek, .hd-lock-card, .hd-lock-stack__strip { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }

@@ -1,0 +1,188 @@
+{
+ "pages": [
+  {
+   "id": "overview",
+   "title": "Etesian",
+   "label": "Etesian",
+   "icon": "star",
+   "color": "#2F6FD6",
+   "summary": "What Etesian is and where it is going.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": false,
+    "menu": true
+   }
+  },
+  {
+   "id": "plasma",
+   "title": "Etesian for KDE Plasma",
+   "label": "Plasma",
+   "icon": "window",
+   "color": "#09A7CC",
+   "summary": "The design language on the KDE Plasma desktop.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "phone",
+   "title": "The phone",
+   "label": "Phone",
+   "icon": "phone",
+   "color": "#1C51AF",
+   "summary": "The Nokia N9, re-envisioned for every screen.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "design",
+   "title": "Design language",
+   "label": "Design",
+   "icon": "edit",
+   "color": "#821DDE",
+   "summary": "Calm, gesture-first, content before chrome.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "apps",
+   "title": "Apps",
+   "label": "Apps",
+   "icon": "grid",
+   "color": "#EF5500",
+   "summary": "Contacts, Messaging, Mail, Calendar and more, rebuilt in the N9 style.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "widgets",
+   "title": "Widgets",
+   "label": "Widgets",
+   "icon": "clock",
+   "color": "#505050",
+   "summary": "Belle-style home-screen widgets.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "web",
+   "title": "Etesian for the web",
+   "label": "Web",
+   "icon": "globe",
+   "color": "#3B8C5A",
+   "summary": "The design language in the browser: this site and Cloud Companion.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "progress",
+   "title": "Progress",
+   "label": "Progress",
+   "icon": "info",
+   "color": "#3A3A3C",
+   "summary": "What is done, what is next, and how to follow along.",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  }
+ ],
+ "events": {
+  "notifications": [
+   {
+    "page": "overview",
+    "title": "Etesian",
+    "text": "The Nokia N9, re-envisioned for every screen.",
+    "icon": "star",
+    "color": "#2F6FD6"
+   },
+   {
+    "page": "phone",
+    "title": "The phone",
+    "text": "Edge swipes, three home views.",
+    "icon": "phone",
+    "color": "#1C51AF"
+   },
+   {
+    "page": "progress",
+    "title": "Progress",
+    "text": "In development. No downloads yet.",
+    "icon": "info",
+    "color": "#3A3A3C"
+   }
+  ],
+  "feeds": [
+   {
+    "page": "apps",
+    "title": "Apps",
+    "text": "Contacts, Messaging, Mail, Calendar, Music, Gallery and more, in the N9 style.",
+    "icon": "grid",
+    "color": "#EF5500"
+   },
+   {
+    "page": "widgets",
+    "title": "Widgets",
+    "text": "Belle-style home-screen widgets, lit from the top.",
+    "icon": "clock",
+    "color": "#505050"
+   },
+   {
+    "page": "design",
+    "title": "Design language",
+    "text": "Calm, gesture-first, content before chrome.",
+    "icon": "edit",
+    "color": "#821DDE"
+   },
+   {
+    "page": "plasma",
+    "title": "Etesian for KDE Plasma",
+    "text": "The same design language on the desktop, in development.",
+    "icon": "window",
+    "color": "#09A7CC"
+   }
+  ],
+  "calendar": [
+   {
+    "time": "10:00",
+    "title": "Stand-up",
+    "text": "Today 10:00"
+   },
+   {
+    "time": "14:00",
+    "title": "Design review",
+    "text": "Today 14:00, Room Etesian"
+   },
+   {
+    "time": "18:30",
+    "title": "Sauna with Mikko",
+    "text": "Today 18:30"
+   }
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "etesian-website",
+  "version": "0.1.0",
+  "description": "Etesian promotional website: an in-browser Etesian desktop, the phone UI, and a classic page",
+  "productName": "Etesian",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "quasar dev -m ssg --port 6120",
+    "build": "quasar build -m ssg",
+    "screenshots": "node scripts/screenshots.mjs",
+    "postinstall": "quasar prepare"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.17.0",
+    "etesian-design": "file:../etesian-design",
+    "quasar": "^2.35.2",
+    "vue": "^3.5.44",
+    "vue-router": "^5.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^3.10.3",
+    "playwright": "^1.64.1",
+    "sass-embedded": "^1.106.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">= 20"
+  }
+}
