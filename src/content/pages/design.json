@@ -1,7 +1,7 @@
 {
   "blocks": [
     { "type": "hero", "eyebrow": "The Etesian design language", "title": "Calm, gesture-first, content before chrome.",
-      "lead": "Etesian is a way of designing as much as a piece of software. It starts from what the Nokia N9 got right and carries it to today’s screens." },
+      "lead": "Etesian is a way of designing as much as a piece of software. Its influence is the Nokia N9's Swipe UI, re-envisioned for today’s screens." },
     { "type": "features", "heading": "Principles", "color": "#821DDE", "items": [
       { "title": "Content before chrome", "text": "Screens show what matters; controls step back. One row of chrome, never two.", "icon": "photo" },
       { "title": "Gestures, not buttons", "text": "The edges of the screen minimise and close, everywhere, the same way. Nothing in an app imitates them.", "icon": "back" },
