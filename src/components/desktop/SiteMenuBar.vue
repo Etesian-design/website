@@ -3,12 +3,12 @@
  * The global menu bar of the approved Desktop v2 direction (design repo XMenuBar's markup and classes):
  * left = the focused window's name and the menus; right = Events count, status icons, then the clock at the far right.
  */
+import { href } from '../../lib/base';
 import { ref } from 'vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
-import HdCountBubble from '@etesian/components/HdCountBubble.vue';
-import XContextMenu from '@etesian/stories/explorations/parts/XContextMenu.vue';
-import '@etesian/stories/explorations/desktop2/XMenuBar.vue';
-import type { XMenuItem } from '@etesian/stories/explorations/parts/types';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
+import HdCountBubble from '@etesian-design/vue/components/HdCountBubble.vue';
+import XContextMenu from '@etesian-design/shell/parts/XContextMenu.vue';
+import type { XMenuItem } from '@etesian-design/shell/parts/types';
 import EtesianMark from '../common/EtesianMark.vue';
 import { listed } from '../../content/site';
 import { useClock } from '../../lib/clock';
@@ -37,7 +37,7 @@ function pick(id: string) { open.value = null; emit('select', id); }
     </span>
     <span class="x-mbar__sp"></span>
     <span class="x-mbar__status" aria-label="Status">
-      <a class="site-mbar__link hd-focusable" href="/classic">Classic site</a>
+      <a class="site-mbar__link hd-focusable" :href="href('/classic')">Classic site</a>
       <button type="button" class="x-mbar__events hd-focusable" :class="{ 'is-active': active === 'events' }" :aria-label="`Events: ${count ?? 3} new`" @click="emit('events')"><HdCountBubble :value="count ?? 3" /></button>
       <button type="button" class="x-mbar__sicons hd-focusable" :class="{ 'is-active': active === 'status' }" aria-label="Status menu" :aria-expanded="active === 'status' ? 'true' : 'false'" @click="emit('status')">
         <HdIcon name="wifi" :size="15" /><HdIcon name="bluetooth" :size="15" /><span class="x-mbar__batt"><HdIcon name="battery" :size="17" />82%</span>

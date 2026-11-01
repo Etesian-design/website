@@ -6,10 +6,9 @@
  * a section with nothing in it is left out, header and all, as on the N9.
  */
 import { ref, computed } from 'vue';
-import HdEventsFeedItem from '@etesian/components/HdEventsFeedItem.vue';
-import HdSectionHeader from '@etesian/components/HdSectionHeader.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
-import '@etesian/stories/explorations/desktop2/XEventsPanel.vue';
+import HdEventsFeedItem from '@etesian-design/vue/components/HdEventsFeedItem.vue';
+import HdSectionHeader from '@etesian-design/vue/components/HdSectionHeader.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 import { useClock } from '../../lib/clock';
 import { useNav } from '../../lib/nav';
 import { EVENTS } from '../../content/site';

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /** Feature grid: lit squircle icons with a bold title and a line; style "apps" uses app icons. */
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 import type { Block } from '../../content/schema';
 defineProps<{ block: Extract<Block, { type: 'features' }> }>();
 </script>

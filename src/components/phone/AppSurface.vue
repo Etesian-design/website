@@ -4,9 +4,9 @@
  * or one of the design repo's mock apps (XMiniApp, with its own N9 toolbar).
  */
 import { computed } from 'vue';
-import HdPageHeader from '@etesian/components/HdPageHeader.vue';
-import HdToolBar from '@etesian/components/HdToolBar.vue';
-import XMiniApp from '@etesian/stories/explorations/parts/XMiniApp.vue';
+import HdPageHeader from '@etesian-design/vue/components/HdPageHeader.vue';
+import HdToolBar from '@etesian-design/vue/components/HdToolBar.vue';
+import XMiniApp from '@etesian-design/shell/parts/XMiniApp.vue';
 import { doc } from '../../content/site';
 import PageRenderer from '../blocks/PageRenderer.vue';
 import { phoneApp } from '../../lib/phoneApps';

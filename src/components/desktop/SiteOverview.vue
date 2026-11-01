@@ -4,10 +4,9 @@
  * content: the Events view on the left, the open windows in the middle (two per row, as in XOverview), the app grid with type-to-search on the right.
  * The dock's first button and Super open it; Super+Space is the compact search (XLauncher) next to it.
  */
-import HdSearchField from '@etesian/components/HdSearchField.vue';
-import XAppsView from '@etesian/stories/explorations/parts/XAppsView.vue';
-import XHints from '@etesian/stories/explorations/desktop/XHints.vue';
-import '@etesian/stories/explorations/parts/XOverview.vue';
+import HdSearchField from '@etesian-design/vue/components/HdSearchField.vue';
+import XAppsView from '@etesian-design/shell/parts/XAppsView.vue';
+import XHints from '@etesian-design/shell/desktop/XHints.vue';
 import SiteEventsPanel from './SiteEventsPanel.vue';
 import SiteWindows, { type OverviewWin } from './SiteWindows.vue';
 defineProps<{ wins: OverviewWin[]; selected: number; query: string; width: number; height: number }>();

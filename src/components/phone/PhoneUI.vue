@@ -6,19 +6,19 @@
  * Fills its container: the whole viewport on a phone, a scaled 360 × 720 screen inside a desktop window.
  */
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue';
-import HdStatusBar from '@etesian/components/HdStatusBar.vue';
+import HdStatusBar from '@etesian-design/vue/components/HdStatusBar.vue';
 import StatusMenu from './StatusMenu.vue';
-import HdAppGrid from '@etesian/components/HdAppGrid.vue';
-import HdAppIcon from '@etesian/components/HdAppIcon.vue';
-import HdPageIndicator from '@etesian/components/HdPageIndicator.vue';
-import HdEventsHeader from '@etesian/components/HdEventsHeader.vue';
-import HdSectionHeader from '@etesian/components/HdSectionHeader.vue';
-import HdEventsFeedItem from '@etesian/components/HdEventsFeedItem.vue';
-import HdLockScreenStack from '@etesian/components/HdLockScreenStack.vue';
-import HdTaskCard from '@etesian/components/HdTaskCard.vue';
-import HdTaskEditBar from '@etesian/components/HdTaskEditBar.vue';
-import HdInfoBanner from '@etesian/components/HdInfoBanner.vue';
-import XFit from '@etesian/stories/explorations/parts/XFit.vue';
+import HdAppGrid from '@etesian-design/vue/components/HdAppGrid.vue';
+import HdAppIcon from '@etesian-design/vue/components/HdAppIcon.vue';
+import HdPageIndicator from '@etesian-design/vue/components/HdPageIndicator.vue';
+import HdEventsHeader from '@etesian-design/vue/components/HdEventsHeader.vue';
+import HdSectionHeader from '@etesian-design/vue/components/HdSectionHeader.vue';
+import HdEventsFeedItem from '@etesian-design/vue/components/HdEventsFeedItem.vue';
+import HdLockScreenStack from '@etesian-design/vue/components/HdLockScreenStack.vue';
+import HdTaskCard from '@etesian-design/vue/components/HdTaskCard.vue';
+import HdTaskEditBar from '@etesian-design/vue/components/HdTaskEditBar.vue';
+import HdInfoBanner from '@etesian-design/vue/components/HdInfoBanner.vue';
+import XFit from '@etesian-design/shell/parts/XFit.vue';
 import AppSurface from './AppSurface.vue';
 import { PHONE_APPS, phoneApp } from '../../lib/phoneApps';
 import { provideNav } from '../../lib/nav';

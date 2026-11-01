@@ -29,17 +29,22 @@
   </tr>
 </table>
 
-Built with Vue 3 and Quasar, from the [design repo](https://github.com/etesian-design/design)'s own components, so the
-site is the design system in use.
+Built with Vue 3 and Quasar on the [design repo](https://github.com/etesian-design/design)'s own packages
+(`@etesian-design/tokens`, `vue`, `quasar` and `shell`), so the site is the design system in use.
 
 ## Run it
 
-The site uses the design repo from a folder next to it:
+The packages are on GitHub Packages, which asks for a GitHub token even to install public packages. Once, put a
+[classic token](https://github.com/settings/tokens) with `read:packages` in your `~/.npmrc`:
 
 ```sh
-git clone https://github.com/etesian-design/design etesian-design
+echo "//npm.pkg.github.com/:_authToken=YOUR_TOKEN" >> ~/.npmrc
+```
+
+Then:
+
+```sh
 git clone https://github.com/etesian-design/website etesian-website
-(cd etesian-design && npm ci && npm run build)
 cd etesian-website && npm ci && npm run dev    # http://localhost:6120
 ```
 

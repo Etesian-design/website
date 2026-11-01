@@ -1,13 +1,16 @@
 <script setup lang="ts">
 /** One image or a gallery. src is relative to public/ (e.g. "images/lock.png") or an absolute URL. */
 import type { Block } from '../../content/schema';
+import { href } from '../../lib/base';
+/** a public/ path from the site's root (not from the current page's address), under whatever base the site is served from */
+const url = (src: string) => (/^[a-z]+:|^\/\//i.test(src) ? src : href('/' + src.replace(/^\//, '')));
 defineProps<{ block: Extract<Block, { type: 'image' }> }>();
 </script>
 <template>
   <section class="blk-img">
     <h2 v-if="block.heading" class="doc__h">{{ block.heading }}</h2>
     <div class="blk-img__grid" :class="{ 'is-one': block.images.length === 1 }">
-      <figure v-for="im in block.images" :key="im.src"><img :src="im.src" :alt="im.alt" loading="lazy" /><figcaption v-if="im.caption">{{ im.caption }}</figcaption></figure>
+      <figure v-for="im in block.images" :key="im.src"><img :src="url(im.src)" :alt="im.alt" loading="lazy" /><figcaption v-if="im.caption">{{ im.caption }}</figcaption></figure>
     </div>
   </section>
 </template>

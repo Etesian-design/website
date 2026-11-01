@@ -1,6 +1,6 @@
 /** Everything the phone UI can open: the site's content pages (as N9 apps) and the design repo's mock apps. */
 import { listed, type DocId } from '../content/site';
-import { app as mockApp } from '@etesian/stories/explorations/parts/data';
+import { app as mockApp } from '@etesian-design/shell/parts/data';
 
 export interface PhoneApp { key: string; label: string; icon: string; color: string; tone?: 'colour' | 'light'; doc?: DocId; mock?: string; href?: string }
 const MOCKS = ['Mail', 'Messages', 'Calendar', 'Music', 'Gallery', 'Notes', 'Browser', 'Settings'];

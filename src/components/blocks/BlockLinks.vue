@@ -1,7 +1,7 @@
 <script setup lang="ts">
 /** Link list: squircle tiles; a page target takes that page's icon and colour unless the item sets its own. */
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 import type { Block } from '../../content/schema';
 import { DOCS } from '../../content/site';
 import { useRouter } from 'vue-router';

@@ -5,10 +5,9 @@
  * applications. Ctrl + wheel (or a touchpad pinch) zooms; the wheel moves through the carousel.
  */
 import { computed } from 'vue';
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
-import '@etesian/stories/explorations/desktop2/XWindows.vue';
-import { ZOOM_LEVELS, zoomStep, fitInto, type ZoomLevel } from '@etesian/stories/explorations/desktop2/geometry';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
+import { ZOOM_LEVELS, zoomStep, fitInto, type ZoomLevel } from '@etesian-design/shell/desktop/geometry';
 
 export interface OverviewWin { key: string; title: string; sub: string; icon: string; color: string; w: number; h: number }
 /** bare: only the cards, no title and zoom buttons (the Overview's middle column) */

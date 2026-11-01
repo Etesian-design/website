@@ -5,9 +5,9 @@
  * Used for content pages and the phone; the design repo's mock apps use XWin itself.
  */
 import { computed } from 'vue';
-import HdSquircle from '@etesian/components/HdSquircle.vue';
-import HdIcon from '@etesian/components/HdIcon.vue';
-import HdToolIcon from '@etesian/components/HdToolIcon.vue';
+import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
+import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
+import HdToolIcon from '@etesian-design/vue/components/HdToolIcon.vue';
 const props = withDefaults(defineProps<{ title: string; icon: string; color: string; x: number; y: number; w: number; h: number; z?: number; focused?: boolean; tiled?: boolean; dark?: boolean }>(), { z: 1 });
 const emit = defineEmits<{ close: []; minimise: []; maximise: [] }>();
 const style = computed(() => ({ left: `${props.x}px`, top: `${props.y}px`, width: `${props.w}px`, height: `${props.h}px`, zIndex: props.z }));

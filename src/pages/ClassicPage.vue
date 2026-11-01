@@ -3,16 +3,17 @@
  * The classic site: a traditional scrolling page built from the design repo's web components (the "Web" story:
  * HdSiteHeader, HdHero, HdContainer, HdFooter), with the same content as the desktop windows and phone pages.
  */
+import { href } from '../lib/base';
 import { computed } from 'vue';
 import { useQuasar, useHydration } from 'quasar';
 import { usePageMeta } from '@/lib/meta';
 import { useRouter } from 'vue-router';
-import HdSiteHeader from '@etesian/components/HdSiteHeader.vue';
-import HdHero from '@etesian/components/HdHero.vue';
-import HdContainer from '@etesian/components/HdContainer.vue';
-import HdFooter from '@etesian/components/HdFooter.vue';
-import HdButton from '@etesian/components/HdButton.vue';
-import XFit from '@etesian/stories/explorations/parts/XFit.vue';
+import HdSiteHeader from '@etesian-design/vue/components/HdSiteHeader.vue';
+import HdHero from '@etesian-design/vue/components/HdHero.vue';
+import HdContainer from '@etesian-design/vue/components/HdContainer.vue';
+import HdFooter from '@etesian-design/vue/components/HdFooter.vue';
+import HdButton from '@etesian-design/vue/components/HdButton.vue';
+import XFit from '@etesian-design/shell/parts/XFit.vue';
 import PhoneUI from '@/components/phone/PhoneUI.vue';
 import EtesianMark from '@/components/common/EtesianMark.vue';
 import { listed, doc, type DocId } from '../content/site';
@@ -28,7 +29,7 @@ const hero = (doc('overview').blocks.find((b) => b.type === 'hero') ?? { title: 
 const links = SECTIONS.map((d) => ({ label: d.label, href: `#sec-${d.id}`, icon: d.icon }));
 const footer = [
   { title: 'Etesian', links: SECTIONS.map((d) => ({ label: d.title, href: `#sec-${d.id}` })) },
-  { title: 'Views', links: [{ label: 'Desktop view', href: '/desktop' }, { label: 'Phone view', href: '/phone' }, { label: 'Classic site', href: '/classic' }] },
+  { title: 'Views', links: [{ label: 'Desktop view', href: href('/desktop') }, { label: 'Phone view', href: href('/phone') }, { label: 'Classic site', href: href('/classic') }] },
 ];
 /** the screen is only known in the browser: the generated page says "Desktop view" until it has hydrated */
 const osLabel = computed(() => (isHydrated.value && $q.screen.width < 820 ? 'Phone view' : 'Desktop view'));
@@ -44,7 +45,7 @@ function onClick(e: MouseEvent) {
 </script>
 <template>
   <div class="classic hd-on-page" @click.capture="onClick">
-    <HdSiteHeader brand="Etesian" brand-href="/classic" :links="links">
+    <HdSiteHeader brand="Etesian" :brand-href="href('/classic')" :links="links">
       <template #actions><HdButton variant="accent" @click="router.push('/')">{{ osLabel }}</HdButton></template>
     </HdSiteHeader>
     <main id="main">

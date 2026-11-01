@@ -13,8 +13,11 @@
     "postinstall": "quasar prepare"
   },
   "dependencies": {
+    "@etesian-design/quasar": "^0.1.0",
+    "@etesian-design/shell": "^0.1.0",
+    "@etesian-design/tokens": "^0.1.0",
+    "@etesian-design/vue": "^0.1.0",
     "@quasar/extras": "^1.17.0",
-    "etesian-design": "file:../etesian-design",
     "quasar": "^2.35.2",
     "vue": "^3.5.44",
     "vue-router": "^5.0.0"

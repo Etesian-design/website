@@ -1,5 +1,5 @@
-# Builds the site and publishes it to GitHub Pages on every push to master.
-# The site uses the design repo as a sibling (file:../etesian-design), so both are checked out side by side.
+# Builds the site and publishes it to GitHub Pages on every push to main.
+# The design comes from the @etesian-design packages on GitHub Packages, installed with this run's own token.
 name: Pages
 
 on:
@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  packages: read
   pages: write
   id-token: write
 
@@ -21,24 +22,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: etesian-website
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository_owner }}/design
-          path: etesian-design
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Build the design repo
-        working-directory: etesian-design
-        run: npm ci && npm run build
+          registry-url: https://npm.pkg.github.com
+          scope: '@etesian-design'
+      # the base path Pages serves the site under: "/website" on etesian-design.github.io, "" once a custom domain is set
+      - id: pages
+        uses: actions/configure-pages@v5
+      # npm install, not npm ci: it fetches the published @etesian-design packages and brings the lockfile up to date
+      - run: npm install --no-audit --no-fund
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the site
-        working-directory: etesian-website
-        run: npm ci && npm run build
+        env:
+          PUBLIC_PATH: ${{ steps.pages.outputs.base_path }}/
+        run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: etesian-website/dist/ssg
+          path: dist/ssg
 
   deploy:
     needs: build
