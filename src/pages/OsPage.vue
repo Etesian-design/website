@@ -15,7 +15,7 @@ import PhoneUI from '@/components/phone/PhoneUI.vue';
 import XFit from '@etesian-design/shell/parts/XFit.vue';
 const props = defineProps<{ force?: 'desktop' | 'phone' }>();
 const { isHydrated } = useHydration();
-const DESC = 'Etesian brings the Nokia N9’s ideas back: a calm, gesture-first design language for an Android phone and the KDE Plasma desktop. Try it in your browser.';
+const DESC = 'Etesian is a calm, gesture-first interface for the KDE Plasma desktop, LineageOS phones and the web, inspired by the Nokia N9. Try it in your browser.';
 usePageMeta(props.force === 'desktop' ? 'Etesian · Desktop' : props.force === 'phone' ? 'Etesian · Phone' : 'Etesian', DESC, props.force ? `/${props.force}` : '/');
 const $q = useQuasar();
 const router = useRouter();

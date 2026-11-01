@@ -34,7 +34,7 @@
    "label": "Phone",
    "icon": "phone",
    "color": "#1C51AF",
-   "summary": "The Nokia N9, re-envisioned for every screen.",
+   "summary": "One calm, gesture-first interface for every screen.",
    "show": {
     "desktop": true,
     "phone": true,
@@ -118,7 +118,7 @@
    {
     "page": "overview",
     "title": "Etesian",
-    "text": "The Nokia N9, re-envisioned for every screen.",
+    "text": "One calm, gesture-first interface for every screen.",
     "icon": "star",
     "color": "#2F6FD6"
    },

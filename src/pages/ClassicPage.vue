@@ -33,7 +33,7 @@ const footer = [
 ];
 /** the screen is only known in the browser: the generated page says "Desktop view" until it has hydrated */
 const osLabel = computed(() => (isHydrated.value && $q.screen.width < 820 ? 'Phone view' : 'Desktop view'));
-usePageMeta('Etesian · Classic site', 'Etesian brings the Nokia N9’s ideas back: the phone, the apps, the widgets, the design language and Etesian for KDE Plasma.', '/classic');
+usePageMeta('Etesian · Classic site', 'Etesian, a calm, gesture-first interface: the phone, the apps, the widgets, the design language and Etesian for KDE Plasma.', '/classic');
 function scrollTo(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 function open(t: Target) { scrollTo(t === 'try-phone' ? 'sec-try' : `sec-${t as DocId}`); }
 provideNav({ open, shell: 'classic' });

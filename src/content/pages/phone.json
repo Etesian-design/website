@@ -3,8 +3,8 @@
   {
    "type": "hero",
    "eyebrow": "Etesian for LineageOS",
-   "title": "The Nokia N9, re-envisioned for your phone.",
-   "lead": "No home button, no back button, no clutter. Swipe in from any edge to go home, see everything new in one calm list, and let your content fill the screen. Etesian brings the N9's interface to any phone LineageOS 24 supports.",
+   "title": "A calm, gesture-first phone.",
+   "lead": "No home button, no back button, no clutter. Swipe in from any edge to go home, see everything new in one calm list, and let your content fill the screen. Etesian runs on any phone LineageOS 24 supports, inspired by the Nokia N9's Swipe UI.",
    "actions": [
     {
      "label": "Try the phone",
