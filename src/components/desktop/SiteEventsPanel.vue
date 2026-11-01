@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Desktop Events (Desktop v2: the phone's Events view sliding in from the right, also the Overview's left column), with
+ * Desktop Events (the phone's Events view sliding in from the right, also the Overview's left column), with
  * XEventsPanel's x-ev markup and the site's content: the day and date (a click unfolds this month, a day can be picked),
  * the time with the weather beside it (the same as the phone's Events), then Notifications, Calendar (today) and Feeds;
  * a section with nothing in it is left out, header and all, as on the N9.

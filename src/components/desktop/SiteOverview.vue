@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * The Overview, the desktop's main menu (design repo XOverview: Desktop v1's Overview, kept by Desktop v2), with the site's
+ * The Overview, the desktop's main menu (design repo XOverview), with the site's
  * content: the Events view on the left, the open windows in the middle (two per row, as in XOverview), the app grid with type-to-search on the right.
  * The dock's first button and Super open it; Super+Space is the compact search (XLauncher) next to it.
  */
@@ -28,7 +28,7 @@ const SIDES = 420 + 600;
       <p class="x-ov__hint">{{ query ? `Apps matching “${query}”` : 'Just start typing' }}</p>
       <XAppsView :columns="5" :size="54" :query="query" @open="(n: string) => emit('open', n)" />
     </section>
-    <XHints corner="br" :items="[['Esc', 'Close'], ['Enter', 'Open'], ['Super+Space', 'Spotlight']]" />
+    <XHints corner="br" :items="[['Esc', 'Close'], ['Enter', 'Open']]" />
   </div>
 </template>
 <style>

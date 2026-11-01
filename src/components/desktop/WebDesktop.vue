@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * The Etesian desktop in the browser, following the approved Desktop v2 direction from the design repo:
+ * The Etesian desktop in the browser, following the design repo's desktop:
  * a global menu bar (menus left, Events, status and clock right), a light floating dock on the left (XDock),
  * overlapping windows with the actions in their decorations (XWin / DocWin), drag to the left or right edge to snap, or to the
  * top edge for the snap layouts (XLayoutPicker, also Super+Z), Super+arrows to snap and maximise, Super+D for the desktop,
@@ -343,7 +343,7 @@ function onKey(e: KeyboardEvent) {
     else fw.snap = null;
     return;
   }
-  // Super+Tab (where the OS lets the browser see it) opens the windows overview, as in Desktop v2
+  // Super+Tab (where the OS lets the browser see it) opens the windows overview
   if (e.metaKey && e.key === 'Tab' && !overview.value) { e.preventDefault(); toggle('overview'); return; }
   if (overview.value) {
     const n = overviewWins.value.length;

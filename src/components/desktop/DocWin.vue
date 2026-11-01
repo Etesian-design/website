@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * A site window in the Desktop v2 style (same markup and classes as the design repo's XWin, so it shares its look):
+ * A site window in the desktop's style (same markup and classes as the design repo's XWin, so it shares its look):
  * the lit app squircle, the title in light type, a drag area, then minimise / maximise / close. Content scrolls below.
  * Used for content pages and the phone; the design repo's mock apps use XWin itself.
  */

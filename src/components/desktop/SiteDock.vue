@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * The Desktop v2 light floating dock (design repo XDock's markup and classes):
+ * The desktop's light floating dock (design repo XDock's markup and classes):
  * Overview button | the open windows | recycle bin. Pages and apps are opened from the desktop icons and the Overview,
  * so the dock only carries what is open, each with the running dot. Hovering one shows its live window (XDock's previews:
  * the window's own shape, its title under it). Its right-click menu (WebDesktop) opens the dock settings (XDockSettings): edge, icon size and
