@@ -64,7 +64,7 @@ async function drag(p, from, to, steps = 12) {
   await p.keyboard.press('Escape');
   await p.getByRole('menuitem', { name: 'Explore' }).click(); await shot(p, 'desktop-9-menu');
   await p.keyboard.press('Escape');
-  await p.goto(`${BASE}/classic`); await p.waitForTimeout(800);
+  await p.goto(`${BASE}/`); await p.waitForTimeout(800);
   await shot(p, 'desktop-classic-top');
   await shot(p, 'desktop-classic-full', true);
   await p.goto(`${BASE}/phone`); await p.waitForTimeout(800);
@@ -91,7 +91,7 @@ async function drag(p, from, to, steps = 12) {
   await p.keyboard.press('Escape'); await p.waitForTimeout(400);
   await p.evaluate(() => { const t = document.querySelector('.ph__track'); t.scrollTo({ left: t.clientWidth * 2 }); }); await p.waitForTimeout(500);
   await shot(p, 'phone-7-open-apps');
-  await p.goto(`${BASE}/classic`); await p.waitForTimeout(800);
+  await p.goto(`${BASE}/`); await p.waitForTimeout(800);
   await shot(p, 'phone-classic-top');
   await shot(p, 'phone-classic-full', true);
 }
@@ -163,10 +163,10 @@ async function drag(p, from, to, steps = 12) {
 }
 
 {
-  // content images are public/ paths: they must load on a page below the root too (they once resolved against /classic/)
+  // content images are public/ paths: they must load on a page below the root too (they once resolved against /classic/; now /try/ is the page below the root)
   const p = await page({ width: 1440, height: 900 });
-  // with the trailing slash, as GitHub Pages serves it (classic/index.html)
-  await p.goto(`${BASE}/classic/`); await p.waitForTimeout(1500);
+  // with the trailing slash, as GitHub Pages serves it (try/index.html)
+  await p.goto(`${BASE}/try/`); await p.waitForTimeout(1500);
   await p.evaluate(async () => { for (const i of document.images) { i.loading = 'eager'; } await new Promise((r) => setTimeout(r, 1500)); });
   const broken = await p.evaluate(() => [...document.images].filter((i) => !i.naturalWidth).map((i) => i.getAttribute('src')));
   if (broken.length) problems.push(`classic: images that do not load: ${broken.join(', ')}`);
@@ -175,12 +175,12 @@ async function drag(p, from, to, steps = 12) {
 
 {
   // the pre-rendered classic page must not draw the hero phone at the unmeasured 25% (a tiny box growing to full size)
-  const html = await (await fetch(`${BASE}/classic`)).text();
+  const html = await (await fetch(`${BASE}/`)).text();
   const inner = html.match(/class="x-fit__inner"[^>]*style="([^"]*)"/);
   if (inner && !/visibility:\s*hidden/.test(inner[1])) problems.push('classic: the hero phone is pre-rendered at its unmeasured size');
   // under a resting lock screen the home grid is not drawn
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/classic`); await p.waitForTimeout(1200);
+  await p.goto(`${BASE}/`); await p.waitForTimeout(1200);
   const vis = await p.locator('.classic-hero__phone .ph__home').evaluate((e) => getComputedStyle(e).visibility);
   if (vis !== 'hidden') problems.push('phone: the home grid is drawn under the lock screen');
   // the lock cards must not blur what is behind them: in a scaled window the GPU sampled the desktop's widgets through them
@@ -295,7 +295,7 @@ async function drag(p, from, to, steps = 12) {
 {
   // GPU bleed: backdrop blur on the dock, its previews or the lock cards drew other icons and windows inside them (not visible headless)
   const p = await page({ width: 1920, height: 1080 });
-  for (const path of ['/desktop', '/phone', '/classic']) {
+  for (const path of ['/desktop', '/phone', '/']) {
     await p.goto(`${BASE}${path}`); await p.waitForTimeout(1500);
     const blurred = await p.evaluate(() => [...new Set([...document.querySelectorAll('*')].filter((e) => { const c = getComputedStyle(e).backdropFilter; return c && c !== 'none'; }).map((e) => e.className.toString().split(' ')[0]))]);
     if (blurred.length) problems.push(`${path}: backdrop blur on ${blurred.join(', ')} (it bleeds on the GPU)`);
@@ -333,7 +333,7 @@ async function drag(p, from, to, steps = 12) {
     if (!(await site.getByText("You're using it").count())) problems.push('web: in the desktop view "This website" does not say "You\'re using it"');
     if (await site.getByRole('button', { name: 'Open the desktop view' }).count()) problems.push('web: the desktop view links to itself');
   }
-  await p.goto(`${BASE}/classic`); await p.waitForTimeout(1500);
+  await p.goto(`${BASE}/`); await p.waitForTimeout(1500);
   if (await p.getByText('Other systems').count()) problems.push('web: "Other systems" is still on the classic page');
   const go = p.locator('.blk-site').getByRole('button', { name: 'Open the desktop view' });
   if (!(await go.count())) problems.push('web: the classic page has no link to the desktop view');

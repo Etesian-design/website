@@ -16,7 +16,7 @@ import XFit from '@etesian-design/shell/parts/XFit.vue';
 const props = defineProps<{ force?: 'desktop' | 'phone' }>();
 const { isHydrated } = useHydration();
 const DESC = 'Etesian is a calm, gesture-first interface for the KDE Plasma desktop, LineageOS phones and the web, inspired by the Nokia N9. Try it in your browser.';
-usePageMeta(props.force === 'desktop' ? 'Etesian · Desktop' : props.force === 'phone' ? 'Etesian · Phone' : 'Etesian', DESC, props.force ? `/${props.force}` : '/');
+usePageMeta(props.force === 'desktop' ? 'Etesian · Desktop' : props.force === 'phone' ? 'Etesian · Phone' : 'Etesian', DESC, props.force ? `/${props.force}` : '/try');
 const $q = useQuasar();
 const router = useRouter();
 /** phone-sized: narrow, or a short landscape phone */
@@ -28,14 +28,14 @@ function go(href: string) { void router.push(href); }
   <main v-if="!isHydrated" class="site-pre hd-on-home">
     <h1>Etesian</h1>
     <p>{{ DESC }}</p>
-    <ul><li v-for="d in DOCS" :key="d.id"><a :href="href(`/classic#sec-${d.id}`)">{{ d.title }}</a>: {{ d.summary }}</li></ul>
-    <p><a :href="href('/classic')">The classic site</a></p>
+    <ul><li v-for="d in DOCS" :key="d.id"><a :href="href(`/#sec-${d.id}`)">{{ d.title }}</a>: {{ d.summary }}</li></ul>
+    <p><a :href="href('/')">Back to the website</a></p>
   </main>
   <WebDesktop v-else-if="mode === 'desktop'" />
   <div v-else-if="small" class="site-phone"><PhoneUI @navigate="go" /></div>
   <div v-else class="site-phonestage hd-on-home">
     <div class="site-phonestage__dev"><XFit :w="360" :h="720" fit="contain"><PhoneUI embedded @navigate="go" /></XFit></div>
-    <nav class="site-phonestage__nav" aria-label="Other views"><router-link to="/desktop">Desktop view</router-link><router-link to="/classic">Classic site</router-link></nav>
+    <nav class="site-phonestage__nav" aria-label="Other views"><router-link to="/desktop">Desktop view</router-link><router-link to="/">Back to the website</router-link></nav>
   </div>
 </template>
 <style>

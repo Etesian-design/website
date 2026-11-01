@@ -24,7 +24,7 @@ Removing a page is the reverse. The order in `site.json` is the order everywhere
 ```
 
 - `label`: short name under icons. `color`: the page's own colour (its header on the phone, its icon).
-- `show`: where the page is listed. `desktop` = desktop icons (the dock only shows open windows), `phone` = phone app grid, `classic` = a section and nav link on the classic site, `menu` = the desktop's Explore menu. Omitted means not listed (the page can still be linked to).
+- `show`: where the page is listed. `desktop` = desktop icons (the dock only shows open windows), `phone` = phone app grid, `classic` = a section and nav link on the website page (`/`), `menu` = the desktop's Explore menu. Omitted means not listed (the page can still be linked to).
 - `icon`: one of the design icon names: back, chevron-right, chevron-down, menu, more, add, close, check, search, edit, delete, share, refresh, settings, flight, moon, location, record, hotspot, cast, mic, camera, qr, accessibility, speaker, headset, power, torch, data, restart, folder, wrench, attach, smile, bag, list, phone, message, mail, person, home, calendar, clock, music, photo, info, warning, wifi, battery, globe, lock, star, bluetooth, play, split, maximize, minimize, window, grid, drag.
 
 ### Events items
@@ -37,7 +37,7 @@ its month): `{ "time": "10:00", "title": "…", "text": "Today 10:00" }`. With n
 
 ## Targets
 
-Buttons and links take a `target`: a page id, `try-phone` (the interactive phone), a site route such as `/classic`, or an `https://` URL (opens in a new tab).
+Buttons and links take a `target`: a page id, `try-phone` (the interactive phone), a site route such as `/try`, or an `https://` URL (opens in a new tab).
 
 ## Block types
 
