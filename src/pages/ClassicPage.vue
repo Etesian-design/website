@@ -46,14 +46,15 @@ function onClick(e: MouseEvent) {
 <template>
   <div class="classic hd-on-page" @click.capture="onClick">
     <HdSiteHeader brand="Etesian" tone="chrome" :brand-href="href('/')" :links="links">
-      <template #logo><EtesianMark :size="28" /></template>
+      <!-- the bar is light until the design library's dark tone (0.3.1) arrives; then the pearl logo -->
+      <template #logo><EtesianMark :size="28" on="light" class="classic-mark--light" /><EtesianMark :size="28" on="dark" class="classic-mark--dark" /></template>
       <template #actions><HdButton variant="accent" @click="router.push('/try')">{{ osLabel }}</HdButton></template>
     </HdSiteHeader>
     <main id="main">
       <section class="classic-hero hd-on-home">
         <HdContainer size="wide" class="classic-hero__in">
           <div class="classic-hero__text">
-            <div class="classic-hero__brand"><EtesianMark :size="48" /><span>{{ hero.eyebrow }}</span></div>
+            <div class="classic-hero__brand"><EtesianMark :size="48" on="dark" /><span>{{ hero.eyebrow }}</span></div>
             <HdHero :title="hero.title" :lead="hero.lead">
               <template #actions>
                 <HdButton variant="accent" @click="router.push('/try')">{{ osLabel }}</HdButton>
@@ -76,6 +77,15 @@ function onClick(e: MouseEvent) {
 </template>
 <style>
 .classic { min-height: 100%; background: var(--hd-c-bg); color: var(--hd-c-fg); }
+/* the header's logo matches its bar: deep blue on the light one, pearl on the dark (chrome) one */
+.classic .hd-site-header--chrome .classic-mark--light, .classic .hd-site-header:not(.hd-site-header--chrome) .classic-mark--dark { display: none; }
+/* Phones: the menu is the bottom toolbar and the hero has the logo, the name and Try, so no top bar at all.
+   The header stays in the page for its bottom toolbar (a fixed child), with nothing of its own showing. */
+@media (max-width: 599.98px) {
+  .classic .hd-site-header { height: 0; border: 0; background: none; }
+  .classic .hd-site-header__bar { height: 0; padding: 0; }
+  .classic .hd-site-header__brand, .classic .hd-site-header__actions { display: none; }
+}
 .classic-hero { background: radial-gradient(900px 500px at 75% 20%, color-mix(in srgb, var(--hd-accent) 26%, transparent), transparent 70%), var(--hd-surface-home); color: var(--hd-c-fg); }
 .classic-hero__in { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; padding-top: 28px; padding-bottom: 28px; }
 @media (min-width: 900px) { .classic-hero__in { grid-template-columns: minmax(0, 720px) 340px; justify-content: center; gap: 56px; } }

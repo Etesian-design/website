@@ -28,7 +28,7 @@ function pick(id: string) { open.value = null; emit('select', id); }
 </script>
 <template>
   <header class="x-mbar hd-on-home site-mbar" role="menubar" :aria-label="`${app} menu bar`">
-    <EtesianMark :size="18" class="site-mbar__mark" />
+    <EtesianMark :size="18" on="dark" class="site-mbar__mark" />
     <span class="x-mbar__app">{{ app }}</span>
     <span v-for="(items, m) in MENUS" :key="m" class="x-mbar__m">
       <button type="button" role="menuitem" class="x-mbar__menu hd-focusable" :class="{ 'is-open': open === m }" :aria-expanded="open === m ? 'true' : 'false'" aria-haspopup="menu"
