@@ -4,7 +4,13 @@
    "type": "hero",
    "eyebrow": "Web",
    "title": "Etesian for the web.",
-   "lead": "The design language is a Vue 3 component library, so anything on the web can look and work like Etesian."
+   "lead": "The design language is a Vue 3 component library, so anything on the web can look and work like Etesian.",
+   "actions": [
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/etesian-design/website"
+    }
+   ]
   },
   {
    "type": "site",
