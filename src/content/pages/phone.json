@@ -15,6 +15,10 @@
     {
      "label": "The apps",
      "target": "apps"
+    },
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/etesian-design/android_vendor_etesian"
     }
    ]
   },

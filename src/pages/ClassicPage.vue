@@ -30,6 +30,13 @@ const links = SECTIONS.map((d) => ({ label: d.label, href: `#sec-${d.id}`, icon:
 const footer = [
   { title: 'Etesian', links: SECTIONS.map((d) => ({ label: d.title, href: `#sec-${d.id}` })) },
   { title: 'Views', links: [{ label: 'Try the desktop', href: href('/desktop') }, { label: 'Try the phone', href: href('/phone') }] },
+  { title: 'Source', links: [
+    { label: 'Design language', href: 'https://language.etesian-design.com' },
+    { label: 'Phone on GitHub', href: 'https://github.com/etesian-design/android_vendor_etesian' },
+    { label: 'Plasma on GitHub', href: 'https://github.com/etesian-design/plasma' },
+    { label: 'Design on GitHub', href: 'https://github.com/etesian-design/design' },
+    { label: 'Website on GitHub', href: 'https://github.com/etesian-design/website' },
+  ] },
 ];
 /** the screen is only known in the browser: the generated page says "Try the desktop" until it has hydrated */
 const osLabel = computed(() => (isHydrated.value && $q.screen.width < 820 ? 'Try the phone' : 'Try the desktop'));
