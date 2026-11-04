@@ -20,6 +20,11 @@ async function shot(p, name, full = false) {
   await p.waitForTimeout(450);
   const over = await p.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   if (over > 0) problems.push(`${name}: horizontal overflow ${over}px`);
+  // 2026-11-04: a page's phone-frame rule (.x .x-fit) also hit the live thumbnails inside the phone's
+  // Open applications cards: each card showed its app full size, cropped, the full height of the screen.
+  const wide = await p.evaluate(() => [...document.querySelectorAll('.hd-task-card')].filter((c) => {
+    const f = c.querySelector('.x-fit'); return f && f.getBoundingClientRect().width > c.getBoundingClientRect().width + 1; }).length);
+  if (wide > 0) problems.push(`${name}: ${wide} Open applications card(s) with a thumbnail wider than the card`);
   await p.screenshot({ path: `${OUT}${name}.png`, fullPage: full });
   console.log('saved', name);
 }
@@ -69,6 +74,25 @@ async function drag(p, from, to, steps = 12) {
   await shot(p, 'desktop-classic-full', true);
   await p.goto(`${BASE}/phone`); await p.waitForTimeout(800);
   await shot(p, 'desktop-phone-route');
+}
+
+/* ---------- home page: the hero phone's Open applications ---------- */
+{
+  const p = await page({ width: 1440, height: 900 });
+  await p.goto(`${BASE}/`); await p.waitForSelector('.classic-hero__phone .ph__lock'); await p.waitForTimeout(900);
+  const r = await p.locator('.classic-hero__phone .ph__lock').first().boundingBox();
+  const swipe = async (x1, x2) => { const y = r.y + r.height * 0.6; await drag(p, { x: x1, y }, { x: x2, y }); await p.mouse.up(); await p.waitForTimeout(700); };
+  await swipe(r.x + 40, r.x + r.width - 10); // unlock
+  for (const app of ['Mail', 'Notes']) {
+    await p.locator('.classic-hero__phone .ph-apps').getByText(app, { exact: true }).first().click(); await p.waitForTimeout(1100);
+    await swipe(r.x + 2, r.x + r.width - 20); // minimise from the edge
+  }
+  for (let i = 0; i < 3; i++) {
+    const at = await p.evaluate(() => document.querySelector('.classic-hero__phone .ph-open').getBoundingClientRect().x);
+    if (Math.abs(at - r.x) < 30) break;
+    await swipe(r.x + r.width - 60, r.x + 60);
+  }
+  await shot(p, 'home-hero-open-apps');
 }
 
 /* ---------- phone ---------- */

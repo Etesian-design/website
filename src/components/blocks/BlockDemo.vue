@@ -78,7 +78,7 @@ const lock = [
 .ph-lock__clock { margin-bottom: 18px; text-align: right; font: 300 64px/1 var(--hd-font-family-light); font-variant-numeric: tabular-nums; }
 .ph-lock__clock small { display: block; margin-top: 8px; font: 400 var(--hd-font-size-default)/1.2 var(--hd-font-family-base); }
 .blk-demo__phone { width: 300px; aspect-ratio: 1 / 2; border-radius: 16px; overflow: hidden; }
-.blk-demo__phone .x-fit { height: 100%; }
+.blk-demo__phone > .x-fit { height: 100%; }
 .wd-stage { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; padding: 18px; border-radius: 12px; background: linear-gradient(160deg, #4d5a63, #1b2226 60%, #0b0e10); overflow: hidden; }
 .wd-home { flex: none; width: 360px; display: grid; grid-template-columns: repeat(4, 90px); grid-auto-rows: 90px; justify-items: center; align-items: center; }
 .wd-more { flex: 1 1 360px; min-width: 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }

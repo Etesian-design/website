@@ -45,7 +45,7 @@ function go(href: string) { void router.push(href); }
 .site-phone { position: fixed; inset: 0; height: 100dvh; background: #000; }
 .site-phonestage { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; background: radial-gradient(900px 600px at 60% 30%, color-mix(in srgb, var(--hd-accent) 20%, transparent), transparent 70%), #000; color: var(--hd-c-fg); }
 .site-phonestage__dev { width: min(100%, calc((100dvh - 110px) / 2)); aspect-ratio: 1 / 2; border-radius: 22px; overflow: hidden; box-shadow: 0 0 0 10px #151517, 0 0 0 11px #2a2a2d, 0 30px 80px rgba(0,0,0,.6); }
-.site-phonestage__dev .x-fit { height: 100%; }
+.site-phonestage__dev > .x-fit { height: 100%; }
 .site-phonestage__nav { display: flex; gap: 18px; font: 400 var(--hd-font-size-small)/1 var(--hd-font-family-base); }
 .site-phonestage__nav a { color: var(--hd-c-fg-secondary); text-decoration: none; }
 .site-phonestage__nav a:hover { color: var(--hd-c-fg); }
