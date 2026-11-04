@@ -106,7 +106,7 @@ function onClick(e: MouseEvent) {
 .classic-hero__brand { display: flex; align-items: center; gap: 14px; font: 700 var(--hd-font-size-xsmall)/1 var(--hd-font-family-base); letter-spacing: .04em; text-transform: uppercase; color: var(--hd-accent); }
 .classic-hero__phone .ph { text-align: left; }
 .classic-hero__phone { display: flex; flex-direction: column; align-items: center; gap: 10px; scroll-margin-top: 80px; }
-.classic-hero__phone .x-fit { width: min(320px, 82vw); height: auto; aspect-ratio: 1 / 2; border-radius: 18px; background: #0e1418; box-shadow: 0 0 0 8px #151517, 0 0 0 9px #2a2a2d, 0 24px 60px rgba(0,0,0,.55); }
+.classic-hero__phone > .x-fit { width: min(320px, 82vw); height: auto; aspect-ratio: 1 / 2; border-radius: 18px; background: #0e1418; box-shadow: 0 0 0 8px #151517, 0 0 0 9px #2a2a2d, 0 24px 60px rgba(0,0,0,.55); }
 .classic-hero__cap { max-width: 320px; margin: 8px 0 0; text-align: center; font: 400 var(--hd-font-size-small)/1.4 var(--hd-font-family-base); color: var(--hd-c-fg-secondary); }
 .classic-sec { padding: 28px 0; scroll-margin-top: 64px; }
 .classic-sec--alt { background: color-mix(in srgb, var(--hd-c-fg) 4%, var(--hd-c-bg)); }
