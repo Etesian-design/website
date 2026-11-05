@@ -230,7 +230,7 @@ const feedDocs = EVENTS.feeds;
       <HdStatusBar :time="time" transparent />
       <div class="ph__lockclock"><div class="ph__locktime">{{ time }}</div><div class="ph__lockdate">{{ longDate }}</div></div>
       <div class="ph__lockcards"><HdLockScreenStack :items="lockItems" :visible="2" /></div>
-      <button type="button" class="ph__unlock hd-focusable" @click="unlock(1)">Swipe sideways to unlock</button>
+      <button type="button" class="ph__unlock hd-sqh hd-focusable" @click="unlock(1)">Swipe sideways to unlock</button>
     </div>
   </div>
 </template>
@@ -282,6 +282,6 @@ const feedDocs = EVENTS.feeds;
 .ph__locktime { font: 300 88px/1 var(--hd-font-family-light); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
 .ph__lockdate { margin-top: 10px; font: 400 1.125rem/1.3 var(--hd-font-family-base); }
 .ph__lockcards { margin-top: auto; padding: 0 14px; }
-.ph__unlock { margin: 14px auto 18px; padding: 8px 14px; border: 0; border-radius: 16px; background: transparent; color: rgba(255,255,255,.7); font: 400 .8125rem/1 var(--hd-font-family-base); cursor: pointer; }
+.ph__unlock { margin: 14px auto 18px; padding: 8px 14px; border: 0; background: transparent; color: rgba(255,255,255,.7); font: 400 .8125rem/1 var(--hd-font-family-base); cursor: pointer; }
 .ph__unlock:hover { color: #fff; background: rgba(255,255,255,.08); }
 </style>
