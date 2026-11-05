@@ -17,6 +17,40 @@ const ALLOWED = ['q-toggle', 'hd-switch', 'q-radio', 'hd-radio', 'q-linear-progr
 // Large surfaces (cards, sheets, panels, hints, tiles) keep --hd-radius-card; scaled-down previews can make them look like pills.
 const CARD_RADIUS = 8;
 
+// Hover states: links, buttons and tabs often paint a highlight only under the pointer (2026-11-05: the site
+// header's links showed a rounded rectangle). Hover each one and audit it and its pseudo-elements then.
+async function hovers(p) {
+  const out = [];
+  const n = await p.evaluate(() => { const els = [...document.querySelectorAll('a, button, [role="button"], [role="tab"], .q-tab, .q-item--clickable')]
+    .filter((e) => { const r = e.getBoundingClientRect(); return r.width >= 6 && r.height >= 6 && r.height <= 64 && r.bottom > 0 && r.top < innerHeight; });
+    els.forEach((e, i) => e.setAttribute('data-hv', String(i))); return Math.min(els.length, 60); });
+  for (let i = 0; i < n; i++) {
+    const ok = await p.hover(`[data-hv="${i}"]`, { timeout: 800, force: true }).then(() => true).catch(() => false);
+    if (!ok) continue;
+    await p.waitForTimeout(160);   // let hover transitions finish
+    const f = await p.evaluate((i) => { const el = document.querySelector(`[data-hv="${i}"]`); return el ? window.__one(el) : null; }, i).catch(() => null);
+    if (f) out.push({ ...f, why: 'on hover: ' + f.why });
+  }
+  await p.mouse.move(0, 0);
+  return out;
+}
+
+function one(el) {
+  const masked = (e) => { const m = (v) => v && v !== 'none'; return m(getComputedStyle(e).maskImage) || m(getComputedStyle(e, '::before').maskImage) || m(getComputedStyle(e, '::after').maskImage); };
+  const allowed = (e) => { for (let x = e; x && x !== document.body; x = x.parentElement) { const c = typeof x.className === 'string' ? x.className : ''; if (window.__ALLOWED.some((a) => c.includes(a))) return true; } return false; };
+  if (allowed(el) || masked(el)) return null;
+  for (const pe of [null, '::before', '::after']) {
+    const cs = getComputedStyle(el, pe); const rad = parseFloat(cs.borderTopLeftRadius) || 0;
+    if (pe && (cs.content === 'none' || cs.content === 'normal')) continue;
+    const painted = (cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent') || cs.backgroundImage !== 'none';
+    if (rad > 2 && painted && Math.abs(rad - window.__CARD) > 0.6) {
+      const H = el.offsetHeight, W = el.offsetWidth;
+      return { name: `${el.tagName.toLowerCase()}.${String(el.className).trim().split(/\s+/).slice(0, 3).join('.')}${pe ?? ''}`, kind: 'hover',
+        why: rad >= H / 2 - 1 ? (W > H * 1.15 ? 'pill' : 'circle') : `rounded ${rad}px`, w: W, h: H };
+    }
+  }
+  return null;
+}
 function audit() {
   const out = [];
   const allowed = (el) => { for (let e = el; e && e !== document.body; e = e.parentElement) {
@@ -52,10 +86,10 @@ const found = new Map();
 async function check(viewport, path, label, before) {
   const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1 });
   const p = await ctx.newPage();
-  await p.addInitScript(([a, c]) => { window.__ALLOWED = a; window.__CARD = c; window.__scale = (el) => { const r = el.getBoundingClientRect(); return el.offsetWidth ? el.offsetWidth / r.width : 1; }; }, [ALLOWED, CARD_RADIUS]);
+  await p.addInitScript(([a, c, f]) => { window.__ALLOWED = a; window.__CARD = c; window.__one = new Function('return ' + f)(); window.__scale = (el) => { const r = el.getBoundingClientRect(); return el.offsetWidth ? el.offsetWidth / r.width : 1; }; }, [ALLOWED, CARD_RADIUS, one.toString()]);
   await p.goto(BASE + path); await p.waitForTimeout(1500);
   if (before) await before(p);
-  for (const f of await p.evaluate(audit)) {
+  for (const f of [...await p.evaluate(audit), ...await hovers(p)]) {
     const k = `${f.name} | ${f.why}`; if (!found.has(k)) found.set(k, { ...f, where: `${label}` });
   }
   await ctx.close();
@@ -68,12 +102,12 @@ for (const [vp, tag] of [[desk, 'desktop'], [phone, 'phone']]) {
 }
 // Every window the desktop's dock opens.
 const ctx = await browser.newContext({ viewport: desk }); const p = await ctx.newPage();
-await p.addInitScript(([a, c]) => { window.__ALLOWED = a; window.__CARD = c; window.__scale = (el) => { const r = el.getBoundingClientRect(); return el.offsetWidth ? el.offsetWidth / r.width : 1; }; }, [ALLOWED, CARD_RADIUS]);
+await p.addInitScript(([a, c, f]) => { window.__ALLOWED = a; window.__CARD = c; window.__one = new Function('return ' + f)(); window.__scale = (el) => { const r = el.getBoundingClientRect(); return el.offsetWidth ? el.offsetWidth / r.width : 1; }; }, [ALLOWED, CARD_RADIUS, one.toString()]);
 await p.goto(BASE + '/desktop'); await p.waitForTimeout(1500);
 const n = await p.locator('.x-dock button, .x-dock a').count();
 for (let i = 0; i < n; i++) {
   await p.locator('.x-dock button, .x-dock a').nth(i).click({ timeout: 3000 }).catch(() => {}); await p.waitForTimeout(700);
-  for (const f of await p.evaluate(audit)) { const k = `${f.name} | ${f.why}`; if (!found.has(k)) found.set(k, { ...f, where: `desktop dock #${i}` }); }
+  for (const f of [...await p.evaluate(audit), ...await hovers(p)]) { const k = `${f.name} | ${f.why}`; if (!found.has(k)) found.set(k, { ...f, where: `desktop dock #${i}` }); }
 }
 await browser.close();
 for (const f of [...found.values()].sort((a, b) => a.kind.localeCompare(b.kind) || a.name.localeCompare(b.name)))
