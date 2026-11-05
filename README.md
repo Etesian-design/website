@@ -18,6 +18,9 @@
 
 ---
 
+This repository is the source of etesian-design.com, the website of Etesian: a cross-platform design language that
+re-envisions the Nokia N9's Swipe UI for today.
+
 <table>
   <tr>
     <td><img src=".github/readme/desktop-snap.png" alt="Dragging a window to the top shows the snap layouts"></td>
@@ -56,6 +59,12 @@ cd etesian-website && npm ci && npm run dev    # http://localhost:6120
 **Editing the text?** It's all JSON in `src/content`, no code needed. See [CONTENT.md](CONTENT.md).
 
 Every push to `main` builds the site and publishes it to GitHub Pages.
+
+## Related projects
+
+The [design language](https://github.com/etesian-design/design), the
+[phone](https://github.com/etesian-design/android_vendor_etesian) (any LineageOS phone) and
+[KDE Plasma](https://github.com/etesian-design/plasma).
 
 ## Licence
 
