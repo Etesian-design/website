@@ -10,13 +10,14 @@
     "dev": "quasar dev -m ssg --port 6120",
     "build": "quasar build -m ssg",
     "screenshots": "node scripts/screenshots.mjs",
-    "postinstall": "quasar prepare"
+    "postinstall": "quasar prepare",
+    "shape-audit": "node scripts/shape-audit.mjs"
   },
   "dependencies": {
-    "@etesian-design/quasar": "^0.1.0",
-    "@etesian-design/shell": "^0.1.0",
-    "@etesian-design/tokens": "^0.1.0",
-    "@etesian-design/vue": "^0.1.0",
+    "@etesian-design/quasar": "^0.4.0",
+    "@etesian-design/shell": "^0.4.0",
+    "@etesian-design/tokens": "^0.4.0",
+    "@etesian-design/vue": "^0.4.0",
     "@quasar/extras": "^1.17.0",
     "quasar": "^2.35.2",
     "vue": "^3.5.44",

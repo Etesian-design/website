@@ -14,7 +14,7 @@ const router = useRouter();
   <section class="blk-site">
     <HdSquircle :size="44" color="#3B8C5A" lighting="lit"><HdIcon :name="block.icon ?? 'globe'" :size="24" lit /></HdSquircle>
     <span class="blk-site__t">
-      <span class="blk-site__h"><b>{{ block.title }}</b><span v-if="inDesktop" class="doc__tag doc__tag--done">You're using it</span></span>
+      <span class="blk-site__h"><b>{{ block.title }}</b><span v-if="inDesktop" class="doc__tag hd-sqm doc__tag--done">You're using it</span></span>
       <span>{{ block.text }}</span>
       <HdButton v-if="!inDesktop" variant="accent" class="blk-site__go" @click="router.push('/desktop')">Open the desktop view</HdButton>
     </span>

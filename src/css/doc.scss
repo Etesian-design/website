@@ -10,7 +10,8 @@
 .doc__note { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 0; padding: 12px 14px; border-radius: var(--hd-radius-card); background: color-mix(in srgb, var(--hd-accent) 10%, transparent); box-shadow: inset 3px 0 0 var(--hd-accent); font-size: var(--hd-font-size-small); }
 .doc__note p { margin: 0; }
 .doc__actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 4px; }
-.doc__tag { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 11px; font: 700 11px/1 var(--hd-font-family-base); letter-spacing: .02em; color: #fff; background: var(--hd-c-fg-secondary); white-space: nowrap; }
+// Status tags are badges: squircle-half ends (the design library's .hd-sqm mask, n = 2.8), never a pill.
+.doc__tag { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; font: 700 11px/1 var(--hd-font-family-base); letter-spacing: .02em; color: #fff; background: var(--hd-c-fg-secondary); white-space: nowrap; }
 .doc__tag--done { background: #3BA55C; }
 .doc__tag--progress { background: #2F6FD6; }
 .doc__tag--planned { background: #B86E00; }
