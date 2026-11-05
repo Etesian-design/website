@@ -37,7 +37,7 @@ function pick(id: string) { open.value = null; emit('select', id); }
     </span>
     <span class="x-mbar__sp"></span>
     <span class="x-mbar__status" aria-label="Status">
-      <a class="site-mbar__link hd-focusable" :href="href('/')">Back to the website</a>
+      <a class="site-mbar__link hd-sqm hd-focusable" :href="href('/')">Back to the website</a>
       <button type="button" class="x-mbar__events hd-focusable" :class="{ 'is-active': active === 'events' }" :aria-label="`Events: ${count ?? 3} new`" @click="emit('events')"><HdCountBubble :value="count ?? 3" /></button>
       <button type="button" class="x-mbar__sicons hd-focusable" :class="{ 'is-active': active === 'status' }" aria-label="Status menu" :aria-expanded="active === 'status' ? 'true' : 'false'" @click="emit('status')">
         <HdIcon name="wifi" :size="15" /><HdIcon name="bluetooth" :size="15" /><span class="x-mbar__batt"><HdIcon name="battery" :size="17" />82%</span>
@@ -49,7 +49,7 @@ function pick(id: string) { open.value = null; emit('select', id); }
 </template>
 <style>
 .site-mbar__mark { margin-right: 8px; }
-.site-mbar__link { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 12px; color: inherit; text-decoration: none; font-size: var(--hd-font-size-small); box-shadow: inset 0 0 0 1px var(--hd-c-divider); }
+.site-mbar__link { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; color: inherit; text-decoration: none; font-size: var(--hd-font-size-small); box-shadow: inset 0 0 0 1px var(--hd-c-divider); }
 .site-mbar__link:hover { background: var(--hd-c-pressed); }
 .site-mbar__scrim { position: fixed; inset: 0; z-index: 59; }
 .site-mbar .x-mbar__drop { z-index: 61; }

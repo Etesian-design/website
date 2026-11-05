@@ -7,7 +7,7 @@ defineProps<{ block: Extract<Block, { type: 'status' }> }>();
     <h2 v-if="block.heading" class="doc__h">{{ block.heading }}</h2>
     <ul class="pg-list">
       <li v-for="s in block.items" :key="s.part" class="pg-list__i">
-        <span class="pg-list__h"><b>{{ s.part }}</b><span class="doc__tag" :class="`doc__tag--${s.tone}`">{{ s.state }}</span></span>
+        <span class="pg-list__h"><b>{{ s.part }}</b><span class="doc__tag hd-sqm" :class="`doc__tag--${s.tone}`">{{ s.state }}</span></span>
         <span v-if="s.detail" class="pg-list__d">{{ s.detail }}</span>
       </li>
     </ul>

@@ -7,7 +7,7 @@ defineProps<{ block: Extract<Block, { type: 'planned' }> }>();
 <template>
   <section class="blk-planned" role="note">
     <HdSquircle :size="44" color="#6B6B70" lighting="lit"><HdIcon :name="block.icon ?? 'info'" :size="24" lit /></HdSquircle>
-    <span class="blk-planned__t"><span class="blk-planned__h"><b>{{ block.title }}</b><span class="doc__tag doc__tag--planned">{{ block.tag ?? 'Planned' }}</span></span><span>{{ block.text }}</span></span>
+    <span class="blk-planned__t"><span class="blk-planned__h"><b>{{ block.title }}</b><span class="doc__tag hd-sqm doc__tag--planned">{{ block.tag ?? 'Planned' }}</span></span><span>{{ block.text }}</span></span>
   </section>
 </template>
 <style>
