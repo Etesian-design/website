@@ -67,4 +67,8 @@ const LABEL: Record<ZoomLevel, string> = { 1: 'One at a time', 2: '2 per row', 3
 <style>
 .site-wins__none { position: absolute; left: 0; right: 0; top: 45%; text-align: center; font: var(--hd-font-weight-light) var(--hd-font-size-xlarge)/1 var(--hd-font-family-light); color: var(--hd-c-fg-secondary); }
 .site-wins .x-wins__live { flex-direction: column; }
+/* captions stay within their card: in the Overview's narrow column "Design language Calm, g…" ran into the next card's "Mail" */
+.site-wins .x-wins__t { width: 100%; overflow: hidden; }
+.site-wins .x-wins__t > span { flex: none; max-width: calc(100% - 28px); overflow: hidden; text-overflow: ellipsis; }   /* the name first; the subtitle gives way */
+.site-wins .x-wins__t > .hd-squircle { flex: none; }
 </style>
