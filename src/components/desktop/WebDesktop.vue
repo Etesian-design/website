@@ -386,7 +386,7 @@ onBeforeUnmount(() => { ro?.disconnect(); window.removeEventListener('keydown', 
       </ul>
 
       <!-- Belle widgets on the wallpaper, under the windows (Super+D shows them); clocks, so only drawn in the browser -->
-      <SiteWidgets v-if="widgetsOn" v-model:editing="editWidgets" :left="L" :top="ins.t" />
+      <SiteWidgets v-if="widgetsOn" v-model:editing="editWidgets" :left="L" :top="ins.t" :right="ins.r + 108" />
 
       <!-- windows -->
       <template v-for="w in visible" :key="w.key">

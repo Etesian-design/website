@@ -5,11 +5,12 @@
  * `editing`: outline, red ✕ to remove), widgets drag to move, and the Add widgets sheet (the design's XWidgets sheet) adds
  * them. Kept in this browser only (localStorage), so a visitor's own arrangement survives a reload.
  */
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
 import BelleWidget, { type BelleKind } from '@etesian-design/shell/widgets/BelleWidget.vue';
 import XMailWidget from '@etesian-design/shell/desktop/XMailWidget.vue';
 import XChatsWidget from '@etesian-design/shell/desktop/XChatsWidget.vue';
-const props = defineProps<{ left: number; top: number }>();
+/** right: the room kept free at the right edge of the screen (the desktop icons' column) */
+const props = withDefaults(defineProps<{ left: number; top: number; right?: number }>(), { right: 0 });
 const editing = defineModel<boolean>('editing', { default: false });
 
 /** a Belle widget, or the desktop's own Mail and Chats panels (XMailWidget, XChatsWidget) */
@@ -39,6 +40,16 @@ function remove(id: number) { placed.value = placed.value.filter((w) => w.id !==
 function reset() { placed.value = DEFAULT.map((w) => ({ ...w })); }
 defineExpose({ add, reset });
 
+/* On narrower screens (1360px) the right-hand column of the default set ran under the desktop icons and hid their
+   labels: each widget is drawn at its place, moved left just enough to end before the kept room (never past the left). */
+const widths = ref<Record<number, number>>({});
+const vw = ref(1920);
+function measured(id: number, el: unknown) { const w = (el as HTMLElement | null)?.offsetWidth; if (w && widths.value[id] !== w) widths.value = { ...widths.value, [id]: w }; }
+function onResize() { vw.value = window.innerWidth; }
+onMounted(() => { onResize(); window.addEventListener('resize', onResize); });
+onBeforeUnmount(() => window.removeEventListener('resize', onResize));
+function xOf(w: Placed) { const at = props.left + w.x; const max = vw.value - props.right - (widths.value[w.id] ?? 0); return drag?.id === w.id ? at : Math.max(props.left + 8, Math.min(at, max)); }
+
 /* drag to move, in edit mode only; a tap on the red ✕ removes */
 let drag: { id: number; dx: number; dy: number; pid: number } | null = null;
 function down(w: Placed, e: PointerEvent) {
@@ -56,7 +67,7 @@ function up() { drag = null; }
 </script>
 <template>
   <div class="site-wg" :class="{ 'x-wg--edit': editing }" aria-label="Desktop widgets">
-    <div v-for="w in placed" :key="w.id" class="site-wg__at" :class="{ 'is-edit': editing }" :style="{ left: `${left + w.x}px`, top: `${top + w.y}px` }"
+    <div v-for="w in placed" :key="w.id" class="site-wg__at" :class="{ 'is-edit': editing }" :ref="(el) => measured(w.id, el)" :style="{ left: `${xOf(w)}px`, top: `${top + w.y}px` }"
       @pointerdown="down(w, $event)" @pointermove="move" @pointerup="up" @pointercancel="up">
       <XMailWidget v-if="w.kind === 'x-mail'" :editing="editing" />
       <XChatsWidget v-else-if="w.kind === 'x-chats'" :editing="editing" />
