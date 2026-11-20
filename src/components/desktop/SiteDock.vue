@@ -71,7 +71,7 @@ const fit = (i: DockItem) => { const s = 280 / Math.max(i.w, i.h); return { w: M
 </script>
 <template>
   <span v-if="hidden" class="x-dock-edge site-dock-edge" :class="`x-dock-edge--${position}`" aria-hidden="true" @mouseenter="revealed = true"></span>
-  <nav ref="nav" class="x-dock hd-on-home" :class="[`x-dock--${position}`, { 'is-vertical': vertical, 'is-panel': panel, 'is-hidden': hidden, 'is-autohide': autoHide, 'is-editing': editing }]" :style="style" aria-label="Dock">
+  <nav ref="nav" class="x-dock hd-on-home site-dock-glass" :class="[`x-dock--${position}`, { 'is-vertical': vertical, 'is-panel': panel, 'is-hidden': hidden, 'is-autohide': autoHide, 'is-editing': editing }]" :style="style" aria-label="Dock">
     <span v-if="launcher" class="x-dock__slot">
       <HdTooltip text="Overview" :placement="tip"><button type="button" class="x-dock__launcher hd-sq hd-focusable" :class="{ 'is-active': launcherActive }" aria-label="Overview" @click="emit('launcher')"><HdIcon name="grid" :size="Math.round(size / 2)" /></button></HdTooltip>
       <button v-if="editing" type="button" class="x-dock__rm hd-sq site-dock__rm" aria-label="Remove the launcher button" @click="emit('remove', 'launcher')">×</button>
@@ -105,4 +105,16 @@ const fit = (i: DockItem) => { const s = 280 / Math.max(i.w, i.h); return { w: M
 .site-dock__rm { padding: 0; border: 0; cursor: pointer; font: 700 13px/1 var(--hd-font-family-base); }
 .x-dock__move { touch-action: none; }
 .site-peek { display: flex; flex-direction: column; transform-origin: 0 0; pointer-events: none; }
+/* glass, as the design library's XShellDock (0.15.0) and the N9's: a dark tinted pane lit from above, a bright top
+   edge, a soft reflection across its upper half and a dark lower edge; gradients only, no blur. Icons 6 px from every edge. */
+.x-dock.site-dock-glass { gap: 6px; padding: 6px; border-radius: calc(var(--x-dock-i, 48px) * .36 + 6px); color: #fff;
+  background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.05) 48%, rgba(255,255,255,0) 52%, rgba(255,255,255,.04)), rgba(14,16,20,.62);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.32), inset 0 0 0 1px rgba(255,255,255,.1), inset 0 -1px 0 rgba(0,0,0,.45), 0 10px 32px rgba(0,0,0,.5); }
+.x-dock.site-dock-glass::before { content: ''; position: absolute; inset: 1px 1px 50% 1px; border-radius: inherit; border-bottom-left-radius: 40% 12px; border-bottom-right-radius: 40% 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.03)); pointer-events: none; }
+.x-dock.site-dock-glass:not(.is-vertical)::before { inset: 1px 1px 52% 1px; }
+.x-dock.site-dock-glass.is-panel { border-radius: var(--hd-radius-card); }
+.site-dock-glass .x-dock__div { background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent); }
+.x-dock.site-dock-glass:not(.is-vertical) .x-dock__div { background: linear-gradient(transparent, rgba(255,255,255,.22), transparent); }
+.site-dock-glass .x-dock__run { background: rgba(255,255,255,.75); }
 </style>
