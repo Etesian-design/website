@@ -53,7 +53,7 @@ function onClick(e: MouseEvent) {
 <template>
   <div class="classic hd-on-page" @click.capture="onClick">
     <HdSiteHeader brand="Etesian" tone="chrome" :brand-href="href('/')" :links="links">
-      <!-- the bar is light until the design library's dark tone (0.3.1) arrives; then the pearl logo -->
+      <!-- the dark (chrome) tone, so the pearl logo -->
       <template #logo><EtesianMark :size="28" on="light" class="classic-mark--light" /><EtesianMark :size="28" on="dark" class="classic-mark--dark" /></template>
       <template #actions><HdButton variant="accent" @click="router.push('/try')">{{ osLabel }}</HdButton></template>
     </HdSiteHeader>
@@ -85,11 +85,25 @@ function onClick(e: MouseEvent) {
 <style>
 .classic { min-height: 100%; background: var(--hd-c-bg); color: var(--hd-c-fg); }
 /* the header's logo matches its bar: deep blue on the light one, pearl on the dark (chrome) one */
+/* Design library 0.15.0 made the header and its phone bottom bar see-through by colour-mixing --hd-surface-chrome,
+   which is a gradient in the hybrid mode, so the mix is invalid and both bars came out fully transparent: white links
+   over the light sections. The same see-through look with the chrome gradient's own colours, at --hd-opacity-chrome
+   and a little more for the white text's contrast; the blur comes from the library. */
+.classic .hd-site-header--chrome {
+  --site-chrome-a: calc((var(--hd-opacity-chrome) + 1) / 2 * 100%);
+  background: linear-gradient(color-mix(in srgb, #3A3A3A var(--site-chrome-a), transparent), color-mix(in srgb, #141414 var(--site-chrome-a), transparent)); }
+@media (max-width: 599.98px) { .classic .hd-site-header__nav { background: linear-gradient(color-mix(in srgb, #3A3A3A 80%, transparent), color-mix(in srgb, #141414 80%, transparent)); } }
+/* tablets: seven links and Try did not fit, Progress was cut off under the button */
+@media (min-width: 600px) and (max-width: 959.98px) { .classic .hd-site-header__nav { gap: 0; } .classic .hd-site-header__link { padding-inline: 7px; } .classic .hd-site-header__brand { font-size: 0; gap: 0; } }
+/* the hero runs up under the see-through header, so the top of the page is one dark surface */
+@media (min-width: 600px) { .classic-hero { margin-top: calc(-1 * var(--site-header-h, 57px)); padding-top: var(--site-header-h, 57px); } }
 .classic .hd-site-header--chrome .classic-mark--light, .classic .hd-site-header:not(.hd-site-header--chrome) .classic-mark--dark { display: none; }
 /* Phones: the menu is the bottom toolbar and the hero has the logo, the name and Try, so no top bar at all.
    The header stays in the page for its bottom toolbar (a fixed child), with nothing of its own showing. */
 @media (max-width: 599.98px) {
-  .classic .hd-site-header { height: 0; border: 0; background: none; }
+  /* no backdrop-filter: it makes the header the containing block of its fixed bottom bar, which then sat above the
+     page (0 px high header) instead of at the bottom of the screen (design library 0.15.0) */
+  .classic .hd-site-header { height: 0; border: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .classic .hd-site-header__bar { height: 0; padding: 0; }
   .classic .hd-site-header__brand, .classic .hd-site-header__actions { display: none; }
 }
