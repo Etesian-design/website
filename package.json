@@ -14,10 +14,10 @@
     "shape-audit": "node scripts/shape-audit.mjs"
   },
   "dependencies": {
-    "@etesian-design/quasar": "^0.15.0",
-    "@etesian-design/shell": "^0.15.0",
-    "@etesian-design/tokens": "^0.15.0",
-    "@etesian-design/vue": "^0.15.0",
+    "@etesian-design/quasar": "^0.16.0",
+    "@etesian-design/shell": "^0.16.0",
+    "@etesian-design/tokens": "^0.16.0",
+    "@etesian-design/vue": "^0.16.0",
     "@quasar/extras": "^1.17.0",
     "quasar": "^2.35.2",
     "vue": "^3.5.44",
