@@ -36,7 +36,7 @@ async function drag(p, from, to, steps = 12) {
 /* ---------- desktop ---------- */
 {
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/`); await p.waitForSelector('.x-dock'); await p.waitForTimeout(900);
+  await p.goto(`${BASE}/desktop`); await p.waitForSelector('.x-dock'); await p.waitForTimeout(900);
   await shot(p, 'desktop-1-home');
   // unlock the phone inside its window and open an app
   const lock = p.locator('.ph__lock').first(); const b = await lock.boundingBox();
