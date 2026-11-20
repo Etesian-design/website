@@ -23,7 +23,7 @@ async function shot(p, name, full = false) {
   // 2026-11-04: a page's phone-frame rule (.x .x-fit) also hit the live thumbnails inside the phone's
   // Open applications cards: each card showed its app full size, cropped, the full height of the screen.
   const wide = await p.evaluate(() => [...document.querySelectorAll('.hd-task-card')].filter((c) => {
-    const f = c.querySelector('.x-fit'); return f && f.getBoundingClientRect().width > c.getBoundingClientRect().width + 1; }).length);
+    const f = c.querySelector('.x-fit'); return f && f.offsetWidth > c.offsetWidth + 1; }).length);  // layout widths: the hover lift (scale 1.02) is not a wide card
   if (wide > 0) problems.push(`${name}: ${wide} Open applications card(s) with a thumbnail wider than the card`);
   await p.screenshot({ path: `${OUT}${name}.png`, fullPage: full });
   console.log('saved', name);
@@ -98,7 +98,7 @@ async function drag(p, from, to, steps = 12) {
 /* ---------- phone ---------- */
 {
   const p = await page({ width: 390, height: 844 }, { touch: true });
-  await p.goto(`${BASE}/`); await p.waitForSelector('.ph__lock'); await p.waitForTimeout(700);
+  await p.goto(`${BASE}/phone`); await p.waitForSelector('.ph__lock'); await p.waitForTimeout(700);
   await shot(p, 'phone-1-lock');
   await p.locator('.ph__unlock').click(); await p.waitForTimeout(500);
   await shot(p, 'phone-2-apps');
@@ -157,7 +157,7 @@ async function drag(p, from, to, steps = 12) {
 }
 {
   const p = await page({ width: 390, height: 844 }, { touch: true });
-  await p.goto(`${BASE}/`); await p.waitForTimeout(1200);
+  await p.goto(`${BASE}/phone`); await p.waitForTimeout(1200);
   if (await p.locator('.ph__unlock').count()) await p.locator('.ph__unlock').click(); await p.waitForTimeout(500);
   // tapping the status bar opens the status menu; tapping below closes it
   await p.locator('.ph__sbtap').click(); await p.waitForTimeout(400); await shot(p, 'phone-status-menu');
@@ -322,7 +322,9 @@ async function drag(p, from, to, steps = 12) {
   for (const path of ['/desktop', '/phone', '/']) {
     await p.goto(`${BASE}${path}`); await p.waitForTimeout(1500);
     const blurred = await p.evaluate(() => [...new Set([...document.querySelectorAll('*')].filter((e) => { const c = getComputedStyle(e).backdropFilter; return c && c !== 'none'; }).map((e) => e.className.toString().split(' ')[0]))]);
-    if (blurred.length) problems.push(`${path}: backdrop blur on ${blurred.join(', ')} (it bleeds on the GPU)`);
+    // the design library (0.15.0) blurs behind the see-through site header on purpose, as the camera's bars
+    const bad = blurred.filter((c) => c !== 'hd-site-header');
+    if (bad.length) problems.push(`${path}: backdrop blur on ${bad.join(', ')} (it bleeds on the GPU)`);
   }
 }
 
