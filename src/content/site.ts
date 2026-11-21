@@ -19,7 +19,11 @@ if (errors.length) {
 const site = index as SiteIndex;
 export type DocId = string;
 export type SiteDoc = Page;
-export const DOCS: Page[] = site.pages.map((p) => ({ ...p, blocks: (byId[p.id] as PageFile).blocks }));
+export const DOCS: Page[] = site.pages.map((p) => ({ ...p, blocks: (byId[p.id] as PageFile).blocks, home: (byId[p.id] as PageFile).home }));
 export const doc = (id: DocId): Page => DOCS.find((d) => d.id === id) ?? DOCS[0]!;
 export const listed = (where: 'desktop' | 'phone' | 'classic' | 'menu') => DOCS.filter((d) => d.show?.[where]);
 export const EVENTS: { notifications: EventItem[]; calendar: CalendarItem[]; feeds: EventItem[] } = { ...site.events, calendar: site.events.calendar ?? [] };
+/** the website address of a page (or "try-phone", the interactive phone) */
+export const pathOf = (t: string): string => (t === 'try-phone' ? '/try/phone' : t === 'try-desktop' ? '/try/desktop' : DOCS.find((d) => d.id === t)?.path ?? '/');
+/** the pages listed under a page (its sub-pages), in site.json order */
+export const childrenOf = (id: string) => DOCS.filter((d) => d.parent === id);

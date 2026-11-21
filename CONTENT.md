@@ -18,13 +18,14 @@ Removing a page is the reverse. The order in `site.json` is the order everywhere
 ### Index entry
 
 ```json
-{ "id": "phone", "title": "The phone", "label": "Phone", "icon": "phone", "color": "#1C51AF",
+{ "id": "phone", "title": "The phone", "label": "Phone", "icon": "phone", "color": "#1C51AF", "path": "/phone",
   "summary": "One line for menus and overviews.",
   "show": { "desktop": true, "phone": true, "classic": true, "menu": true } }
 ```
 
+- `path`: the page's address on the website (each page is its own generated page; `/try` is reserved for the interactive views). `parent` (optional): the id of the page it sits under; a page and its sub-pages share a tab bar.
 - `label`: short name under icons. `color`: the page's own colour (its header on the phone, its icon).
-- `show`: where the page is listed. `desktop` = desktop icons (the dock only shows open windows), `phone` = phone app grid, `classic` = a section and nav link on the website page (`/`), `menu` = the desktop's Explore menu. Omitted means not listed (the page can still be linked to).
+- `show`: where the page is listed. `desktop` = desktop icons (the dock only shows open windows), `phone` = phone app grid, `classic` = a link in the website's top bar (pages with a `parent` are reached from their parent's tabs), `menu` = the desktop's Explore menu. Omitted means not listed (the page can still be linked to).
 - `icon`: one of the design icon names: back, chevron-right, chevron-down, menu, more, add, close, check, search, edit, delete, share, refresh, settings, flight, moon, location, record, hotspot, cast, mic, camera, qr, accessibility, speaker, headset, power, torch, data, restart, folder, wrench, attach, smile, bag, list, phone, message, mail, person, home, calendar, clock, music, photo, info, warning, wifi, battery, globe, lock, star, bluetooth, play, split, maximize, minimize, window, grid, drag.
 
 ### Events items
@@ -37,7 +38,7 @@ its month): `{ "time": "10:00", "title": "…", "text": "Today 10:00" }`. With n
 
 ## Targets
 
-Buttons and links take a `target`: a page id, `try-phone` (the interactive phone), a site route such as `/try`, or an `https://` URL (opens in a new tab).
+Buttons and links take a `target`: a page id, `try-phone` (the interactive phone, `/try/phone`), a site route such as `/try`, or an `https://` URL (opens in a new tab).
 
 ## Block types
 
@@ -50,7 +51,9 @@ Optional fields are marked `?`.
 | `features` | `items: [{ title, text, icon, color? }]`, `heading?`, `intro?`, `color?`, `style?: "list" \| "apps"` | grid of lit squircle icons with a title and a line; `apps` uses larger app icons |
 | `status` | `items: [{ part, state, tone: "done" \| "progress" \| "planned", detail? }]`, `heading?` | status rows with coloured tags |
 | `demo` | `device: "phone" \| "lock" \| "widgets" \| "desktop" \| "settings"`, `heading?`, `text?`, `caption?`, `items?: [string]` | live demos: the interactive phone, lock-screen cards, Belle widgets, the desktop sketch, or the phone's Lock screen settings page with its live preview |
-| `image` | `images: [{ src, alt, caption? }]`, `heading?` | one image or a gallery; `src` is a path under `public/` or a URL |
+| `image` | `images: [{ src, alt, caption? }]`, `heading?`, `intro?`, `style?: "phone"` | one image or a gallery; `src` is a path under `public/` or a URL; `phone` lays portrait phone screenshots side by side in a bezel |
 | `planned` | `title`, `text`, `icon?`, `tag?` (default "Planned") | a dashed "planned / coming soon" card |
 | `site` | `title`, `text`, `icon?` | the "this website" card: in the desktop view it says "You're using it", anywhere else it links to the desktop view |
 | `links` | `items: [{ label, target, text?, icon?, color? }]`, `heading?` | link tiles; a page target uses that page's icon and colour unless given |
+| `release` | `repo` ("owner/name"), `title`, `text`, `icon?`, `color?`, `note?` | the latest published GitHub release of `repo`: version, date, files and links. Read by `scripts/releases.mjs` before `dev` and `build` into `src/content/releases.gen.json` (not committed); offline, `src/content/releases.json` is the fallback (`RELEASES_UPDATE_FALLBACK=1 node scripts/releases.mjs` refreshes it) |
+| `steps` | `items: [string]`, `heading?`, `intro?` | numbered steps; text in backticks is shown as code |

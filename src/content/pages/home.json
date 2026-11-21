@@ -1,0 +1,179 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS",
+   "title": "Home and Events.",
+   "lead": "Home is Events, Applications and Open applications side by side, the N9’s three views, with optional Widgets and News views. Each view can have its own wallpaper, or one wallpaper can scroll across them."
+  },
+  {
+   "type": "features",
+   "heading": "Events",
+   "color": "#3A3A3C",
+   "items": [
+    {
+     "title": "One list",
+     "text": "Day, date and weather at the top, then notifications and feeds grouped by source. New notifications slide in under their section.",
+     "icon": "calendar"
+    },
+    {
+     "title": "Today",
+     "text": "An optional section with today’s calendar entries.",
+     "icon": "clock"
+    },
+    {
+     "title": "Ongoing notices",
+     "text": "Android’s ongoing notices, such as music playing or a download, are listed too.",
+     "icon": "play"
+    },
+    {
+     "title": "Kept notifications",
+     "text": "Dismissed notifications can stay as faded rows until you clear them.",
+     "icon": "list"
+    },
+    {
+     "title": "Edit mode anywhere",
+     "text": "Long-press anywhere in Events to edit, with N9 menus for feeds and groups. {{rom.after:2026-11-15}}",
+     "icon": "edit"
+    },
+    {
+     "title": "Mark feed posts read",
+     "text": "In edit mode, swipe a feed post away to mark it read. {{rom.after:2026-11-15}}",
+     "icon": "check"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Applications",
+   "color": "#1C51AF",
+   "items": [
+    {
+     "title": "The grid",
+     "text": "Every app as a lit squircle icon on a four-column grid. Long-press to arrange.",
+     "icon": "grid"
+    },
+    {
+     "title": "Folders",
+     "text": "Drop one icon on another to make a folder.",
+     "icon": "folder"
+    },
+    {
+     "title": "Search everything",
+     "text": "With Glance built in, the Applications search also finds contacts, messages, settings, files and more. {{rom.after:2026-11-15}}",
+     "icon": "search"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Open applications",
+   "color": "#505050",
+   "items": [
+    {
+     "title": "Live cards",
+     "text": "Two per row by default. Pinch to zoom; long-press to close or rearrange.",
+     "icon": "window"
+    },
+    {
+     "title": "Split and merge",
+     "text": "Put two apps side by side from their cards, and merge them back.",
+     "icon": "split"
+    },
+    {
+     "title": "Sharp previews",
+     "text": "Previews are whole and sharp, and apps used sideways are shown the way the phone is held.",
+     "icon": "photo"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Widgets",
+   "paragraphs": [
+    "The Widgets view is optional (Settings → Home screen views). Widgets sit on a four-column grid. Long-press anywhere on the view for edit mode: drag a widget to move it, pull the handles on three of its corners to resize it in whole cells, tap its ✕ badge to remove it. Add widget, in the edit bar (or on the empty view), opens a full-screen picker of every app’s widgets, grouped by app, each with its preview, size and description. The view is either one scrolling list or fixed screens cut to the display, so lists inside mail and feed widgets scroll by themselves."
+   ]
+  },
+  {
+   "type": "live",
+   "wide": true,
+   "items": [
+    {
+     "demo": "widgets",
+     "title": "Every Belle widget, one at a time.",
+     "caption": "Pick a set and a widget, change its size in cells, and switch on edit mode to see its resize handles and ✕ badge. Drawn by the design library in your browser."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Belle classic widgets",
+   "color": "#3A3A3C",
+   "intro": "Glass, brushed metal and paper, each lit from the top: the Symbian Belle look.",
+   "items": [
+    {
+     "title": "Clocks",
+     "text": "Flip clock, square clock, large clock, gear clock, digital clock and word clock.",
+     "icon": "clock"
+    },
+    {
+     "title": "Switches",
+     "text": "One switch, a row of switches, Wi-Fi and FM Radio switches.",
+     "icon": "settings"
+    },
+    {
+     "title": "Calendar",
+     "text": "A calendar and a calendar card with the next entries.",
+     "icon": "calendar"
+    },
+    {
+     "title": "Mail",
+     "text": "Latest mail, and Email with the inbox.",
+     "icon": "mail"
+    },
+    {
+     "title": "Weather and feeds",
+     "text": "Weather with a place picker, and a feed.",
+     "icon": "rss"
+    },
+    {
+     "title": "Music, notes and more",
+     "text": "Music player, notes, data tracker, contact, website and app shortcut.",
+     "icon": "music"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Belle widgets (translucent)",
+   "paragraphs": [
+    "A modern translucent set: clock, analog clock, weather, calendar, feeds, music and shortcuts. Like the classic set, they are ordinary Android widgets, so they also work on other launchers."
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "News",
+   "color": "#0067BC",
+   "items": [
+    {
+     "title": "The News view",
+     "text": "An optional view left of the others with Glance’s ranked news, stories with their pictures. Settings → Home screen views → News. {{rom.after:2026-11-15}}",
+     "icon": "globe"
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "eyebrow": "Home-screen widgets",
+   "title": "Belle-style widgets.",
+   "lead": "Widgets are lit objects: glass, brushed metal and paper, each lit from the top. They sit on a four-column grid and resize in whole cells."
+  },
+  {
+   "type": "demo",
+   "device": "widgets",
+   "caption": "Clocks, switches, data meter, latest mail, weather with a place picker, music and feeds. A modern translucent set is also available."
+  }
+ ]
+}

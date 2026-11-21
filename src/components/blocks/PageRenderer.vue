@@ -10,14 +10,21 @@ import BlockImage from './BlockImage.vue';
 import BlockPlanned from './BlockPlanned.vue';
 import BlockLinks from './BlockLinks.vue';
 import BlockSite from './BlockSite.vue';
+import BlockRelease from './BlockRelease.vue';
+import BlockSteps from './BlockSteps.vue';
+import BlockLive from './BlockLive.vue';
+import { computed } from 'vue';
 import type { Page, BlockType } from '../../content/schema';
-defineProps<{ page: Page }>();
-const MAP: Record<BlockType, Component> = { hero: BlockHero, text: BlockText, features: BlockFeatures, status: BlockStatus, demo: BlockDemo, image: BlockImage, planned: BlockPlanned, links: BlockLinks, site: BlockSite };
+import { resolveDeep } from '../../lib/releases';
+const props = defineProps<{ page: Page }>();
+/** version and date tokens ({{rom.version}} …) filled in from the release data, live */
+const blocks = computed(() => resolveDeep(props.page.blocks));
+const MAP: Record<BlockType, Component> = { hero: BlockHero, text: BlockText, features: BlockFeatures, status: BlockStatus, demo: BlockDemo, image: BlockImage, planned: BlockPlanned, links: BlockLinks, site: BlockSite, release: BlockRelease, steps: BlockSteps, live: BlockLive };
 </script>
 <template>
   <article class="doc" :aria-label="page.title">
     <div class="doc__in">
-      <component :is="MAP[b.type]" v-for="(b, i) in page.blocks" :key="i" :block="b" :first="i === 0" class="doc__blk" />
+      <component :is="MAP[b.type]" v-for="(b, i) in blocks" :key="i" :block="b" :first="i === 0" class="doc__blk" />
     </div>
   </article>
 </template>

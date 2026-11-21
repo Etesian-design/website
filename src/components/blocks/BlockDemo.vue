@@ -53,15 +53,18 @@ const lock = [
       <div v-else-if="block.device === 'phone' && nav.shell !== 'phone'" class="blk-demo__phone"><XFit :w="360" :h="720" fit="contain"><PhoneUI embedded /></XFit></div>
     </div>
 
-    <div v-if="block.device === 'widgets'" class="wd-stage hd-on-home">
-      <div class="wd-home" aria-label="Home screen with widgets">
-        <BelleWidget kind="switch" word="VPN" /><BelleWidget kind="switch" word="3G" /><BelleWidget kind="switch" glyph="bluetooth" on /><BelleWidget kind="data" />
-        <BelleWidget kind="agenda" style="grid-column: span 4; grid-row: span 3" />
-        <BelleWidget kind="music" on style="grid-column: span 4; grid-row: span 2" />
-      </div>
-      <div v-if="isHydrated" class="wd-more" aria-label="More widgets">
-        <BelleWidget kind="weather" /><BelleWidget kind="analog" /><BelleWidget kind="notes" /><BelleWidget kind="flipclock" /><BelleWidget kind="wifi" on /><BelleWidget kind="rss" />
-      </div>
+    <!-- every widget packed in columns (no grid holes): the column count follows the width, the stage hugs the columns -->
+    <div v-if="block.device === 'widgets'" class="wd-stage hd-on-home" aria-label="Home screen with widgets">
+      <div class="wd-it wd-sw"><BelleWidget kind="switch" word="VPN" /><BelleWidget kind="switch" word="3G" /><BelleWidget kind="switch" glyph="bluetooth" on /><BelleWidget kind="data" /></div>
+      <div class="wd-it"><BelleWidget kind="agenda" /></div>
+      <div class="wd-it"><BelleWidget kind="music" on /></div>
+      <template v-if="isHydrated">
+        <div class="wd-it"><BelleWidget kind="weather" /></div>
+        <div class="wd-it"><BelleWidget kind="flipclock" /></div>
+        <div class="wd-it wd-pair"><BelleWidget kind="analog" /><BelleWidget kind="wifi" on /></div>
+        <div class="wd-it"><BelleWidget kind="rss" /></div>
+        <div class="wd-it"><BelleWidget kind="notes" /></div>
+      </template>
     </div>
 
     <div v-if="block.device === 'desktop' && !isHydrated" class="blk-demo__desk" style="aspect-ratio: 1920 / 1120" aria-hidden="true"></div>
@@ -79,10 +82,13 @@ const lock = [
 .ph-lock__clock small { display: block; margin-top: 8px; font: 400 var(--hd-font-size-default)/1.2 var(--hd-font-family-base); }
 .blk-demo__phone { width: 300px; aspect-ratio: 1 / 2; border-radius: 16px; overflow: hidden; }
 .blk-demo__phone > .x-fit { height: 100%; }
-.wd-stage { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; padding: 18px; border-radius: 12px; background: linear-gradient(160deg, #4d5a63, #1b2226 60%, #0b0e10); overflow: hidden; }
-.wd-home { flex: none; width: 360px; display: grid; grid-template-columns: repeat(4, 90px); grid-auto-rows: 90px; justify-items: center; align-items: center; }
-.wd-more { flex: 1 1 360px; min-width: 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
-@container (max-width: 420px) { .wd-stage { padding: 12px 0; justify-content: center; } .wd-more { justify-content: center; } }
+.wd-stage { --wd-col: 352px; --wd-gap: 16px; --wd-n: 1; box-sizing: content-box; width: calc(var(--wd-n) * var(--wd-col) + (var(--wd-n) - 1) * var(--wd-gap)); max-width: calc(100% - 24px); margin-inline: auto; padding: 12px; columns: var(--wd-n); column-gap: var(--wd-gap); border-radius: 12px; background: linear-gradient(160deg, #4d5a63, #1b2226 60%, #0b0e10); }
+.wd-it { break-inside: avoid; display: flex; justify-content: center; margin-bottom: var(--wd-gap); }
+.wd-it:last-child { margin-bottom: 0; }
+.wd-sw { display: grid; grid-template-columns: repeat(4, 1fr); justify-items: center; }
+.wd-pair { justify-content: space-around; align-items: center; }
+@container (min-width: 760px) { .wd-stage { --wd-n: 2; } }
+@container (min-width: 1140px) { .wd-stage { --wd-n: 3; } }
 .blk-demo__deskin { width: 1920px; height: 1120px; display: flex; background: #000; }
 .blk-demo__deskin .x-hints { display: none; }
 .blk-demo__desk { margin-top: 6px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 1px var(--hd-c-divider), 0 10px 30px rgba(0,0,0,.25); pointer-events: none; }

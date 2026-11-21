@@ -4,49 +4,149 @@
    "type": "hero",
    "eyebrow": "Status",
    "title": "Follow progress.",
-   "lead": "Etesian is being built one part at a time. There are no downloads and no release dates yet."
+   "lead": "Etesian is built one part at a time. The ROM’s latest published release is {{rom.version}} ({{rom.date}}). Work built since then is listed under “Built since the latest release” until a newer release includes it."
   },
   {
    "type": "status",
    "items": [
     {
-     "part": "Etesian for LineageOS",
-     "state": "In development",
-     "tone": "progress",
-     "detail": "Launcher, home views, lock screen, gestures, status menu, settings and apps running on the device."
-    },
-    {
-     "part": "Optional additions",
-     "state": "In development",
-     "tone": "progress",
-     "detail": "Each on the Settings page of what it changes, with a live preview. All off by default for the pure N9 experience."
-    },
-    {
-     "part": "Boot animation and startup sound",
-     "state": "Done",
+     "part": "ROM for the F(x)tec Pro1-X",
+     "state": "{{rom.version}}",
      "tone": "done",
-     "detail": "Made for Etesian."
+     "detail": "Launcher, home views, Events, lock screen, gestures, status menu, notification styles, keyboard, Belle widgets and the restyled apps. Signed builds from CI."
+    },
+    {
+     "part": "Glance",
+     "state": "{{glance.version}}",
+     "tone": "done",
+     "detail": "Standalone APK for any Android phone."
+    },
+    {
+     "part": "Etesian in a container",
+     "state": "{{container.version}}",
+     "tone": "done",
+     "detail": "LineageOS 24 with Etesian as a Redroid-style Docker image, boot-tested before each release."
+    },
+    {
+     "part": "Design library",
+     "state": "Published",
+     "tone": "done",
+     "detail": "Tokens, Vue components and the desktop shell on GitHub Packages, with the Storybook at language.etesian-design.com."
+    },
+    {
+     "part": "This website",
+     "state": "Live",
+     "tone": "done",
+     "detail": "The pages, and the interactive desktop and phone under Try."
+    },
+    {
+     "part": "Cloud Companion",
+     "state": "Experimental",
+     "tone": "done",
+     "detail": "A Phorepoc project with its own releases: a Raspberry Pi image, binaries and an install script."
+    }
+   ],
+   "heading": "Released"
+  },
+  {
+   "type": "status",
+   "items": [
+    {
+     "part": "Breeze",
+     "state": "{{rom.state:2026-11-15}}",
+     "tone": "progress",
+     "detail": "The floating button and menu that replaces Side Sense."
+    },
+    {
+     "part": "Single hand",
+     "state": "{{rom.state:2026-11-15}}",
+     "tone": "progress",
+     "detail": "The whole screen at half size."
+    },
+    {
+     "part": "Glance in the ROM",
+     "state": "{{rom.state:2026-11-15}}",
+     "tone": "progress",
+     "detail": "The News view and search everything in Applications."
+    },
+    {
+     "part": "Sounds and boot animation",
+     "state": "{{rom.state:2026-11-15}}",
+     "tone": "progress",
+     "detail": "Etesian’s own interface sounds and tones; the water-drop boot animation."
+    },
+    {
+     "part": "Events edit mode and gestures",
+     "state": "{{rom.state:2026-11-15}}",
+     "tone": "progress",
+     "detail": "Edit mode from a long press anywhere, hold-to-peek, per-side swipe targets."
+    },
+    {
+     "part": "Apps",
+     "state": "{{rom.state:2026-11-15}}",
+     "tone": "progress",
+     "detail": "The N9 dial pad, the Contacts menu, Meeye icons as the default, selection sheets in Settings."
+    }
+   ],
+   "heading": "Built since the latest release"
+  },
+  {
+   "type": "status",
+   "items": [
+    {
+     "part": "N9 camera",
+     "state": "In development",
+     "tone": "progress",
+     "detail": "Not in a release yet: squircle controls, flash strip, card flip, settings page and panels, zoom slider."
+    },
+    {
+     "part": "Standby screen",
+     "state": "In development",
+     "tone": "progress",
+     "detail": "The N9-style standby screen, as an Android screen saver. Not in the development tree yet."
+    },
+    {
+     "part": "N9 switches in Wallpaper & style",
+     "state": "In development",
+     "tone": "progress",
+     "detail": "The wallpaper and style pickers with N9 switches."
     },
     {
      "part": "Etesian for KDE Plasma",
-     "state": "In development",
+     "state": "Source only",
      "tone": "progress",
-     "detail": "Look, window decoration, dock, Events, snapping and widgets working on Plasma 6.6 and newer."
-    },
-    {
-     "part": "Etesian for the web",
-     "state": "Live",
-     "tone": "done",
-     "detail": "This website. Cloud Companion is experimental."
+     "detail": "Working on Plasma 6.6 and newer; no packages yet."
     }
-   ]
+   ],
+   "heading": "In development"
   },
   {
-   "type": "planned",
-   "title": "Downloads",
-   "tag": "Coming soon",
-   "icon": "data",
-   "text": "Phone builds, starting with the F(x)tec Pro1-X, and the KDE Plasma theme will be listed here when they are ready to install."
+   "type": "status",
+   "items": [
+    {
+     "part": "Other phones",
+     "state": "Planned",
+     "tone": "planned",
+     "detail": "Any phone LineageOS 24 supports needs its own build. Only the Pro1-X has one."
+    }
+   ],
+   "heading": "Planned"
+  },
+  {
+   "type": "links",
+   "items": [
+    {
+     "label": "ROM releases",
+     "target": "https://github.com/Etesian-design/android_vendor_etesian/releases",
+     "text": "Release notes for each version."
+    },
+    {
+     "label": "Build and contribute",
+     "target": "build",
+     "text": "Build it yourself."
+    }
+   ],
+   "heading": "Follow along"
   }
  ]
 }

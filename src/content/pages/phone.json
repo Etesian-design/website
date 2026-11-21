@@ -2,35 +2,73 @@
  "blocks": [
   {
    "type": "hero",
-   "eyebrow": "Etesian for LineageOS",
-   "title": "A calm, gesture-first phone.",
-   "lead": "No home button, no back button, no clutter. Swipe in from any edge to go home, see everything new in one calm list, and let your content fill the screen. Etesian runs on any phone LineageOS 24 supports, inspired by the Nokia N9's Swipe UI.",
+   "eyebrow": "Etesian for LineageOS 24",
+   "title": "The phone, in detail.",
+   "lead": "Gestures, the lock screen, notifications and settings on Etesian for LineageOS 24. Published builds exist for the F(x)tec Pro1-X only.",
    "actions": [
     {
-     "label": "Try the phone",
-     "target": "try-phone",
-     "primary": true,
-     "icon": "phone"
+     "label": "Download for the Pro1-X",
+     "target": "download",
+     "primary": true
     },
     {
-     "label": "The apps",
-     "target": "apps"
+     "label": "Try the phone",
+     "target": "try-phone"
     },
     {
      "label": "Source on GitHub",
-     "target": "https://github.com/etesian-design/android_vendor_etesian"
+     "target": "https://github.com/Etesian-design/android_vendor_etesian"
     }
    ]
+  },
+  {
+   "type": "text",
+   "paragraphs": [
+    "The latest published ROM is version {{rom.version}} ({{rom.date}}). Work built since then is marked “not in a release yet” until a newer release is published."
+   ],
+   "note": true
+  },
+  {
+   "type": "features",
+   "heading": "The edges in detail",
+   "color": "#1C51AF",
+   "items": [
+    {
+     "title": "Swipe in from the left or right edge",
+     "text": "Leaves the app: it keeps running and waits in Open applications. Each side can be set to go to a different home view {{rom.pending:2026-11-15}}.",
+     "icon": "back"
+    },
+    {
+     "title": "Swipe up from the bottom edge",
+     "text": "A plain swipe leaves the app, as from the sides. Hold still for about half a second on the way up and the first row of Applications comes up; the app drops onto it and stays until you tap an icon or the app.",
+     "icon": "grid"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Etesian in a container",
+   "paragraphs": [
+    "The same Etesian, built on LineageOS 24 for x86_64, runs as a Docker image the way Redroid does: one container, no virtual machine, on a Linux host. Reach it with adb and scrcpy. It is built with the release keys and boot-tested in a throwaway virtual machine before each release; the image and how to run it are on the Download page."
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS 24",
+   "title": "A calm, gesture-first phone.",
+   "lead": "No home button, no navigation bar. Swipe in from an edge to leave an app, see everything new in one list, and let your content fill the screen. Etesian is built on LineageOS 24; published builds exist for the F(x)tec Pro1-X only. Version {{rom.version}}."
   },
   {
    "type": "features",
    "heading": "Swipe, don’t press",
    "color": "#1C51AF",
-   "intro": "There is no home button and no navigation bar. The edges of the screen do the work, the same way on every screen.",
+   "intro": "The edges of the screen do the work, the same way in every app.",
    "items": [
     {
      "title": "Swipe in from the left or right edge",
-     "text": "Minimises the app. It keeps running and waits in Open applications.",
+     "text": "Leaves the app. It keeps running and waits in Open applications.",
      "icon": "back"
     },
     {
@@ -39,8 +77,8 @@
      "icon": "chevron-down"
     },
     {
-     "title": "Swipe up from the bottom edge and hold",
-     "text": "Peeks the first row of the app grid over the app. Release on an icon to launch it.",
+     "title": "Swipe up from the bottom edge",
+     "text": "Leaves the app; hold on the way up and the first row of Applications comes up.",
      "icon": "grid"
     },
     {
@@ -62,28 +100,28 @@
   },
   {
    "type": "features",
-   "heading": "Three home views",
+   "heading": "Home views",
    "color": "#3A3A3C",
-   "intro": "Home is three views side by side, plus an optional fourth for widgets. Swipe between them; page dots show where you are.",
+   "intro": "Home is three views side by side, plus optional Widgets and News views. Swipe between them.",
    "items": [
     {
      "title": "Events",
-     "text": "Day, date and weather at the top, then notifications and feeds, grouped by source. New notifications slide in under their section.",
+     "text": "Notifications, today’s calendar and your feeds in one list, with the weather.",
      "icon": "calendar"
     },
     {
      "title": "Applications",
-     "text": "Every app as a lit squircle icon on a four-column grid. Long-press to arrange.",
+     "text": "Every app as a lit squircle icon, with folders.",
      "icon": "grid"
     },
     {
      "title": "Open applications",
-     "text": "Live cards of the running apps, two per row by default. Pinch to zoom; long-press to close or rearrange.",
+     "text": "Live cards of the running apps.",
      "icon": "window"
     },
     {
-     "title": "Widgets",
-     "text": "An optional view for Belle-style widgets: clocks, weather, agenda, mail and more.",
+     "title": "Widgets and News",
+     "text": "Optional views: Belle-style widgets, and Glance’s news (News view {{rom.pending:2026-11-15}}).",
      "icon": "clock"
     }
    ]
@@ -92,19 +130,19 @@
    "type": "demo",
    "device": "lock",
    "heading": "The lock screen",
-   "text": "A large, thin clock and the full date, with notifications as dark translucent cards at the bottom. The newest show in full and the rest stack beneath them. Nothing pops up over the lock screen. The N9’s “More” style is available as an option. Swipe sideways to unlock."
+   "text": "A large, thin clock and the full date. Notifications are dark translucent cards at the bottom: the newest in full, the rest stacked beneath them. An optional glance line and the weather can sit under the clock, and emergency information is reachable from the lock screen. Swipe sideways to unlock."
   },
   {
    "type": "demo",
    "device": "settings",
    "heading": "Additions, off by default",
-   "text": "Everything the N9 did not have is optional and starts switched off, so the phone starts as a pure N9 experience. Each addition sits in Settings on the page of what it changes, with a live preview of that part of the phone at the top. Try the Lock screen page here. N9-style replacements keep every option of the stock Android screens they replace."
+   "text": "Everything the N9 did not have is optional and starts switched off, so the phone starts as a pure N9 experience. Each addition sits in Settings on the page of what it changes, most with a live preview of that part of the phone at the top. Try the Lock screen page here. N9-style replacements keep every option of the stock Android screens they replace."
   },
   {
    "type": "features",
    "heading": "Settings where you expect them",
    "color": "#505050",
-   "intro": "Every page of Settings shows what it changes before you change it.",
+   "intro": "Pages that change how something looks start with a live preview of it.",
    "items": [
     {
      "title": "Status menu",

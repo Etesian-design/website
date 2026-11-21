@@ -6,11 +6,74 @@
    "label": "Etesian",
    "icon": "star",
    "color": "#2F6FD6",
-   "summary": "What Etesian is and where it is going.",
+   "summary": "What Etesian is, what you can install today, and where to go next.",
+   "path": "/",
    "show": {
     "desktop": true,
     "phone": true,
     "classic": false,
+    "menu": true
+   }
+  },
+  {
+   "id": "phone",
+   "title": "Etesian for LineageOS",
+   "label": "Phone",
+   "icon": "phone",
+   "color": "#1C51AF",
+   "summary": "A LineageOS 24 ROM, built for the F(x)tec Pro1-X: gestures, home views, lock screen.",
+   "path": "/phone",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "home",
+   "title": "Home and Events",
+   "label": "Home",
+   "icon": "home",
+   "color": "#3A3A3C",
+   "summary": "Events, Applications, Open applications, Widgets and News.",
+   "path": "/phone#home",
+   "parent": "phone",
+   "show": {
+    "desktop": false,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "apps",
+   "title": "Apps",
+   "label": "Apps",
+   "icon": "grid",
+   "color": "#EF5500",
+   "summary": "The system apps restyled, and Etesian’s own Store, Feeds and Mail.",
+   "path": "/phone#apps",
+   "parent": "phone",
+   "show": {
+    "desktop": false,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "glance",
+   "title": "Glance",
+   "label": "Glance",
+   "icon": "search",
+   "color": "#0067BC",
+   "summary": "Search everything on the phone, and the news, on one screen.",
+   "path": "/glance",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
     "menu": true
    }
   },
@@ -20,21 +83,8 @@
    "label": "Plasma",
    "icon": "window",
    "color": "#09A7CC",
-   "summary": "The design language on the KDE Plasma desktop.",
-   "show": {
-    "desktop": true,
-    "phone": true,
-    "classic": true,
-    "menu": true
-   }
-  },
-  {
-   "id": "phone",
-   "title": "The phone",
-   "label": "Phone",
-   "icon": "phone",
-   "color": "#1C51AF",
-   "summary": "One calm, gesture-first interface for every screen.",
+   "summary": "The design language on the KDE Plasma desktop. Install from source.",
+   "path": "/plasma",
    "show": {
     "desktop": true,
     "phone": true,
@@ -49,34 +99,7 @@
    "icon": "edit",
    "color": "#821DDE",
    "summary": "Calm, gesture-first, content before chrome.",
-   "show": {
-    "desktop": true,
-    "phone": true,
-    "classic": true,
-    "menu": true
-   }
-  },
-  {
-   "id": "apps",
-   "title": "Apps",
-   "label": "Apps",
-   "icon": "grid",
-   "color": "#EF5500",
-   "summary": "Contacts, Messaging, Mail, Calendar and more, rebuilt in the N9 style.",
-   "show": {
-    "desktop": true,
-    "phone": true,
-    "classic": true,
-    "menu": true
-   }
-  },
-  {
-   "id": "widgets",
-   "title": "Widgets",
-   "label": "Widgets",
-   "icon": "clock",
-   "color": "#505050",
-   "summary": "Belle-style home-screen widgets.",
+   "path": "/design",
    "show": {
     "desktop": true,
     "phone": true,
@@ -86,11 +109,27 @@
   },
   {
    "id": "web",
-   "title": "Etesian for the web",
+   "title": "Web and Cloud Companion",
    "label": "Web",
    "icon": "globe",
    "color": "#3B8C5A",
-   "summary": "The design language in the browser: this site and Cloud Companion.",
+   "summary": "This website, and Cloud Companion, a Phorepoc project in the Etesian look.",
+   "path": "/web",
+   "show": {
+    "desktop": true,
+    "phone": true,
+    "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "download",
+   "title": "Download",
+   "label": "Download",
+   "icon": "data",
+   "color": "#62B700",
+   "summary": "Published releases: the Pro1-X ROM, Glance and Cloud Companion.",
+   "path": "/download",
    "show": {
     "desktop": true,
     "phone": true,
@@ -104,11 +143,59 @@
    "label": "Progress",
    "icon": "info",
    "color": "#3A3A3C",
-   "summary": "What is done, what is next, and how to follow along.",
+   "summary": "What is released, what is built but not released, and what is planned.",
+   "path": "/progress",
    "show": {
     "desktop": true,
     "phone": true,
     "classic": true,
+    "menu": true
+   }
+  },
+  {
+   "id": "settings",
+   "title": "Settings and additions",
+   "label": "Settings",
+   "icon": "wrench",
+   "color": "#6B6B70",
+   "summary": "N9 behaviour first; every addition is in Settings, off by default.",
+   "path": "/phone#settings",
+   "parent": "phone",
+   "show": {
+    "desktop": false,
+    "phone": true,
+    "classic": false,
+    "menu": true
+   }
+  },
+  {
+   "id": "system",
+   "title": "System UI",
+   "label": "System",
+   "icon": "settings",
+   "color": "#505050",
+   "summary": "Status menu, notifications, Breeze, single hand, power menu, sounds.",
+   "path": "/phone#system",
+   "parent": "phone",
+   "show": {
+    "desktop": false,
+    "phone": true,
+    "classic": false,
+    "menu": true
+   }
+  },
+  {
+   "id": "build",
+   "title": "Build and contribute",
+   "label": "Build",
+   "icon": "folder",
+   "color": "#1C51AF",
+   "summary": "Build the ROM from source, the tests and the CI.",
+   "path": "/build",
+   "show": {
+    "desktop": false,
+    "phone": true,
+    "classic": false,
     "menu": true
    }
   }
@@ -125,32 +212,32 @@
    {
     "page": "phone",
     "title": "The phone",
-    "text": "Edge swipes, three home views.",
+    "text": "Edge swipes and home views.",
     "icon": "phone",
     "color": "#1C51AF"
    },
    {
-    "page": "progress",
-    "title": "Progress",
-    "text": "In development. No downloads yet.",
-    "icon": "info",
-    "color": "#3A3A3C"
+    "page": "glance",
+    "title": "Glance",
+    "text": "Search everything on the phone, and the news.",
+    "icon": "search",
+    "color": "#0067BC"
    }
   ],
   "feeds": [
    {
     "page": "apps",
     "title": "Apps",
-    "text": "Contacts, Messaging, Mail, Calendar, Music, Gallery and more, in the N9 style.",
+    "text": "Phone, Contacts, Messaging, Mail, Calendar, Music and more, restyled.",
     "icon": "grid",
     "color": "#EF5500"
    },
    {
-    "page": "widgets",
-    "title": "Widgets",
-    "text": "Belle-style home-screen widgets, lit from the top.",
-    "icon": "clock",
-    "color": "#505050"
+    "page": "home",
+    "title": "Home and Events",
+    "text": "Events, Applications, Open applications, Widgets and News.",
+    "icon": "home",
+    "color": "#3A3A3C"
    },
    {
     "page": "design",
@@ -160,11 +247,11 @@
     "color": "#821DDE"
    },
    {
-    "page": "plasma",
-    "title": "Etesian for KDE Plasma",
-    "text": "The same design language on the desktop, in development.",
-    "icon": "window",
-    "color": "#09A7CC"
+    "page": "progress",
+    "title": "Progress",
+    "text": "What is released and what is built but not released.",
+    "icon": "info",
+    "color": "#3A3A3C"
    }
   ],
   "calendar": [

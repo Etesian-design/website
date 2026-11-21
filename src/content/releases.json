@@ -1,0 +1,34 @@
+{
+ "rom": {
+  "repo": "Etesian-design/android_vendor_etesian",
+  "label": "Etesian for the F(x)tec Pro1-X",
+  "assets": [
+   "^etesian-.+-pro1x\\.zip$",
+   "^etesian-.+-pro1x\\.zip\\.sha256$"
+  ]
+ },
+ "glance": {
+  "repo": "Etesian-design/glance",
+  "label": "Glance",
+  "assets": [
+   "\\.apk$",
+   "\\.apk\\.sha256$"
+  ]
+ },
+ "cloud": {
+  "repo": "Phorepoc/cloud-companion",
+  "label": "Cloud Companion",
+  "assets": [
+   "\\.img\\.xz$",
+   "^phehost-linux-",
+   "^install\\.sh$",
+   "^cloud-board\\.tar\\.gz$",
+   "^SHA256SUMS"
+  ]
+ },
+ "container": {
+  "repo": "Etesian-design/redroid",
+  "label": "Etesian in a container",
+  "assets": []
+ }
+}

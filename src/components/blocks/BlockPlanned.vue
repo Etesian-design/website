@@ -2,12 +2,13 @@
 import HdSquircle from '@etesian-design/vue/components/HdSquircle.vue';
 import HdIcon from '@etesian-design/vue/components/HdIcon.vue';
 import type { Block } from '../../content/schema';
+import { href } from '../../lib/base';
 defineProps<{ block: Extract<Block, { type: 'planned' }> }>();
 </script>
 <template>
   <section class="blk-planned" role="note">
     <HdSquircle :size="44" color="#6B6B70" lighting="lit"><HdIcon :name="block.icon ?? 'info'" :size="24" lit /></HdSquircle>
-    <span class="blk-planned__t"><span class="blk-planned__h"><b>{{ block.title }}</b><span class="doc__tag hd-sqm doc__tag--planned">{{ block.tag ?? 'Planned' }}</span></span><span>{{ block.text }}</span></span>
+    <span class="blk-planned__t"><span class="blk-planned__h"><b><a v-if="block.href" class="doc__more" :href="href(block.href)">{{ block.title }} <span aria-hidden="true">›</span></a><template v-else>{{ block.title }}</template></b><span class="doc__tag hd-sqm doc__tag--planned">{{ block.tag ?? 'Planned' }}</span></span><span>{{ block.text }}</span></span>
   </section>
 </template>
 <style>

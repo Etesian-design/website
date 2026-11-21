@@ -1,0 +1,84 @@
+{
+ "rom": {
+  "tag": "v0.1.1",
+  "date": "2026-11-14",
+  "url": "https://github.com/Etesian-design/android_vendor_etesian/releases/tag/v0.1.1",
+  "assets": [
+   {
+    "name": "etesian-0.1.1-pro1x.zip",
+    "size": 1115354208,
+    "url": "https://github.com/Etesian-design/android_vendor_etesian/releases/download/v0.1.1/etesian-0.1.1-pro1x.zip"
+   },
+   {
+    "name": "etesian-0.1.1-pro1x.zip.sha256",
+    "size": 90,
+    "url": "https://github.com/Etesian-design/android_vendor_etesian/releases/download/v0.1.1/etesian-0.1.1-pro1x.zip.sha256"
+   }
+  ]
+ },
+ "glance": {
+  "tag": "v0.3.0",
+  "date": "2026-11-20",
+  "url": "https://github.com/Etesian-design/glance/releases/tag/v0.3.0",
+  "assets": [
+   {
+    "name": "EtesianGlance-0.3.0.apk",
+    "size": 7308481,
+    "url": "https://github.com/Etesian-design/glance/releases/download/v0.3.0/EtesianGlance-0.3.0.apk"
+   },
+   {
+    "name": "EtesianGlance-0.3.0.apk.sha256",
+    "size": 90,
+    "url": "https://github.com/Etesian-design/glance/releases/download/v0.3.0/EtesianGlance-0.3.0.apk.sha256"
+   }
+  ]
+ },
+ "cloud": {
+  "tag": "v0.8.0",
+  "date": "2026-11-20",
+  "url": "https://github.com/Phorepoc/cloud-companion/releases/tag/v0.8.0",
+  "assets": [
+   {
+    "name": "cloud-board.tar.gz",
+    "size": 30581,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/cloud-board.tar.gz"
+   },
+   {
+    "name": "cloud-companion-raspberry-pi-v0.8.0.img.xz",
+    "size": 688380520,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/cloud-companion-raspberry-pi-v0.8.0.img.xz"
+   },
+   {
+    "name": "install.sh",
+    "size": 6057,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/install.sh"
+   },
+   {
+    "name": "phehost-linux-amd64",
+    "size": 8347810,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/phehost-linux-amd64"
+   },
+   {
+    "name": "phehost-linux-arm64",
+    "size": 7798946,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/phehost-linux-arm64"
+   },
+   {
+    "name": "SHA256SUMS.board",
+    "size": 334,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/SHA256SUMS.board"
+   },
+   {
+    "name": "SHA256SUMS.image",
+    "size": 109,
+    "url": "https://github.com/Phorepoc/cloud-companion/releases/download/v0.8.0/SHA256SUMS.image"
+   }
+  ]
+ },
+ "container": {
+  "tag": "v0.1.0",
+  "date": "2026-11-13",
+  "url": "https://github.com/Etesian-design/redroid/releases/tag/v0.1.0",
+  "assets": []
+ }
+}

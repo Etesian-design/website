@@ -1,0 +1,108 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS",
+   "title": "System UI.",
+   "lead": "The parts of the phone around the apps: the status menu, notifications, the power menu, Breeze and single hand, and the sound of the system."
+  },
+  {
+   "type": "features",
+   "heading": "Status and notifications",
+   "color": "#505050",
+   "items": [
+    {
+     "title": "Status menu",
+     "text": "Tap the status bar: profile, volume, connectivity and battery, with an optional toggle strip and an edit mode.",
+     "icon": "settings"
+    },
+    {
+     "title": "Notifications over apps",
+     "text": "Five styles: Discreet (the N9’s), Belle strip, Card, Colour or Android.",
+     "icon": "message"
+    },
+    {
+     "title": "Profiles",
+     "text": "Do Not Disturb and Modes are shown as N9 profiles, with priority people.",
+     "icon": "moon"
+    },
+    {
+     "title": "Privacy",
+     "text": "An N9-style privacy indicator, the N9 permission dialog and a screen recorder tile.",
+     "icon": "mic"
+    },
+    {
+     "title": "Copied",
+     "text": "A small “Copied” bubble when text goes to the clipboard.",
+     "icon": "attach"
+    },
+    {
+     "title": "Private space and app pinning",
+     "text": "Android’s private space and app pinning, kept and restyled.",
+     "icon": "lock"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Reaching the screen",
+   "color": "#1C51AF",
+   "items": [
+    {
+     "title": "Breeze",
+     "text": "A floating button, or an edge handle, with a menu of shortcuts and widgets, its own editor, sizes and settings. It replaces Side Sense. {{rom.after:2026-11-15}}",
+     "icon": "star"
+    },
+    {
+     "title": "Single hand",
+     "text": "The whole screen at half size, with a size slider or corners only. Tap the empty space to move it; double tap for full screen. {{rom.after:2026-11-15}}",
+     "icon": "minimize"
+    },
+    {
+     "title": "Back side",
+     "text": "Which side Back sits on is a system setting.",
+     "icon": "back"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Power and standby",
+   "color": "#3A3A3C",
+   "items": [
+    {
+     "title": "Power menu",
+     "text": "The N9 power menu. The squircle shutdown spinner {{rom.pending:2026-11-15}}.",
+     "icon": "power"
+    },
+    {
+     "title": "Standby screen",
+     "text": "An N9-style standby screen: the clock, notification icons and items, moving every minute against burn-in. In development.",
+     "icon": "clock"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Sound and start-up",
+   "color": "#821DDE",
+   "items": [
+    {
+     "title": "Etesian’s own sounds",
+     "text": "Interface sounds and tones made for Etesian: wind on N9 moments only (long press, edit mode, the status bar, closing), silent taps, and Etesian ringtone, message, mail, calendar and alarm tones. {{rom.after:2026-11-15}}",
+     "icon": "speaker"
+    },
+    {
+     "title": "Volume keys",
+     "text": "N9-style volume-key tones.",
+     "icon": "speaker"
+    },
+    {
+     "title": "Boot animation",
+     "text": "A water-drop boot animation made for Etesian. {{rom.after:2026-11-15}}",
+     "icon": "play"
+    }
+   ]
+  }
+ ]
+}

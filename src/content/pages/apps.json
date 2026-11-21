@@ -1,18 +1,243 @@
 {
-  "blocks": [
-    { "type": "hero", "eyebrow": "N9-style apps", "title": "The everyday apps, rebuilt.",
-      "lead": "Each core app follows the same rules: the app’s own colour on its main header, plain sub pages, a bottom toolbar with Back on the left, squircle icons and light, large type." },
-    { "type": "features", "style": "apps", "items": [
-      { "title": "Contacts", "text": "People first: squircle photos, one list, every way to reach someone on their card.", "icon": "person", "color": "#007DC9" },
-      { "title": "Messaging", "text": "Conversations in N9 bubbles. Inline reply from Events is an optional extra.", "icon": "message", "color": "#09A7CC" },
-      { "title": "Mail", "text": "A calm inbox with the N9 view menu: Inbox, Sent, Drafts and folders from the title.", "icon": "mail", "color": "#0067BC" },
-      { "title": "Calendar", "text": "Month, week and agenda views; today’s entries also appear in Events.", "icon": "calendar", "color": "#EF5500" },
-      { "title": "Music", "text": "Library and now playing, with a Belle-style music widget planned for the home screen.", "icon": "music", "color": "#CC09BA" },
-      { "title": "Gallery", "text": "Photos as they are, edge to edge, with sharing from the toolbar.", "icon": "photo", "color": "#821DDE" },
-      { "title": "Store", "text": "Apps in the same visual language as the rest of the system.", "icon": "star", "color": "#1C51AF" },
-      { "title": "Clock", "text": "Alarms, world clock, timers and stopwatch behind one bottom toolbar.", "icon": "clock", "color": "#F77219" },
-      { "title": "Feeds", "text": "The sources you follow, delivered into the Feeds section of Events.", "icon": "globe", "color": "#FF8500" },
-      { "title": "Settings", "text": "Every stock option, N9 lists, and pull-down to search instead of a search button.", "icon": "settings", "color": "#505050" } ] },
-    { "type": "links", "items": [ { "label": "Open the interactive phone", "target": "try-phone", "text": "Unlock it and tap an app.", "icon": "phone", "color": "#62B700" } ] }
-  ]
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS",
+   "title": "Every restyled app.",
+   "lead": "Each app below: what changed from the LineageOS original and what the N9 look brings to it. Every stock option stays."
+  },
+  {
+   "type": "text",
+   "paragraphs": [
+    "Etesian ROM builds come with the Meeye icon pack by YeyeBBC preinstalled, unmodified and signed by its author, and set as the launcher’s default icon pack {{rom.pending:2026-11-15}}; Settings → Appearance credits it with a link to their work. It is not made by the project. Its icons are licensed CC BY-NC 4.0 (the release’s own LICENSE file says CC BY-NC-ND 4.0). A switch adds N9-style lighting to the icons."
+   ],
+   "note": true
+  },
+  {
+   "type": "features",
+   "style": "apps",
+   "items": [
+    {
+     "title": "Phone",
+     "text": "The dialer and call screens, with the N9 dial pad {{rom.pending:2026-11-15}}.",
+     "icon": "phone",
+     "color": "#62B700"
+    },
+    {
+     "title": "Contacts",
+     "text": "Squircle photos, one list with N9 fast scroll, every way to reach someone on their card, and the N9 menu {{rom.pending:2026-11-15}}.",
+     "icon": "person",
+     "color": "#007DC9"
+    },
+    {
+     "title": "Mail",
+     "text": "Thunderbird for Android, rebranded and restyled. Included when the build has its prebuilt APK.",
+     "icon": "mail",
+     "color": "#0067BC"
+    },
+    {
+     "title": "Camera",
+     "text": "Aperture. The N9 camera (squircle controls, flash strip, settings panels, zoom slider) is in development, not in a release yet.",
+     "icon": "camera",
+     "color": "#3A3A3C"
+    },
+    {
+     "title": "Browser",
+     "text": "Jelly, with an address bar that stays put while you scroll.",
+     "icon": "globe",
+     "color": "#2EA8C7"
+    },
+    {
+     "title": "Files",
+     "text": "DocumentsUI, restyled; it opens on Documents {{rom.pending:2026-11-15}}.",
+     "icon": "folder",
+     "color": "#F77219"
+    },
+    {
+     "title": "Calculator, FM Radio, Recorder, AudioFX",
+     "text": "Restyled to match.",
+     "icon": "grid",
+     "color": "#505050"
+    },
+    {
+     "title": "Keyboard",
+     "text": "The N9 keyboard look on LatinIME, with the clipboard and autofill chips kept clear of the N9 strip. Key click in and out {{rom.pending:2026-11-15}}.",
+     "icon": "edit",
+     "color": "#505050"
+    },
+    {
+     "title": "Settings",
+     "text": "Every stock option in N9 lists, and pull down to search. N9 selection sheets {{rom.pending:2026-11-15}}.",
+     "icon": "settings",
+     "color": "#505050"
+    },
+    {
+     "title": "Glance",
+     "text": "Search everything, and the news. Built into the ROM {{rom.pending:2026-11-15}}; also released as a standalone app.",
+     "icon": "search",
+     "color": "#0067BC"
+    }
+   ],
+   "heading": "Every app"
+  },
+  {
+   "type": "image",
+   "heading": "The apps, drawn",
+   "intro": "Design-library renderings (Storybook) of the apps in the N9 style, not phone screenshots.",
+   "style": "phone",
+   "images": [
+    {
+     "src": "/ds/app-phone.webp",
+     "alt": "Phone in the N9 style",
+     "caption": "Phone"
+    },
+    {
+     "src": "/ds/app-contacts.webp",
+     "alt": "Contacts in the N9 style",
+     "caption": "Contacts"
+    },
+    {
+     "src": "/ds/app-calendar.webp",
+     "alt": "Calendar in the N9 style",
+     "caption": "Calendar"
+    },
+    {
+     "src": "/ds/app-clock.webp",
+     "alt": "Clock in the N9 style",
+     "caption": "Clock"
+    },
+    {
+     "src": "/ds/app-calculator.webp",
+     "alt": "Calculator in the N9 style",
+     "caption": "Calculator"
+    },
+    {
+     "src": "/ds/app-gallery.webp",
+     "alt": "Gallery in the N9 style",
+     "caption": "Gallery"
+    },
+    {
+     "src": "/ds/app-music.webp",
+     "alt": "Music in the N9 style",
+     "caption": "Music"
+    },
+    {
+     "src": "/ds/app-browser.webp",
+     "alt": "Browser in the N9 style",
+     "caption": "Browser"
+    },
+    {
+     "src": "/ds/app-files.webp",
+     "alt": "Files in the N9 style",
+     "caption": "Files"
+    },
+    {
+     "src": "/ds/app-fmradio.webp",
+     "alt": "FM Radio in the N9 style",
+     "caption": "FM Radio"
+    },
+    {
+     "src": "/ds/app-recorder.webp",
+     "alt": "Recorder in the N9 style",
+     "caption": "Recorder"
+    }
+   ]
+  },
+  {
+   "type": "links",
+   "items": [
+    {
+     "label": "Open the interactive phone",
+     "target": "try-phone",
+     "text": "Unlock it and tap an app."
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS",
+   "title": "The everyday apps, restyled.",
+   "lead": "LineageOS’s own apps, patched to follow the same rules: the app’s colour on its main header, plain sub pages, a bottom toolbar, squircle-half buttons and text fields, N9 switches and fast scroll, and light, large type. Every stock option stays."
+  },
+  {
+   "type": "features",
+   "style": "apps",
+   "items": [
+    {
+     "title": "Contacts",
+     "text": "Squircle photos, one list with N9 fast scroll, every way to reach someone on their card.",
+     "icon": "person",
+     "color": "#007DC9"
+    },
+    {
+     "title": "Messaging",
+     "text": "Conversations in N9 bubbles, sides as on the N9.",
+     "icon": "message",
+     "color": "#09A7CC"
+    },
+    {
+     "title": "Mail",
+     "text": "Thunderbird for Android, restyled, when the build includes it.",
+     "icon": "mail",
+     "color": "#0067BC"
+    },
+    {
+     "title": "Calendar",
+     "text": "Etar, restyled; today’s entries also appear in Events.",
+     "icon": "calendar",
+     "color": "#EF5500"
+    },
+    {
+     "title": "Music",
+     "text": "Twelve, restyled, with generated covers. A Belle music widget is on the Widgets view.",
+     "icon": "music",
+     "color": "#CC09BA"
+    },
+    {
+     "title": "Gallery",
+     "text": "Glimpse: photos edge to edge, sharing from the toolbar.",
+     "icon": "photo",
+     "color": "#821DDE"
+    },
+    {
+     "title": "Store",
+     "text": "Etesian’s own: an F-Droid client styled after the N9 Nokia Store.",
+     "icon": "bag",
+     "color": "#1C51AF"
+    },
+    {
+     "title": "Clock",
+     "text": "Alarms, world clock, timers and stopwatch.",
+     "icon": "clock",
+     "color": "#F77219"
+    },
+    {
+     "title": "Feeds",
+     "text": "Etesian’s own: the sources you follow, delivered into Events.",
+     "icon": "list",
+     "color": "#FF8500"
+    },
+    {
+     "title": "Settings",
+     "text": "Every stock option in N9 lists; pull down to search.",
+     "icon": "settings",
+     "color": "#505050"
+    }
+   ]
+  },
+  {
+   "type": "links",
+   "items": [
+    {
+     "label": "Open the interactive phone",
+     "target": "try-phone",
+     "text": "Unlock it and tap an app.",
+     "icon": "phone",
+     "color": "#62B700"
+    }
+   ]
+  }
+ ]
 }

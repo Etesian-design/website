@@ -1,0 +1,60 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian for LineageOS",
+   "title": "Faithful first, additions off.",
+   "lead": "The first time you switch it on, the phone behaves like an N9. Everything the N9 didn’t have is optional and starts switched off. Each addition sits in Settings on the page of what it changes, with a live preview of that part of the phone at the top."
+  },
+  {
+   "type": "image",
+   "heading": "The settings pages",
+   "intro": "Design-library renderings (Storybook) of the Etesian settings pages, not phone screenshots.",
+   "style": "phone",
+   "images": [
+    {
+     "src": "/ds/settings-gestures.webp",
+     "alt": "Gestures settings page",
+     "caption": "Gestures: where each edge swipe goes."
+    },
+    {
+     "src": "/ds/settings-breeze.webp",
+     "alt": "Breeze settings page",
+     "caption": "Breeze: the floating button, its menu and sizes."
+    },
+    {
+     "src": "/ds/settings-status-menu.webp",
+     "alt": "Status menu settings page",
+     "caption": "Status menu: the toggle strip, sliders and rows."
+    },
+    {
+     "src": "/ds/settings-lock.webp",
+     "alt": "Lock screen settings page",
+     "caption": "Lock screen, with its preview at the top."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Other additions",
+   "color": "#505050",
+   "items": [
+    {
+     "title": "Home screen views",
+     "text": "The Widgets view, and the News view (News view {{rom.pending:2026-11-15}}).",
+     "icon": "home"
+    },
+    {
+     "title": "Gestures",
+     "text": "Where each side swipe leaves the app, and whether swiping in goes Back (off by default). {{rom.after:2026-11-15}}",
+     "icon": "back"
+    },
+    {
+     "title": "Breeze and single hand",
+     "text": "The Breeze button, its menu and sizes; single hand mode. {{rom.after:2026-11-15}}",
+     "icon": "star"
+    }
+   ]
+  }
+ ]
+}

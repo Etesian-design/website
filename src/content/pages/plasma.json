@@ -3,12 +3,111 @@
   {
    "type": "hero",
    "eyebrow": "KDE Plasma 6.6 and newer",
-   "title": "Etesian for KDE Plasma.",
-   "lead": "The Etesian desktop on KDE Plasma: the same design language as the phone, on laptops and desktops. It installs for the current user, needs no root for the look, and uninstalling puts your own settings and panels back.",
+   "title": "Etesian on KDE Plasma, in detail.",
+   "lead": "What the Plasma desktop gets, how to install it from source for the current user, and what is still to come. There are no packages or releases yet.",
    "actions": [
     {
      "label": "Get it on GitHub",
-     "target": "https://github.com/etesian-design/plasma",
+     "target": "https://github.com/Etesian-design/plasma",
+     "primary": true
+    }
+   ],
+   "button": "How to install",
+   "intro": "Plasma 6.6 (Kubuntu 26.04) or newer. From a clone of the repository:",
+   "steps": [
+    "`./install.sh` for the look and behaviour; your panels stay as they are.",
+    "`./install.sh --layout` also sets up the Etesian menu bar and dock.",
+    "Log out and back in once.",
+    "`./uninstall.sh` puts everything back as it was."
+   ]
+  },
+  {
+   "type": "image",
+   "heading": "More of the desktop",
+   "images": [
+    {
+     "src": "/plasma/events.webp",
+     "alt": "Plasma desktop with the Events panel open beside windows",
+     "caption": "Events on the desktop: the time, weather, notifications, calendar and feeds."
+    },
+    {
+     "src": "/plasma/search.webp",
+     "alt": "The Overview with the search field and app results",
+     "caption": "Overview search: just start typing."
+    },
+    {
+     "src": "/plasma/snap.webp",
+     "alt": "The snap layouts picker over windows",
+     "caption": "Snap layouts (Super+Z): six layouts, then the zone number."
+    },
+    {
+     "src": "/plasma/windows-grid.webp",
+     "alt": "Open windows shown as a grid of cards",
+     "caption": "Open windows as a grid; the view can also be a carousel."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Keys",
+   "color": "#1D99F3",
+   "items": [
+    {
+     "title": "Super",
+     "text": "Overview.",
+     "icon": "grid"
+    },
+    {
+     "title": "Super + Space",
+     "text": "Search.",
+     "icon": "search"
+    },
+    {
+     "title": "Super + N",
+     "text": "Events.",
+     "icon": "calendar"
+    },
+    {
+     "title": "Super + Tab",
+     "text": "Open windows.",
+     "icon": "window"
+    },
+    {
+     "title": "Super + Z",
+     "text": "Snap layouts.",
+     "icon": "split"
+    },
+    {
+     "title": "Super + arrows",
+     "text": "Move between columns, maximise, float.",
+     "icon": "drag"
+    },
+    {
+     "title": "Touchpad",
+     "text": "Pinch with three fingers to zoom the windows view; swipe sideways with three fingers to minimise.",
+     "icon": "drag"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Not finished yet",
+   "paragraphs": [
+    "Your own calendars, and people and mail in search, need KDE PIM. The Mail widget reads KMail only. Only some apps get their actions in the header, and KDE apps have no Back button.",
+    "Etesian icons cover the main KDE apps (Dolphin, Kate, Konsole, Okular, Gwenview, KMail, System Settings and others); the rest, such as Ark, Konqueror, Kontact, the KDE games and LibreOffice, still show their Breeze icons. Window corners are plain rounded corners, not yet the squircle shape of the design language."
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "eyebrow": "KDE Plasma 6.6 and newer",
+   "title": "Etesian for KDE Plasma.",
+   "lead": "The Etesian desktop on KDE Plasma: the same design language as the phone, on laptops and desktops. It installs from source for the current user, needs no root for the look, and uninstalling puts your own settings and panels back.",
+   "actions": [
+    {
+     "label": "Get it on GitHub",
+     "target": "https://github.com/Etesian-design/plasma",
      "primary": true
     }
    ]
@@ -75,7 +174,7 @@
     },
     {
      "title": "The whole look",
-     "text": "Colours from the design tokens, icons, cursors, sounds, wallpaper, splash and login screen, all made for Etesian.",
+     "text": "Colours from the design tokens, icons, cursors, sounds, wallpaper, splash and login screen.",
      "icon": "photo"
     },
     {
@@ -89,7 +188,7 @@
    "type": "text",
    "heading": "Still to come",
    "paragraphs": [
-    "People and mail in search need KDE PIM. The mail widget reads KMail only for now. Apps with toolbars that hold more than file and edit actions keep their own toolbar."
+    "People and mail in search need KDE PIM. The mail widget reads KMail only for now. Apps with toolbars that hold more than file and edit actions keep their own toolbar. Etesian icons for the rest of the KDE apps, and squircle window corners."
    ]
   },
   {

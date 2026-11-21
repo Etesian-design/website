@@ -1,20 +1,214 @@
 {
-  "blocks": [
-    { "type": "hero", "eyebrow": "The Etesian design language", "title": "Calm, gesture-first, content before chrome.",
-      "lead": "Etesian is a way of designing as much as a piece of software. Its influence is the Nokia N9's Swipe UI, re-envisioned for today’s screens.",
-      "actions": [ { "label": "Browse the design language", "target": "https://language.etesian-design.com", "primary": true }, { "label": "Source on GitHub", "target": "https://github.com/etesian-design/design" } ] },
-    { "type": "features", "heading": "Principles", "color": "#821DDE", "items": [
-      { "title": "Content before chrome", "text": "Screens show what matters; controls step back. One row of chrome, never two.", "icon": "photo" },
-      { "title": "Gestures, not buttons", "text": "The edges of the screen minimise and close, everywhere, the same way. Nothing in an app imitates them.", "icon": "back" },
-      { "title": "Calm by default", "text": "Nothing shouts for attention. Everything that happened waits in one place: Events.", "icon": "moon" },
-      { "title": "Faithful first", "text": "The N9 behaviour is the default. Every addition is optional and starts switched off.", "icon": "check" } ] },
-    { "type": "features", "heading": "Look and feel", "color": "#3A3A3C", "items": [
-      { "title": "The squircle", "text": "Every thumb-sized shape, from app icons to avatars, is a superellipse measured from the N9’s own icons. Never a circle, never a rounded square.", "icon": "star" },
-      { "title": "Lit from the top", "text": "Icons and buttons are lit objects: a soft gradient, a thin rim, a gentle sheen.", "icon": "settings" },
-      { "title": "Light, large type", "text": "Big, thin headings and plain text. Type follows the system’s size and weight settings.", "icon": "edit" },
-      { "title": "Colour that means something", "text": "Each app has its own colour, used on its main header and icon. Sub pages stay plain.", "icon": "photo" },
-      { "title": "Black home, light pages", "text": "The home views are black; apps are light. Dark and light modes keep the same structure.", "icon": "window" },
-      { "title": "Motion with purpose", "text": "Apps slide in, slide away when minimised and follow the finger when closed. No splash screens.", "icon": "play" } ] },
-    { "type": "text", "heading": "Heritage", "paragraphs": [ "The design language is built from careful study of the N9 (2011): its gestures, proportions and behaviour. Where the N9 had no answer, for larger screens, a pointer or a keyboard, the gaps are filled in the same spirit. Fonts, icons and sounds are open or made for the project." ] }
-  ]
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "The Etesian design language",
+   "title": "How the design language works.",
+   "lead": "The tokens, shapes, motion and components behind every Etesian screen, running live from the design library: flip, drag and press them.",
+   "actions": [
+    {
+     "label": "Open the Storybook",
+     "target": "https://language.etesian-design.com",
+     "primary": true
+    },
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/Etesian-design/design"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "The principles in practice",
+   "color": "#821DDE",
+   "items": [
+    {
+     "title": "Content before chrome",
+     "text": "the toolbar below is the only chrome a page gets.",
+     "icon": "photo"
+    },
+    {
+     "title": "Gestures, not buttons",
+     "text": "no app draws a close button; the swipe from the edge does it.",
+     "icon": "back"
+    },
+    {
+     "title": "Calm by default",
+     "text": "a notification is a short banner, then waits in Events.",
+     "icon": "moon"
+    },
+    {
+     "title": "Faithful first",
+     "text": "on the phone, every extra in Etesian Settings starts switched off.",
+     "icon": "check"
+    }
+   ]
+  },
+  {
+   "type": "live",
+   "heading": "Tokens",
+   "intro": "Colours, type, sizes, radii and timings are design tokens: one JSON file in the design repository, published as CSS custom properties and TypeScript. These demos read them from the package.",
+   "items": [
+    {
+     "demo": "palette",
+     "title": "Colour.",
+     "caption": "The N9 palette for light and dark pages, and an accent per app (Phone green, Messages cyan, Calendar orange). Used for every page background, text colour and app header."
+    },
+    {
+     "demo": "type",
+     "title": "Type.",
+     "caption": "The type scale from the N9’s own sizes, set in open fonts (Fira Sans on this site). Headings are light and large; body text is plain."
+    },
+    {
+     "demo": "shapes",
+     "title": "The squircle.",
+     "caption": "Icons, avatars and thumbnails are superellipses, never circles or rounded squares. Drag the slider to compare."
+    },
+    {
+     "demo": "motion",
+     "title": "Motion.",
+     "caption": "The N9’s timings and curves: things arrive easing out, leave easing in. Press Play. With reduced motion set, nothing animates."
+    },
+    {
+     "demo": "chrome",
+     "title": "See-through chrome.",
+     "caption": "Bars over content, like this site’s header and the camera’s controls, let the content show through, blurred."
+    }
+   ]
+  },
+  {
+   "type": "live",
+   "heading": "Components",
+   "intro": "The Vue components (Hd*) in @etesian-design/vue, live. How they reach this site, Cloud Companion and the Storybook is on the Web page.",
+   "items": [
+    {
+     "demo": "controls",
+     "title": "Buttons, segments, switches and fields.",
+     "caption": "Buttons and fields end in half a squircle; switches are the N9’s flip switches. Used in every settings page and form."
+    },
+    {
+     "demo": "fastscroll",
+     "title": "Fast scroll.",
+     "caption": "Scroll the list, or drag the letters on the right: a big letter shows while you drag. Used in Contacts, Applications and every long list."
+    },
+    {
+     "demo": "overlays",
+     "title": "Menus, dialogs and sheets.",
+     "caption": "The app menu, a question that needs an answer, and a sheet for a short task. Used across the apps."
+    },
+    {
+     "demo": "toolbar",
+     "title": "Page header, list and toolbar.",
+     "caption": "A plain page header, list rows, and the N9 bottom toolbar with Back at the left; tap the star. Used by every app page."
+    },
+    {
+     "demo": "notifications",
+     "title": "Notification styles.",
+     "caption": "Pick a style: a banner for a message, a toast with an action, a short info banner for a confirmation."
+    },
+    {
+     "demo": "icons",
+     "title": "Icons with N9 lighting.",
+     "caption": "App icons are lit from the top: gradient, rim and a short shadow. Switch it off to see the flat version."
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Fonts and assets",
+   "paragraphs": [
+    "The fonts are open (Fira Sans, Ubuntu Sans, Archivo); the sounds, boot animation and wallpapers are made for the project."
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "eyebrow": "The Etesian design language",
+   "title": "Calm, gesture-first, content before chrome.",
+   "lead": "Etesian is a way of designing as much as a piece of software. Its influence is the Nokia N9's Swipe UI, re-envisioned for today’s screens.",
+   "actions": [
+    {
+     "label": "Browse the design language",
+     "target": "https://language.etesian-design.com",
+     "primary": true
+    },
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/Etesian-design/design"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Principles",
+   "color": "#821DDE",
+   "items": [
+    {
+     "title": "Content before chrome",
+     "text": "Screens show what matters; controls step back. One row of chrome, never two.",
+     "icon": "photo"
+    },
+    {
+     "title": "Gestures, not buttons",
+     "text": "The edges of the screen minimise and close, everywhere, the same way. Nothing in an app imitates them.",
+     "icon": "back"
+    },
+    {
+     "title": "Calm by default",
+     "text": "Nothing shouts for attention. Everything that happened waits in one place: Events.",
+     "icon": "moon"
+    },
+    {
+     "title": "Faithful first",
+     "text": "The N9 behaviour is the default. Every addition is optional and starts switched off.",
+     "icon": "check"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Look and feel",
+   "color": "#3A3A3C",
+   "items": [
+    {
+     "title": "The squircle",
+     "text": "Every thumb-sized shape, from app icons to avatars, is a superellipse measured from the N9’s own icons. Never a circle, never a rounded square.",
+     "icon": "star"
+    },
+    {
+     "title": "Lit from the top",
+     "text": "Icons and buttons are lit objects: a soft gradient, a thin rim, a gentle sheen.",
+     "icon": "settings"
+    },
+    {
+     "title": "Light, large type",
+     "text": "Big, thin headings and plain text. Type follows the system’s size and weight settings.",
+     "icon": "edit"
+    },
+    {
+     "title": "Colour that means something",
+     "text": "Each app has its own colour, used on its main header and icon. Sub pages stay plain.",
+     "icon": "photo"
+    },
+    {
+     "title": "Black home, light pages",
+     "text": "The home views are black; apps are light. Dark and light modes keep the same structure.",
+     "icon": "window"
+    },
+    {
+     "title": "Motion with purpose",
+     "text": "Apps slide in, slide away when minimised and follow the finger when closed. No splash screens.",
+     "icon": "play"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Heritage",
+   "paragraphs": [
+    "The design language is built from careful study of the N9 (2011): its gestures, proportions and behaviour. Where the N9 had no answer, for larger screens, a pointer or a keyboard, the gaps are filled in the same spirit. No Nokia images, sounds or fonts are used."
+   ]
+  }
+ ]
 }

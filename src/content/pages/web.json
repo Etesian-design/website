@@ -4,11 +4,185 @@
    "type": "hero",
    "eyebrow": "Web",
    "title": "Etesian for the web.",
+   "lead": "The design language is a set of web packages, so anything on the web can look and work like Etesian. This website and Cloud Companion’s web app are both built from them.",
+   "actions": [
+    {
+     "label": "Try the desktop",
+     "target": "/try/desktop",
+     "primary": true
+    },
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/Etesian-design/website"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "The packages",
+   "color": "#0067BC",
+   "items": [
+    {
+     "title": "@etesian-design/tokens",
+     "text": "The design tokens (colours, type, spacing, radii, motion) as CSS custom properties, TypeScript and JSON, and the open fonts used in place of the N9’s.",
+     "icon": "edit"
+    },
+    {
+     "title": "@etesian-design/vue",
+     "text": "The Vue 3 components (HdButton, HdSwitch, HdToolBar, HdFastScroll and the rest), composables and the squircle geometry.",
+     "icon": "grid"
+    },
+    {
+     "title": "@etesian-design/quasar",
+     "text": "A theme and integration for Quasar 2: brand colours, the icon set, the squircle spinner and the colour modes, so Quasar’s own components look Etesian.",
+     "icon": "settings"
+    },
+    {
+     "title": "@etesian-design/shell",
+     "text": "The shell parts: the desktop (menu bar, dock, windows, Events, snapping, Overview), the mini apps and the Belle home-screen widgets.",
+     "icon": "window"
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "heading": "Installing the packages",
+   "intro": "The packages are published to GitHub Packages. npm needs a GitHub token with read:packages in ~/.npmrc, even for public packages.",
+   "collapsed": true,
+   "button": "How to install the packages",
+   "items": [
+    "Point the @etesian-design scope at GitHub: `echo \"@etesian-design:registry=https://npm.pkg.github.com\" >> .npmrc`.",
+    "Install what you need: `npm install @etesian-design/vue @etesian-design/tokens`, and `@etesian-design/quasar` or `@etesian-design/shell` if you use them.",
+    "In a Quasar app, install the theme from a boot file: `app.use(EtesianQuasar, { mode: 'hybrid' })`."
+   ]
+  },
+  {
+   "type": "live",
+   "heading": "Quasar, themed",
+   "intro": "Quasar is a Vue 3 framework. With the @etesian-design/quasar theme its own components (left) sit next to the library’s (right). Both columns are live.",
+   "items": [
+    {
+     "demo": "quasar",
+     "title": "Quasar and Hd* side by side.",
+     "caption": "QBtn, QToggle and QInput with the Etesian theme, next to HdButton, HdSwitch and HdTextField."
+    }
+   ],
+   "wide": true
+  },
+  {
+   "type": "image",
+   "heading": "The Storybook",
+   "intro": "Storybook is a workshop for UI components: each component, and whole screens built from them, rendered on their own with their measurements and notes. It is the visual reference for every component, built from the design repository and published with GitHub Pages at language.etesian-design.com. A few of its stories:",
+   "style": "phone",
+   "images": [
+    {
+     "src": "/ds/app-messaging.webp",
+     "alt": "Storybook rendering of a messaging conversation",
+     "caption": "A conversation, from the Messaging example (Storybook rendering)."
+    },
+    {
+     "src": "/ds/app-keyboard.webp",
+     "alt": "Storybook rendering of a conversation with the N9-style keyboard open",
+     "caption": "The same, typing with the N9-style keyboard (Storybook rendering)."
+    },
+    {
+     "src": "/ds/events.webp",
+     "alt": "Storybook rendering of the Events feed",
+     "caption": "The Events feed (Storybook rendering)."
+    }
+   ]
+  },
+  {
+   "type": "links",
+   "items": [
+    {
+     "label": "Open the Storybook",
+     "target": "https://language.etesian-design.com",
+     "text": "Every component and screen, live.",
+     "icon": "grid",
+     "color": "#821DDE"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "How this site is built",
+   "paragraphs": [
+    "This site is a Quasar (Vue 3) app, built as static pages (Quasar’s SSG mode) and published with GitHub Pages at etesian-design.com. It uses the four packages: the pages, the /try desktop and the phone are the library’s own components.",
+    "Each page is a JSON file of content blocks (text, features, pictures, live demos, release cards), checked when the site builds. Version numbers and dates are never typed into the text: they come from each project’s latest GitHub release, read when the site is built and again in your browser."
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "What Cloud Companion does",
+   "color": "#09A7CC",
+   "items": [
+    {
+     "title": "A browser in the cloud",
+     "text": "Optional: Firefox runs on your server and its page is shown in the web app, or sent to phones too old for a modern web page.",
+     "icon": "globe"
+    },
+    {
+     "title": "A messaging gateway",
+     "text": "SMS, Matrix, XMPP, IRC, Nextcloud Talk, Signal and Telegram, reachable from a SIP or XMPP phone or the web app.",
+     "icon": "message"
+    },
+    {
+     "title": "Mail, calendar and contacts",
+     "text": "In the web app, and through an optional hub that speaks Exchange ActiveSync, CalDAV and CardDAV for older phones.",
+     "icon": "mail"
+    },
+    {
+     "title": "Android in a browser tab",
+     "text": "Optional: an Android system on your server, streamed to a web page with touch, keyboard, sound and clipboard.",
+     "icon": "phone"
+    }
+   ],
+   "anchor": "cloud-companion"
+  },
+  {
+   "type": "text",
+   "paragraphs": [
+    "Cloud Companion is a Phorepoc project, experimental, licensed AGPL-3.0. Its server is written in Go and runs with Docker; its web app is Vue 3 with Quasar, and imports the tokens, vue and shell packages with its own Quasar theme."
+   ]
+  },
+  {
+   "type": "links",
+   "items": [
+    {
+     "label": "Try the desktop",
+     "target": "/try/desktop",
+     "text": "The shell parts Cloud Companion’s web app uses, full screen in your browser.",
+     "icon": "window",
+     "color": "#09A7CC"
+    },
+    {
+     "label": "Cloud Companion on GitHub",
+     "target": "https://github.com/Phorepoc/cloud-companion",
+     "text": "Source, screenshots and the getting-started guide.",
+     "icon": "globe",
+     "color": "#09A7CC"
+    },
+    {
+     "label": "Download",
+     "target": "download",
+     "text": "Its latest release is on the Download page.",
+     "icon": "data",
+     "color": "#62B700"
+    }
+   ]
+  }
+ ],
+ "home": [
+  {
+   "type": "hero",
+   "eyebrow": "Web",
+   "title": "Etesian for the web.",
    "lead": "The design language is a Vue 3 component library, so anything on the web can look and work like Etesian.",
    "actions": [
     {
      "label": "Source on GitHub",
-     "target": "https://github.com/etesian-design/website"
+     "target": "https://github.com/Etesian-design/website"
     }
    ]
   },
@@ -16,14 +190,15 @@
    "type": "site",
    "title": "This website",
    "icon": "globe",
-   "text": "A working Etesian desktop and phone in the browser, built from the library's own components: drag, snap and resize windows, open Events, swipe through the phone."
+   "text": "A working Etesian desktop and phone in the browser, built from the library’s own components: drag, snap and resize windows, open Events, swipe through the phone."
   },
   {
    "type": "planned",
    "title": "Cloud Companion",
    "icon": "globe",
    "tag": "Experimental",
-   "text": "A self-hosted server with an Etesian web app for mail, calendar, contacts and a browser, on any device, including old phones that can't handle the modern web."
+   "text": "A Phorepoc project in the Etesian look: a small server you run yourself, with a browser, messaging, mail, calendar, contacts and Android in a browser tab.",
+   "href": "/web#cloud-companion"
   }
  ]
 }

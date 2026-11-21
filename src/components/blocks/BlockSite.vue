@@ -16,7 +16,7 @@ const router = useRouter();
     <span class="blk-site__t">
       <span class="blk-site__h"><b>{{ block.title }}</b><span v-if="inDesktop" class="doc__tag hd-sqm doc__tag--done">You're using it</span></span>
       <span>{{ block.text }}</span>
-      <HdButton v-if="!inDesktop" variant="accent" class="blk-site__go" @click="router.push('/desktop')">Open the desktop view</HdButton>
+      <HdButton v-if="!inDesktop" variant="accent" class="blk-site__go" @click="router.push('/try/desktop')">Open the desktop view</HdButton>
     </span>
   </section>
 </template>

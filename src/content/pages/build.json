@@ -1,0 +1,68 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Build and contribute",
+   "title": "Build Etesian yourself.",
+   "lead": "Etesian is a vendor tree added to a LineageOS 24 build, plus patches to LineageOS’s own projects. Licensed AGPL-3.0-only with additional terms.",
+   "actions": [
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/Etesian-design/android_vendor_etesian",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "heading": "Build the ROM",
+   "intro": "You need a LineageOS 24 build environment for your phone: follow your device’s build guide on the LineageOS wiki. Then, from the top of the tree:",
+   "items": [
+    "`git clone https://github.com/Etesian-design/android_vendor_etesian vendor/etesian`",
+    "`echo '$(call inherit-product, vendor/etesian/etesian.mk)' >> vendor/extra/product.mk`",
+    "`vendor/etesian/patches/apply.sh`, and again after every repo sync.",
+    "`brunch <device>`, for example `brunch pro1x`, the reference device."
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "What’s in the tree",
+   "color": "#1C51AF",
+   "items": [
+    {
+     "title": "launcher/",
+     "text": "The home: its views, widgets, status menu and settings.",
+     "icon": "home"
+    },
+    {
+     "title": "patches/",
+     "text": "Changes to LineageOS’s own projects: SystemUI, Settings and the apps.",
+     "icon": "edit"
+    },
+    {
+     "title": "overlay/, theme/, fonts/, sounds/, bootanimation/",
+     "text": "The look and sound.",
+     "icon": "photo"
+    },
+    {
+     "title": "mail/, feeds/, store/, toolbar/, fastscroll/",
+     "text": "Apps and shared parts.",
+     "icon": "grid"
+    },
+    {
+     "title": "tests/",
+     "text": "About 130 tests that run on the phone: tests/device/run.sh.",
+     "icon": "check"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "paragraphs": [
+    "Release builds are built and signed on a self-hosted runner and published with semantic-release; commit messages follow Conventional Commits, checked by commitlint.",
+    "Another phone that runs LineageOS 24 needs only its own build, but none has been made or tested yet. If you own an N9, its own files can be imported into a local build; they stay outside the repository and are never in published builds."
+   ],
+   "heading": "CI and other phones"
+  }
+ ]
+}

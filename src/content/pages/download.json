@@ -1,0 +1,76 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Download",
+   "title": "Published releases.",
+   "lead": "Everything here is a published GitHub release, read from GitHub when the site was built. These are development builds: expect rough edges."
+  },
+  {
+   "type": "release",
+   "title": "Etesian for the F(x)tec Pro1-X",
+   "icon": "phone",
+   "color": "#1C51AF",
+   "text": "The full ROM as an OTA package for LineageOS recovery, with its SHA-256 checksum. A development build, signed by the project’s CI.",
+   "note": "Only the F(x)tec Pro1-X has a build. Other phones that run LineageOS 24 need their own build; none exists yet.",
+   "key": "rom",
+   "button": "How to install on the Pro1-X",
+   "intro": "Etesian installs from LineageOS recovery with adb sideload. You need an unlocked bootloader, LineageOS recovery for the Pro1-X (the LineageOS wiki’s pro1x install guide covers both) and adb on a computer.",
+   "steps": [
+    "Download `etesian-{{rom.version}}-pro1x.zip` and its `.sha256` file, then check it: `sha256sum -c etesian-{{rom.version}}-pro1x.zip.sha256`.",
+    "Back up anything you need. Then reboot into recovery: `adb reboot recovery`.",
+    "Coming from stock or another ROM, official LineageOS included: choose Factory reset → Format data / factory reset. Etesian is signed with its own keys. Updating an earlier Etesian build: skip this step.",
+    "Choose Apply update → Apply from ADB, then on the computer run `adb sideload etesian-{{rom.version}}-pro1x.zip`.",
+    "If recovery says the signature can’t be verified, choose Yes to continue: the package is signed with Etesian’s keys, not LineageOS’s.",
+    "When it finishes, choose Reboot system now."
+   ]
+  },
+  {
+   "type": "release",
+   "title": "Glance",
+   "icon": "search",
+   "color": "#0067BC",
+   "text": "A standalone APK for any Android phone. Without the ROM’s platform key it can’t show app shortcuts or join the launcher (the News view, search in Applications); on Etesian, Glance comes built into the ROM.",
+   "key": "glance"
+  },
+  {
+   "type": "release",
+   "title": "Etesian in a container",
+   "icon": "window",
+   "color": "#5A5A9E",
+   "text": "Etesian on LineageOS 24 as a Docker image that runs like Redroid: one container, no virtual machine. Published as ghcr.io/etesian-design/redroid, signed with the release keys and boot-tested before each release.",
+   "note": "A privileged container shares the host’s kernel. Run it on a machine you can afford to lose, or in a virtual machine.",
+   "key": "container",
+   "button": "How to run it",
+   "intro": "On a Linux host with Docker:",
+   "steps": [
+    "Load the kernel modules: `sudo modprobe binder_linux devices=binder,hwbinder,vndbinder` and `sudo modprobe af_key`.",
+    "`docker run -d --privileged -v etesian-data:/data -p 127.0.0.1:5555:5555 ghcr.io/etesian-design/redroid:latest androidboot.redroid_width=1080 androidboot.redroid_height=1920 androidboot.redroid_dpi=420 androidboot.use_memfd=1`",
+    "Connect with `adb connect 127.0.0.1:5555`, and see the screen with scrcpy (`scrcpy -s 127.0.0.1:5555`).",
+    "Your data stays in the `etesian-data` volume; remove the container and the volume to start again."
+   ]
+  },
+  {
+   "type": "planned",
+   "title": "Etesian for KDE Plasma",
+   "icon": "window",
+   "tag": "Source only",
+   "text": "No packages yet. Install it from the repository with its install script; see the Plasma page."
+  },
+  {
+   "type": "release",
+   "title": "Cloud Companion",
+   "icon": "globe",
+   "color": "#3B8C5A",
+   "text": "A Phorepoc project in the Etesian look. Experimental. Releases carry a Raspberry Pi image, phehost binaries for Linux (amd64, arm64), an install script and checksums.",
+   "key": "cloud"
+  },
+  {
+   "type": "text",
+   "paragraphs": [
+    "Not published: builds for any other phone, Plasma packages, and the work built since the latest ROM release (see Progress). Nokia images, sounds and fonts are never published."
+   ],
+   "note": true
+  }
+ ]
+}

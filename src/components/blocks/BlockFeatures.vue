@@ -6,7 +6,7 @@ import type { Block } from '../../content/schema';
 defineProps<{ block: Extract<Block, { type: 'features' }> }>();
 </script>
 <template>
-  <section class="blk-feat">
+  <section :id="block.anchor" class="blk-feat">
     <h2 v-if="block.heading" class="doc__h">{{ block.heading }}</h2>
     <p v-if="block.intro">{{ block.intro }}</p>
     <ul class="doc-feat" :class="{ 'doc-feat--apps': block.style === 'apps' }">
@@ -18,5 +18,6 @@ defineProps<{ block: Extract<Block, { type: 'features' }> }>();
   </section>
 </template>
 <style>
+.blk-feat { scroll-margin-top: 72px; }
 .doc-feat--apps .doc-feat__i { align-items: center; }
 </style>

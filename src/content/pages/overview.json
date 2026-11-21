@@ -2,93 +2,27 @@
  "blocks": [
   {
    "type": "hero",
-   "eyebrow": "Desktop · Phone · Web",
+   "eyebrow": "Phone · Desktop · Web",
    "title": "One calm, gesture-first interface for every screen.",
-   "lead": "Etesian runs on the KDE Plasma desktop, on LineageOS phones and on the web, from one design language. Its influence is the Nokia N9's Swipe UI, re-envisioned for how we use our screens today.",
+   "lead": "Etesian runs on a LineageOS phone, the KDE Plasma desktop and the web, from one design language. Its influence is the Nokia N9’s Swipe UI, re-envisioned for how we use our screens today.",
    "actions": [
     {
-     "label": "The desktop",
-     "target": "plasma",
+     "label": "Try the desktop",
+     "target": "/try/desktop",
      "primary": true
     },
     {
-     "label": "The phone",
-     "target": "phone"
-    },
-    {
-     "label": "Follow progress",
-     "target": "progress"
-    }
-   ]
-  },
-  {
-   "type": "links",
-   "heading": "Explore",
-   "items": [
-    {
-     "label": "Etesian for KDE Plasma",
-     "target": "plasma",
-     "text": "The design language on the desktop."
-    },
-    {
-     "label": "The phone",
-     "target": "phone",
-     "text": "Gestures, home views, lock screen, settings."
-    },
-    {
-     "label": "Design language",
-     "target": "design",
-     "text": "Calm, gesture-first, content before chrome."
-    },
-    {
-     "label": "Apps",
-     "target": "apps",
-     "text": "The everyday apps, rebuilt in the N9 style."
-    },
-    {
-     "label": "Widgets",
-     "target": "widgets",
-     "text": "Belle-style home-screen widgets."
-    },
-    {
-     "label": "Etesian for the web",
-     "target": "web",
-     "text": "This website, and Cloud Companion."
-    }
-   ]
-  },
-  {
-   "type": "status",
-   "heading": "Where it stands",
-   "items": [
-    {
-     "part": "Etesian for LineageOS",
-     "state": "In development",
-     "tone": "progress"
-    },
-    {
-     "part": "Optional additions",
-     "state": "In development",
-     "tone": "progress"
-    },
-    {
-     "part": "Etesian for KDE Plasma",
-     "state": "In development",
-     "tone": "progress"
-    },
-    {
-     "part": "Etesian for the web",
-     "state": "Live",
-     "tone": "done"
+     "label": "Try the phone",
+     "target": "/try/phone"
     }
    ]
   },
   {
    "type": "text",
-   "note": true,
    "paragraphs": [
-    "Etesian, founded by Kyriakos Bompotis. This site is licensed AGPL-3.0-only with additional terms; its source is at https://github.com/Etesian-design/website. Etesian is an independent project and is not affiliated with Nokia. It credits the Nokia N9 (2011) as its inspiration and ships none of its assets: fonts, icons and sounds are open or made for the project."
-   ]
+    "Etesian, founded by Kyriakos Bompotis. This site is licensed AGPL-3.0-only with additional terms; its source is at https://github.com/Etesian-design/website. Etesian is an independent project and is not affiliated with Nokia. It credits the Nokia N9 (2011) as its inspiration and holds no copyrighted material owned by Nokia or its subsidiaries. The fonts (Fira Sans, Ubuntu Sans, Archivo) are open fonts under their own licences; the sounds, boot animation and wallpapers are made for the project."
+   ],
+   "note": true
   }
  ]
 }

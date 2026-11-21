@@ -81,6 +81,9 @@ function audit() {
   return out;
 }
 
+import { readFileSync } from 'node:fs';
+/** every content page of the website (site.json) */
+const CONTENT = JSON.parse(readFileSync(new URL('../src/content/site.json', import.meta.url), 'utf8')).pages.map((d) => d.path).filter((x) => !x.includes('#'));
 const browser = await firefox.launch();
 const found = new Map();
 async function check(viewport, path, label, before) {
@@ -96,14 +99,14 @@ async function check(viewport, path, label, before) {
 }
 const desk = { width: 1440, height: 900 }, phone = { width: 390, height: 844 };
 for (const [vp, tag] of [[desk, 'desktop'], [phone, 'phone']]) {
-  await check(vp, '/', `${tag} /`);
-  await check(vp, '/phone', `${tag} /phone`);
-  await check(vp, '/desktop', `${tag} /desktop`);
+  for (const path of CONTENT) await check(vp, path, `${tag} ${path}`);
+  await check(vp, '/try/phone', `${tag} /try/phone`);
+  await check(vp, '/try/desktop', `${tag} /try/desktop`);
 }
 // Every window the desktop's dock opens.
 const ctx = await browser.newContext({ viewport: desk }); const p = await ctx.newPage();
 await p.addInitScript(([a, c, f]) => { window.__ALLOWED = a; window.__CARD = c; window.__one = new Function('return ' + f)(); window.__scale = (el) => { const r = el.getBoundingClientRect(); return el.offsetWidth ? el.offsetWidth / r.width : 1; }; }, [ALLOWED, CARD_RADIUS, one.toString()]);
-await p.goto(BASE + '/desktop'); await p.waitForTimeout(1500);
+await p.goto(BASE + '/try/desktop'); await p.waitForTimeout(1500);
 const n = await p.locator('.x-dock button, .x-dock a').count();
 for (let i = 0; i < n; i++) {
   await p.locator('.x-dock button, .x-dock a').nth(i).click({ timeout: 3000 }).catch(() => {}); await p.waitForTimeout(700);

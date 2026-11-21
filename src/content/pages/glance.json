@@ -1,0 +1,284 @@
+{
+ "blocks": [
+  {
+   "type": "hero",
+   "eyebrow": "Etesian Glance",
+   "title": "Search everything. Then the news.",
+   "lead": "Glance is one screen: a search bar on top that finds everything on the phone, the way the Sesame launcher does, and the news under it, the way Google News shows it. It runs on any Android phone as a standalone app, and on Etesian it is built into the ROM and joins the launcher. Open source, AGPL-3.0-only.",
+   "actions": [
+    {
+     "label": "Download Glance",
+     "target": "download",
+     "primary": true
+    },
+    {
+     "label": "Source on GitHub",
+     "target": "https://github.com/Etesian-design/glance"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "note": true,
+   "paragraphs": [
+    "The screenshots on this page are the Glance app on an Android emulator, with made-up stories, outlets, pictures, contacts, messages and files. None of it is real news or real people."
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "The news",
+   "paragraphs": [
+    "Open Glance and the news is there under the search bar, in two parts. Top stories are Google News’s own picks for the phone’s language and country. For you is ranked on the phone from what you read. Each story has a picture, the outlet, how long ago it was published, how many outlets cover it and its topic. Pull down, or tap Refresh on the bottom bar, to fetch it again."
+   ]
+  },
+  {
+   "type": "image",
+   "style": "phone",
+   "images": [
+    {
+     "src": "glance/news.webp",
+     "alt": "Glance: the search bar, then Top stories, each with a large picture, its headline, outlet, age and number of outlets",
+     "caption": "Top stories: Google News’s picks, one story per event, with how many outlets cover it."
+    },
+    {
+     "src": "glance/foryou.webp",
+     "alt": "Glance scrolled down to the For you section",
+     "caption": "For you: ranked on the phone; one outlet or topic never takes over."
+    },
+    {
+     "src": "glance/story-menu.webp",
+     "alt": "A long press on a story opens a menu: Fewer like this, Share, Open in browser",
+     "caption": "Long-press a story: Fewer like this, Share, or Open in browser."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "How the news is picked",
+   "color": "#3A3A3C",
+   "items": [
+    {
+     "title": "Google News without the app",
+     "text": "Its public RSS feeds: Top stories and the topics you pick (World, Your country, Business, Technology, Science, Health, Sports, Entertainment), for the phone’s language and country or an edition you choose. No app, no ads, no tracking scripts.",
+     "icon": "globe"
+    },
+    {
+     "title": "One story, many outlets",
+     "text": "Articles about the same thing are merged into one story, and the number of outlets covering it counts towards its rank.",
+     "icon": "list"
+    },
+    {
+     "title": "Ranked on the phone",
+     "text": "A story ranks by how fresh it is (half-life 8 hours), how many outlets cover it, whether it comes from your own feeds or keywords, and what you open. Topics, outlets and words you read count more; Fewer like this counts less; both fade over two weeks.",
+     "icon": "star"
+    },
+    {
+     "title": "Pictures for every story",
+     "text": "Lent by publishers’ own feeds when they cover the same story, or read from the article page’s own picture.",
+     "icon": "photo"
+    },
+    {
+     "title": "Your feeds and keywords",
+     "text": "Your own subscriptions, and keywords whose news comes first in For you. Yahoo News headlines can be mixed in; the same story shows once. On Etesian, the Feeds app’s subscriptions are mixed in too.",
+     "icon": "edit"
+    },
+    {
+     "title": "Forget what I read",
+     "text": "What Glance learns stays on the phone, and one setting clears it.",
+     "icon": "delete"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Search",
+   "paragraphs": [
+    "Type a few letters and Glance looks everywhere at once, best matches first, each source’s results appearing as it answers. Matching works like Sesame’s: the start of the name, the start of any word, initials (gm finds Google Maps), or several words each starting a word (ma ka finds Maria Karra); letters in order only as a last resort. Enter opens the first result. Back clears the search and brings the news back."
+   ]
+  },
+  {
+   "type": "image",
+   "style": "phone",
+   "images": [
+    {
+     "src": "glance/search.webp",
+     "alt": "Searching for ma: Applications, Contacts, Files, Notifications, Messages and a web search row",
+     "caption": "One query, every source: apps, contacts, files, notifications from the last 30 days, text messages and the web."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "color": "#0067BC",
+   "items": [
+    {
+     "title": "Applications",
+     "text": "Every app, in every profile.",
+     "icon": "grid"
+    },
+    {
+     "title": "Contacts",
+     "text": "By name, nickname or number. Needs the Contacts permission.",
+     "icon": "person"
+    },
+    {
+     "title": "Messages",
+     "text": "Text messages, and every message in chat notifications (WhatsApp, Signal and others). Needs SMS and notification access.",
+     "icon": "message"
+    },
+    {
+     "title": "Notifications",
+     "text": "All notifications of the last 30 days, kept after they are dismissed, so you can find what you swiped away. Needs notification access; the history can be cleared in Settings.",
+     "icon": "info"
+    },
+    {
+     "title": "Settings",
+     "text": "The Settings pages people look for: Wi-Fi, Battery, Developer options and more.",
+     "icon": "settings"
+    },
+    {
+     "title": "Files",
+     "text": "By name. Needs all-files access.",
+     "icon": "folder"
+    },
+    {
+     "title": "News",
+     "text": "Today’s stories and the Feeds app’s posts; a news result opens in the reader.",
+     "icon": "globe"
+    },
+    {
+     "title": "App shortcuts",
+     "text": "What apps publish: a chat with someone, a new event. wa ma finds Maria in WhatsApp. Only on Etesian, as it needs the system’s permission.",
+     "icon": "star"
+    },
+    {
+     "title": "Web",
+     "text": "The query in your search engine, DuckDuckGo by default. Suggestions as you type are off by default.",
+     "icon": "search"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "The reader",
+   "paragraphs": [
+    "Stories open in Glance’s own reader, built on Mozilla Readability, the library behind Firefox’s reader view: the headline, the outlet, the picture and the text, without the rest of the page. The bottom bar has Back, Open in browser, Share and a menu with Larger text and Smaller text. When a page can’t be shown as an article, Glance says so and shows the page as it is. The reader can be switched off in Settings, and then stories open in the browser."
+   ]
+  },
+  {
+   "type": "image",
+   "style": "phone",
+   "images": [
+    {
+     "src": "glance/reader.webp",
+     "alt": "The reader: the outlet, headline, byline, picture and text, with Back, Open in browser, Share and Menu on the bottom bar",
+     "caption": "The reader: just the article, with Back, Open in browser, Share and Menu on the bottom bar."
+    },
+    {
+     "src": "glance/reader-menu.webp",
+     "alt": "The reader’s menu open: Larger text, Smaller text",
+     "caption": "The menu: Larger text and Smaller text."
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Settings",
+   "paragraphs": [
+    "Settings lists every search source with a switch, so each can be left out; a switch stays off until Android allows what it needs. News settings choose the reader, Google News and its topics and edition, and lead to Feeds and keywords."
+   ]
+  },
+  {
+   "type": "image",
+   "style": "phone",
+   "images": [
+    {
+     "src": "glance/settings.webp",
+     "alt": "Glance Settings, Search section: switches for Contacts, Text messages, Notifications and chat messages, Files, Settings pages, News and feeds; App shortcuts, Web suggestions, Search engine, Clear notification history",
+     "caption": "Search: a switch per source, web suggestions (off), the search engine, and the notification history."
+    },
+    {
+     "src": "glance/settings2.webp",
+     "alt": "Glance Settings, News section: Read stories in Glance, Google News, Topics, Edition, Feeds and keywords, Etesian Feeds, Forget what I read",
+     "caption": "News: the reader, Google News, topics and edition, Feeds and keywords, and Forget what I read."
+    },
+    {
+     "src": "glance/feeds.webp",
+     "alt": "Feeds and keywords: Add a feed, Import OPML, Export OPML, Keywords, Yahoo News, offline reading",
+     "caption": "Feeds and keywords: subscriptions, OPML, keywords, Yahoo News and offline reading."
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Feeds, keywords and offline reading",
+   "color": "#FF8500",
+   "items": [
+    {
+     "title": "Add a feed",
+     "text": "Type a feed’s address (RSS or Atom), or just a site that has one, and Glance finds the feed.",
+     "icon": "add"
+    },
+    {
+     "title": "OPML",
+     "text": "Import subscriptions from another reader, or export them.",
+     "icon": "share"
+    },
+    {
+     "title": "Keep for offline reading",
+     "text": "Per subscription, and for Yahoo News: new articles are saved on Wi-Fi, not in battery saver, kept 30 days and up to 50 MB, and the reader opens them without a connection.",
+     "icon": "data"
+    }
+   ]
+  },
+  {
+   "type": "features",
+   "heading": "Privacy",
+   "color": "#505050",
+   "items": [
+    {
+     "title": "Nothing typed leaves the phone",
+     "text": "Unless web suggestions are switched on: then what you type goes to DuckDuckGo for suggestions. A web search goes to your search engine only when you choose it.",
+     "icon": "lock"
+    },
+    {
+     "title": "Permissions only when asked",
+     "text": "Contacts, messages, notifications and files are each asked for separately, from a card at the top, and each can be left off.",
+     "icon": "check"
+    },
+    {
+     "title": "Learned on the phone",
+     "text": "Reading interests and the notification history are stored on the phone only.",
+     "icon": "phone"
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "With the Etesian launcher",
+   "paragraphs": [
+    "On Etesian, Glance is built into the ROM from source and signed with the ROM’s platform key. That lets it share a permission with the launcher, which then shows the News view (Settings → Home screen views → News puts the news left of the other views, with each story’s picture) and Glance’s results under the apps in the Applications search. The launcher opens results through Glance, the only app able to start app shortcuts, fire notifications’ own actions and lend its file access. With the platform key Glance can also show app shortcuts and switch on its own notification access.",
+    "This needs an Etesian build with Glance built in {{rom.pending:2026-11-15}}."
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Standalone or in the ROM",
+   "paragraphs": [
+    "The standalone APK from the Glance releases installs on any Android phone and is signed with Glance’s own key. Everything above works except app shortcuts and the launcher integration, which need the ROM’s platform key. The ROM’s copy is built from the same source and signed with the ROM’s keys, so the two are separate installs; on Etesian you don’t need the APK."
+   ]
+  },
+  {
+   "type": "links",
+   "items": [
+    {
+     "label": "Download",
+     "target": "download",
+     "text": "Glance: the latest release is on the Download page.",
+     "icon": "data",
+     "color": "#62B700"
+    }
+   ]
+  }
+ ]
+}

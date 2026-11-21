@@ -12,6 +12,8 @@ const problems = [];
 async function page(viewport, opts = {}) {
   const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, hasTouch: !!opts.touch, isMobile: !!opts.touch });
   const p = await ctx.newPage();
+  // the pages read the latest releases from GitHub; the checks don't spend the anonymous rate limit (an empty answer keeps the build's data)
+  await p.route('https://api.github.com/**', (r) => r.fulfill({ json: {} }));
   p.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') problems.push(`[${viewport.width}] ${m.type()}: ${m.text().slice(0, 300)}`); });
   p.on('pageerror', (e) => problems.push(`[${viewport.width}] pageerror: ${e.message}`));
   return p;
@@ -33,10 +35,57 @@ async function drag(p, from, to, steps = 12) {
   for (let i = 1; i <= steps; i++) await p.mouse.move(from.x + ((to.x - from.x) * i) / steps, from.y + ((to.y - from.y) * i) / steps);
 }
 
+/* ---------- every content page (site.json), at both sizes, with a check that each internal link resolves ---------- */
+{
+  const { readFileSync } = await import('node:fs');
+  const paths = JSON.parse(readFileSync(new URL('../src/content/site.json', import.meta.url), 'utf8')).pages.map((d) => d.path);
+  const known = new Set([...paths, '/try', '/try/desktop', '/try/phone']);
+  for (const [w, h, tag, touch] of [[1440, 900, 'desktop', false], [390, 844, 'phone', true]]) {
+    const p = await page({ width: w, height: h }, { touch });
+    for (const path of paths) {
+      if (path.includes('#')) continue; // a section of another page
+      await p.goto(`${BASE}${path}`); await p.waitForTimeout(900);
+      const name = `page-${tag}-${path === '/' ? 'home' : path.slice(1).replace(/\//g, '-')}`;
+      await shot(p, name, true);
+      const bad = await p.evaluate((k) => [...document.querySelectorAll('a[href^="/"]')].map((a) => a.getAttribute('href').split('#')[0].replace(/\/$/, '') || '/').filter((x) => !k.includes(x)), [...known]);
+      if (bad.length) problems.push(`${path}: links to unknown pages: ${[...new Set(bad)].join(', ')}`);
+      if (/\{\{/.test(await p.locator('#main').innerText())) problems.push(`${path}: an unresolved {{token}}`);
+      // download links live on /download only
+      const dl = await p.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => /\/releases\/download\/|\.apk$|\.zip$|\.sha256$|\.img\.xz$/.test(h)).length);
+      if (dl && path !== '/download') problems.push(`${path}: ${dl} download link(s) outside the Download page`);
+    }
+    await p.context().close();
+  }
+}
+
+/* ---------- release data: the Download page refreshes it from GitHub in the browser, and keeps the build's data when that fails ---------- */
+{
+  const fake = { tag_name: 'v9.9.9', published_at: '2099-01-01T00:00:00Z', html_url: 'https://github.com/Etesian-design/android_vendor_etesian/releases/tag/v9.9.9',
+    assets: [{ name: 'etesian-9.9.9-pro1x.zip', size: 1, browser_download_url: 'https://example.invalid/z' }, { name: 'unrelated.txt', size: 1, browser_download_url: 'https://example.invalid/u' }] };
+  const p = await page({ width: 1440, height: 900 });
+  await p.route('https://api.github.com/repos/**', (r) => r.fulfill({ status: 403, body: 'rate limited' }));
+  await p.route('https://api.github.com/repos/Etesian-design/android_vendor_etesian/releases/latest', (r) => r.fulfill({ json: fake }));  // later routes win
+  await p.goto(`${BASE}/download`); await p.waitForTimeout(1500);
+  const t = await p.locator('#main').innerText();
+  if (!t.includes('v9.9.9') || !t.includes('etesian-9.9.9-pro1x.zip')) problems.push('releases: the Download page did not take the newer release from the API');
+  if (t.includes('unrelated.txt')) problems.push('releases: a file not matching the patterns is listed');
+  if (!t.includes('Release v')) problems.push('releases: Glance or Cloud Companion lost its build-time data when the API failed');
+  const q = await page({ width: 1440, height: 900 });
+  await q.route('https://api.github.com/**', (r) => r.abort());
+  const before = problems.length;
+  await q.goto(`${BASE}/download`); await q.waitForTimeout(1500);
+  const u = await q.locator('#main').innerText();
+  if ((u.match(/Release v/g) ?? []).length < 3) problems.push('releases: with the API blocked the Download page lost its build-time releases');
+  if (/\{\{/.test(u)) problems.push('releases: an unresolved {{token}} is shown');
+  problems.splice(before - 0, 0); // console errors from the blocked API are the point of this test
+  for (let i = problems.length - 1; i >= 0; i--) if (/403|ERR_FAILED/.test(problems[i])) problems.splice(i, 1);
+  await p.context().close(); await q.context().close();
+}
+
 /* ---------- desktop ---------- */
 {
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/desktop`); await p.waitForSelector('.x-dock'); await p.waitForTimeout(900);
+  await p.goto(`${BASE}/try/desktop`); await p.waitForSelector('.x-dock'); await p.waitForTimeout(900);
   await shot(p, 'desktop-1-home');
   // unlock the phone inside its window and open an app
   const lock = p.locator('.ph__lock').first(); const b = await lock.boundingBox();
@@ -72,7 +121,7 @@ async function drag(p, from, to, steps = 12) {
   await p.goto(`${BASE}/`); await p.waitForTimeout(800);
   await shot(p, 'desktop-classic-top');
   await shot(p, 'desktop-classic-full', true);
-  await p.goto(`${BASE}/phone`); await p.waitForTimeout(800);
+  await p.goto(`${BASE}/try/phone`); await p.waitForTimeout(800);
   await shot(p, 'desktop-phone-route');
 }
 
@@ -98,7 +147,7 @@ async function drag(p, from, to, steps = 12) {
 /* ---------- phone ---------- */
 {
   const p = await page({ width: 390, height: 844 }, { touch: true });
-  await p.goto(`${BASE}/phone`); await p.waitForSelector('.ph__lock'); await p.waitForTimeout(700);
+  await p.goto(`${BASE}/try/phone`); await p.waitForSelector('.ph__lock'); await p.waitForTimeout(700);
   await shot(p, 'phone-1-lock');
   await p.locator('.ph__unlock').click(); await p.waitForTimeout(500);
   await shot(p, 'phone-2-apps');
@@ -123,7 +172,7 @@ async function drag(p, from, to, steps = 12) {
 /* behaviour checks, each for a fix that broke before */
 {
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500);
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500);
   const win = () => p.locator('[data-win="doc:overview"]').first().boundingBox();
   // snap layouts: dropping a window on the top-edge picker's zone puts it in that zone
   const tb = await p.locator('[data-win="doc:overview"] .x-win__bar').first().boundingBox();
@@ -157,7 +206,7 @@ async function drag(p, from, to, steps = 12) {
 }
 {
   const p = await page({ width: 390, height: 844 }, { touch: true });
-  await p.goto(`${BASE}/phone`); await p.waitForTimeout(1200);
+  await p.goto(`${BASE}/try/phone`); await p.waitForTimeout(1200);
   if (await p.locator('.ph__unlock').count()) await p.locator('.ph__unlock').click(); await p.waitForTimeout(500);
   // tapping the status bar opens the status menu; tapping below closes it
   await p.locator('.ph__sbtap').click(); await p.waitForTimeout(400); await shot(p, 'phone-status-menu');
@@ -215,7 +264,7 @@ async function drag(p, from, to, steps = 12) {
 {
   // right-click menus: what is under the pointer decides the menu; window content keeps the browser's own
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500);
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500);
   const menu = async () => (await p.locator('.x-cmenu .x-cmenu__item').allTextContents()).map((t) => t.trim());
   const want = async (where, first) => { const m = await menu(); if (m[0] !== first) problems.push(`right-click ${where}: menu starts "${m[0]}", want "${first}"`); await p.keyboard.press('Escape'); await p.waitForTimeout(150); };
   await p.keyboard.press('Control+Alt+d'); await p.waitForTimeout(300);
@@ -249,7 +298,7 @@ async function drag(p, from, to, steps = 12) {
 {
   // resizing from the edges: a corner, the left edge, the minimum size, and a snapped window turning floating
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500);
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500);
   const W = () => p.locator('[data-win="doc:overview"]').first().boundingBox();
   const pull = async (x0, y0, x1, y1) => { await drag(p, { x: x0, y: y0 }, { x: x1, y: y1 }, 8); await p.mouse.up(); await p.waitForTimeout(200); };
   const r0 = await W(); await pull(r0.x + r0.width, r0.y + r0.height, r0.x + r0.width - 150, r0.y + r0.height - 100);
@@ -267,7 +316,7 @@ async function drag(p, from, to, steps = 12) {
 {
   // Events: one line above Notifications (the section header's), none under the time or the month (reported twice)
   const p = await page({ width: 1440, height: 900 });
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1200);
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1200);
   await p.locator('.x-mbar__events').click(); await p.waitForTimeout(400);
   const rule = (sel) => p.locator(`.x-ev ${sel}`).first().evaluate((e) => getComputedStyle(e).borderBottomWidth);
   if ((await rule('.x-ev__now')) !== '0px') problems.push('Events: a line under the time as well as the Notifications header line');
@@ -278,8 +327,8 @@ async function drag(p, from, to, steps = 12) {
 {
   // the design audit (docs/21-desktop.md and the Desktop v2 story): each item once found off-design
   const p = await page({ width: 1920, height: 1080 });
-  try { await p.goto(`${BASE}/desktop`); await p.evaluate(() => localStorage.clear()); } catch { /* fresh */ }
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500);
+  try { await p.goto(`${BASE}/try/desktop`); await p.evaluate(() => localStorage.clear()); } catch { /* fresh */ }
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500);
   // Super+Tab opens the carousel (one large card)
   await p.keyboard.press('Meta+Tab'); await p.waitForTimeout(400);
   if (!(await p.locator('.x-wins--1').count())) problems.push('audit: Super+Tab did not open the carousel');
@@ -332,7 +381,7 @@ async function drag(p, from, to, steps = 12) {
   // dragging a window (to the snap picker) or resizing one must not select text on the page. In Firefox: there the menu
   // bar got selected as the picker dropped (Chrome never showed it)
   const ff = await firefox.launch(); const p = await ff.newPage({ viewport: { width: 1920, height: 1080 } });
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500);
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500);
   const bar = await p.locator('[data-win="doc:overview"] .x-win__bar').boundingBox();
   await drag(p, { x: bar.x + 200, y: bar.y + 20 }, { x: 1100, y: 2 }, 10); await p.waitForTimeout(300);
   const z = await p.locator('.x-lpick__z').first().boundingBox();
@@ -340,7 +389,7 @@ async function drag(p, from, to, steps = 12) {
   let sel = await p.evaluate(() => window.getSelection()?.toString() ?? '');
   await p.mouse.up(); await p.waitForTimeout(200);
   if (sel.trim()) problems.push(`dragging a window to the snap picker selected text: "${sel.trim().slice(0, 40)}"`);
-  await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500); // the resize on a fresh page: the drag above left the window partly off-screen
+  await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500); // the resize on a fresh page: the drag above left the window partly off-screen
   const w = await p.locator('[data-win="doc:overview"]').boundingBox();
   await drag(p, { x: w.x + w.width - 2, y: w.y + w.height / 2 }, { x: w.x + w.width - 300, y: w.y + 300 }, 10);
   sel = await p.evaluate(() => window.getSelection()?.toString() ?? ''); await p.mouse.up();
@@ -349,21 +398,15 @@ async function drag(p, from, to, steps = 12) {
 }
 
 {
-  // Etesian for the web: "This website" says "You're using it" in the desktop view and links to it anywhere else; no "Other systems"
-  const p = await page({ width: 1440, height: 900 }); await p.goto(`${BASE}/desktop`); await p.waitForTimeout(1500);
+  // "This website" is on the home page: it links to the desktop view there; the desktop's Web page never links to itself
+  const p = await page({ width: 1440, height: 900 }); await p.goto(`${BASE}/try/desktop`); await p.waitForTimeout(1500);
   if (await p.getByText('Other systems').count()) problems.push('web: "Other systems" is still on the desktop');
   await p.locator('.site-icons .hd-app-icon', { hasText: /^\s*Web\s*$/ }).first().click(); await p.waitForTimeout(600);
-  const site = p.locator('.blk-site').first();
-  if (!(await site.count())) problems.push('web: the desktop did not open the Etesian for the web page');
-  else {
-    if (!(await site.getByText("You're using it").count())) problems.push('web: in the desktop view "This website" does not say "You\'re using it"');
-    if (await site.getByRole('button', { name: 'Open the desktop view' }).count()) problems.push('web: the desktop view links to itself');
-  }
+  if (await p.getByRole('button', { name: 'Open the desktop view' }).count()) problems.push('web: the desktop view links to itself');
   await p.goto(`${BASE}/`); await p.waitForTimeout(1500);
-  if (await p.getByText('Other systems').count()) problems.push('web: "Other systems" is still on the classic page');
   const go = p.locator('.blk-site').getByRole('button', { name: 'Open the desktop view' });
-  if (!(await go.count())) problems.push('web: the classic page has no link to the desktop view');
-  else { await go.click(); await p.waitForTimeout(800); if (!p.url().endsWith('/desktop')) problems.push(`web: the link went to ${p.url()}`); }
+  if (!(await go.count())) problems.push('web: the home page\'s "This website" has no link to the desktop view');
+  else { await go.click(); await p.waitForTimeout(800); if (!p.url().endsWith('/try/desktop')) problems.push(`web: the link went to ${p.url()}`); }
 }
 
 await browser.close();
