@@ -101,9 +101,9 @@
     },
     {
      "part": "Standby screen",
-     "state": "In development",
+     "state": "{{rom.state:2026-11-22}}",
      "tone": "progress",
-     "detail": "The N9-style standby screen, as an Android screen saver. Not in the development tree yet."
+     "detail": "The N9-style standby screen, the phone’s doze screen while locked. It keeps its minute in deep Doze and does not turn with the phone."
     },
     {
      "part": "N9 switches in Wallpaper & style",

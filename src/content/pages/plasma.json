@@ -94,7 +94,7 @@
    "heading": "Not finished yet",
    "paragraphs": [
     "Your own calendars, and people and mail in search, need KDE PIM. The Mail widget reads KMail only. Only some apps get their actions in the header, and KDE apps have no Back button.",
-    "Etesian icons cover the main KDE apps (Dolphin, Kate, Konsole, Okular, Gwenview, KMail, System Settings and others); the rest, such as Ark, Konqueror, Kontact, the KDE games and LibreOffice, still show their Breeze icons. Window corners are plain rounded corners, not yet the squircle shape of the design language."
+    "Apps outside Etesian's icon set (it covers the KDE apps, LibreOffice and the common desktop ones) keep their own icons."
    ]
   }
  ],
@@ -188,7 +188,7 @@
    "type": "text",
    "heading": "Still to come",
    "paragraphs": [
-    "People and mail in search need KDE PIM. The mail widget reads KMail only for now. Apps with toolbars that hold more than file and edit actions keep their own toolbar. Etesian icons for the rest of the KDE apps, and squircle window corners."
+    "People and mail in search need KDE PIM. The mail widget reads KMail only for now. Apps with toolbars that hold more than file and edit actions keep their own toolbar."
    ]
   },
   {

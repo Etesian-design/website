@@ -13,7 +13,7 @@
    "items": [
     {
      "title": "Status menu",
-     "text": "Tap the status bar: profile, volume, connectivity and battery, with an optional toggle strip and an edit mode.",
+     "text": "Tap the status bar: profile, volume, connectivity and battery. The rows open their settings, as on the N9; an optional strip of Belle toggles switches them, with an edit mode.",
      "icon": "settings"
     },
     {

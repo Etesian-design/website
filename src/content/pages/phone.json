@@ -40,8 +40,13 @@
     },
     {
      "title": "Swipe up from the bottom edge",
-     "text": "A plain swipe leaves the app, as from the sides. Hold still for about half a second on the way up and the first row of Applications comes up; the app drops onto it and stays until you tap an icon or the app.",
+     "text": "A plain swipe leaves the app, as from the sides. Hold still for about half a second on the way up and the first row of Applications comes up, on black as on the N9; the app drops onto it and stays until you tap an icon or the app.",
      "icon": "grid"
+    },
+    {
+     "title": "Your own edges",
+     "text": "The N9’s way is the default. Give the bottom and one side a view of their own and it leaves the row of home views, coming in only from that edge, from an app or the home screen: the bottom can always bring Applications, as on Sailfish {{rom.pending:2026-11-22}}.",
+     "icon": "settings"
     }
    ]
   },
@@ -146,7 +151,7 @@
    "items": [
     {
      "title": "Status menu",
-     "text": "An optional toggle strip and sliders, with an edit mode to add, remove and reorder rows.",
+     "text": "Rows that open their settings, as on the N9; an optional strip of Belle toggles and sliders, with an edit mode to add, remove and reorder rows.",
      "icon": "settings"
     },
     {
