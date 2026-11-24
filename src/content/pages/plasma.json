@@ -103,7 +103,7 @@
    "type": "hero",
    "eyebrow": "KDE Plasma 6.6 and newer",
    "title": "Etesian for KDE Plasma.",
-   "lead": "The Etesian desktop on KDE Plasma: the same design language as the phone, on laptops and desktops. It installs from source for the current user, needs no root for the look, and uninstalling puts your own settings and panels back.",
+   "lead": "Etesian on KDE Plasma brings the same calm design language from your phone to your laptop or desktop. It builds from source right inside your user account—no root required—and if you ever uninstall it, your original panels and settings come right back.",
    "actions": [
     {
      "label": "Get it on GitHub",

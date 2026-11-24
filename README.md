@@ -18,8 +18,8 @@
 
 ---
 
-This repository is the source of etesian-design.com, the website of Etesian: a cross-platform design language that
-re-envisions the Nokia N9's Swipe UI for today.
+This repository is the source of etesian-design.com, the website of Etesian: a design language based on the Nokia N9's Swipe UI,
+used by a LineageOS phone ROM, a KDE Plasma desktop look and Vue components for the web.
 
 <table>
   <tr>

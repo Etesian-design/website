@@ -39,7 +39,7 @@ const parent = computed(() => (page.value.parent ? doc(page.value.parent) : null
 /** the home page is the whole site on one page: a section per listed page (its "home" blocks, else all its blocks),
  *  each ending in a link to the page with the details */
 /** the home page: the original single page's sections, in its order; each title links to its page */
-const HOME = ['plasma', 'phone', 'design', 'apps', 'home', 'web'];
+const HOME = ['plasma', 'phone', 'apps', 'home', 'design', 'web'];
 const SECTIONS = HOME.map((id) => doc(id)).filter(Boolean).map((d) => ({
   ...d, blocks: (d.home ?? d.blocks).map((b, i) => (i === 0 && b.type === 'hero' ? { ...b, more: { label: `More about ${d.title}`, href: href(d.path) } } : b)),
 }));

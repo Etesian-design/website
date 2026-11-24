@@ -98,7 +98,7 @@
    "label": "Design",
    "icon": "edit",
    "color": "#821DDE",
-   "summary": "Calm, gesture-first, content before chrome.",
+   "summary": "Beyond the phone and desktop: a coherent system for your own work.",
    "path": "/design",
    "show": {
     "desktop": true,
@@ -205,7 +205,7 @@
    {
     "page": "overview",
     "title": "Etesian",
-    "text": "One calm, gesture-first interface for every screen.",
+    "text": "A calmer way to move through your day.",
     "icon": "star",
     "color": "#2F6FD6"
    },
@@ -242,7 +242,7 @@
    {
     "page": "design",
     "title": "Design language",
-    "text": "Calm, gesture-first, content before chrome.",
+    "text": "Beyond the phone and desktop: a coherent system for your own work.",
     "icon": "edit",
     "color": "#821DDE"
    },

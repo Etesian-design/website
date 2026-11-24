@@ -158,8 +158,8 @@
   {
    "type": "hero",
    "eyebrow": "Etesian for LineageOS",
-   "title": "The everyday apps, restyled.",
-   "lead": "LineageOS’s own apps, patched to follow the same rules: the app’s colour on its main header, plain sub pages, a bottom toolbar, squircle-half buttons and text fields, N9 switches and fast scroll, and light, large type. Every stock option stays."
+   "title": "System apps that look and feel native.",
+   "lead": "Every default LineageOS app is adapted to the same design language, pairing color-accented headers and bottom toolbars with N9-style switches, squircle-half buttons, fast scrolling, and airy typography—without losing a single stock option."
   },
   {
    "type": "features",

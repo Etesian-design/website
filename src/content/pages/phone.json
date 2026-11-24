@@ -62,8 +62,8 @@
   {
    "type": "hero",
    "eyebrow": "Etesian for LineageOS 24",
-   "title": "A calm, gesture-first phone.",
-   "lead": "No home button, no navigation bar. Swipe in from an edge to leave an app, see everything new in one list, and let your content fill the screen. Etesian is built on LineageOS 24; published builds exist for the F(x)tec Pro1-X only. Version {{rom.version}}."
+   "title": "Every pixel on your phone belongs to what you are doing.",
+   "lead": "Swipe from any edge to step out of an app, take in everything new at once, and let your work fill the display. Built on LineageOS 24, Etesian is currently available for the F(x)tec Pro1-X and OnePlus 7 Pro."
   },
   {
    "type": "features",
@@ -140,8 +140,8 @@
   {
    "type": "demo",
    "device": "settings",
-   "heading": "Additions, off by default",
-   "text": "Everything the N9 did not have is optional and starts switched off, so the phone starts as a pure N9 experience. Each addition sits in Settings on the page of what it changes, most with a live preview of that part of the phone at the top. Try the Lock screen page here. N9-style replacements keep every option of the stock Android screens they replace."
+   "heading": "Modern conveniences, tailored to Swipe UI.",
+   "text": "Alongside the classic experience, Etesian brings thoughtful modern utilities—redesigned from the ground up to match the aesthetics and flow of Swipe UI. Every addition stays turned off by default so a fresh phone feels authentically like an N9, yet each is ready whenever you want it: tucked into Settings beside the feature it shapes, usually with a live preview at the top (try the Lock screen page here), and backed by every option from stock Android."
   },
   {
    "type": "features",
@@ -185,7 +185,7 @@
    "type": "text",
    "heading": "From the first second",
    "paragraphs": [
-    "A boot animation and a startup sound made for Etesian, in the spirit of the N9 rather than copied from it, set the tone before the lock screen appears."
+    "A boot animation and a startup sound made for Etesian. They follow the N9’s style but are not copied from it."
    ]
   }
  ]

@@ -125,8 +125,8 @@
   {
    "type": "hero",
    "eyebrow": "The Etesian design language",
-   "title": "Calm, gesture-first, content before chrome.",
-   "lead": "Etesian is a way of designing as much as a piece of software. Its influence is the Nokia N9's Swipe UI, re-envisioned for today’s screens.",
+   "title": "Beyond the phone and desktop: a coherent system for your own work.",
+   "lead": "Etesian distills the principles of the Nokia N9’s Swipe UI into a unified design language—and extends them naturally to larger displays, pointers, and keyboards. From the phone ROM and Plasma desktop to the web components, every surface speaks the same quiet language.",
    "actions": [
     {
      "label": "Browse the design language",
@@ -207,7 +207,7 @@
    "type": "text",
    "heading": "Heritage",
    "paragraphs": [
-    "The design language is built from careful study of the N9 (2011): its gestures, proportions and behaviour. Where the N9 had no answer, for larger screens, a pointer or a keyboard, the gaps are filled in the same spirit. No Nokia images, sounds or fonts are used."
+    "The design language is based on the N9 (2011): its gestures, proportions and behaviour. The N9 had no rules for larger screens, a pointer or a keyboard, so Etesian adds its own, built on the N9’s. No Nokia images, sounds or fonts are used."
    ]
   }
  ]
