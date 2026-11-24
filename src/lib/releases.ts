@@ -9,10 +9,7 @@
  *
  * Content text uses tokens, resolved by resolveTokens():
  *   {{rom.version}} the version without "v"   {{rom.tag}} the tag   {{rom.date}} the publish date, written out   {{rom.url}} the release page
- *   {{rom.after:YYYY-MM-DD}} "Not in a release yet." when the latest release was published before that day (the day
- *   the feature was built), else "" (so the label disappears by itself once a newer release is out)
- *   {{rom.pending:YYYY-MM-DD}} the same as "(not in a release yet)" inside a sentence
- *   {{rom.state:YYYY-MM-DD}} "Not released yet" or "In <version>" for status rows
+ * Pages never write a version, a device list or what is in which release: the release cards read those from GitHub.
  */
 import { reactive } from 'vue';
 import config from '@/content/releases.json';
@@ -41,17 +38,14 @@ export const formatDate = (d: string) =>
 /** replaces {{key.field}} tokens in a text with the current release data */
 export function resolveTokens(s: string): string {
   if (!s.includes('{{')) return s;
-  return s.replace(/\{\{\s*(\w+)\.(\w+)(?::([\d-]+))?\s*\}\}/g, (all, key: string, field: string, arg?: string) => {
+  return s.replace(/\{\{\s*(\w+)\.(\w+)\s*\}\}/g, (all, key: string, field: string) => {
     const r = releases[key];
-    if (!r) return field === 'after' ? 'Not in a release yet.' : field === 'state' ? 'Not released yet' : field === 'pending' ? '(not in a release yet)' : '';
+    if (!r) return '';
     switch (field) {
       case 'version': return version(r.tag);
       case 'tag': return r.tag;
       case 'date': return formatDate(r.date);
       case 'url': return r.url;
-      case 'after': return arg && r.date < arg ? 'Not in a release yet.' : '';
-      case 'state': return arg && r.date < arg ? 'Not released yet' : `In ${version(r.tag)}`;
-      case 'pending': return arg && r.date < arg ? '(not in a release yet)' : '';
       default: return all;
     }
   }).replace(/ +([).,;:])/g, '$1').replace(/\(\s*\)/g, '').replace(/ {2,}/g, ' ').trim();

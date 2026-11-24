@@ -8,19 +8,18 @@
   },
   {
    "type": "release",
-   "title": "Etesian for the F(x)tec Pro1-X",
+   "title": "Etesian for phones",
    "icon": "phone",
    "color": "#1C51AF",
-   "text": "The full ROM as an OTA package for LineageOS recovery, with its SHA-256 checksum. A development build, signed by the project’s CI.",
-   "note": "Only the F(x)tec Pro1-X has a build. Other phones that run LineageOS 24 need their own build; none exists yet.",
+   "text": "The full ROM for each supported phone as an OTA package for LineageOS recovery, with its SHA-256 checksum. A development build, signed by the project’s CI.",
    "key": "rom",
-   "button": "How to install on the Pro1-X",
-   "intro": "Etesian installs from LineageOS recovery with adb sideload. You need an unlocked bootloader, LineageOS recovery for the Pro1-X (the LineageOS wiki’s pro1x install guide covers both) and adb on a computer.",
+   "button": "How to install",
+   "intro": "Etesian installs from LineageOS recovery with adb sideload. You need an unlocked bootloader, LineageOS recovery for your phone (the LineageOS wiki’s install guide for it covers both) and adb on a computer.",
    "steps": [
-    "Download `etesian-{{rom.version}}-pro1x.zip` and its `.sha256` file, then check it: `sha256sum -c etesian-{{rom.version}}-pro1x.zip.sha256`.",
+    "Download your phone’s `.zip` and its `.sha256` file, then check it: `sha256sum -c` followed by the `.sha256` file’s name.",
     "Back up anything you need. Then reboot into recovery: `adb reboot recovery`.",
     "Coming from stock or another ROM, official LineageOS included: choose Factory reset → Format data / factory reset. Etesian is signed with its own keys. Updating an earlier Etesian build: skip this step.",
-    "Choose Apply update → Apply from ADB, then on the computer run `adb sideload etesian-{{rom.version}}-pro1x.zip`.",
+    "Choose Apply update → Apply from ADB, then on the computer run `adb sideload` followed by the `.zip` file’s name.",
     "If recovery says the signature can’t be verified, choose Yes to continue: the package is signed with Etesian’s keys, not LineageOS’s.",
     "When it finishes, choose Reboot system now."
    ]
@@ -68,7 +67,7 @@
   {
    "type": "text",
    "paragraphs": [
-    "Not published: builds for any other phone, Plasma packages, and the work built since the latest ROM release (see Progress). Nokia images, sounds and fonts are never published."
+    "Not published: Plasma packages. Nokia images, sounds and fonts are never published."
    ],
    "note": true
   }

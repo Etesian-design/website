@@ -19,7 +19,7 @@ const all = computed(() => `https://github.com/${PROJECTS[props.block.key]?.repo
   <section class="blk-rel">
     <HdSquircle :size="44" :color="block.color ?? '#2F6FD6'" lighting="lit"><HdIcon :name="block.icon ?? 'data'" :size="24" lit /></HdSquircle>
     <div class="blk-rel__t">
-      <span class="blk-rel__h"><b>{{ block.title }}</b><span v-if="r" class="doc__tag hd-sqm doc__tag--done">{{ r.tag }}</span><span v-else class="doc__tag hd-sqm doc__tag--planned">No release</span></span>
+      <span class="blk-rel__h"><b>{{ block.title }}</b><span v-if="r" class="doc__tag hd-sqm doc__tag--done">{{ r.tag }}</span></span>
       <span>{{ block.text }}</span>
       <span v-if="r" class="blk-rel__d">Published {{ formatDate(r.date) }}</span>
       <ul v-if="files.length" class="blk-rel__files">

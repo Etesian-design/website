@@ -68,7 +68,7 @@ const footer = [
 const footNote = computed(() => resolveTokens('Etesian is an independent project, not affiliated with Nokia. The Nokia N9 (2011) is credited as its inspiration; the project holds no copyrighted material owned by Nokia or its subsidiaries. Etesian ROM builds bundle the Meeye icon pack by YeyeBBC (CC BY-NC 4.0) as the default icon pack {{rom.pending:2026-11-15}}; it is not made by the project.'));
 /** the screen is only known in the browser: the generated page says "Try the desktop" until it has hydrated */
 const osLabel = computed(() => (isHydrated.value && $q.screen.width < 820 ? 'Try the phone' : 'Try the desktop'));
-usePageMeta(isHome.value ? 'Etesian' : `${page.value.title} · Etesian`, isHome.value ? 'Etesian, a calm, gesture-first interface inspired by the Nokia N9: a LineageOS phone ROM for the F(x)tec Pro1-X, Glance, Etesian for KDE Plasma and the design language.' : page.value.summary, page.value.path);
+usePageMeta(isHome.value ? 'Etesian' : `${page.value.title} · Etesian`, isHome.value ? 'Etesian, a calm, gesture-first interface inspired by the Nokia N9: a LineageOS phone ROM, Glance, Etesian for KDE Plasma and the design language.' : page.value.summary, page.value.path);
 function open(t: Target) {
   if (t === 'try-phone' && isHome.value) { document.getElementById('sec-try')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
   void router.push(pathOf(t));

@@ -50,12 +50,12 @@
    "items": [
     {
      "title": "Breeze",
-     "text": "A floating button, or an edge handle, with a menu of shortcuts and widgets, its own editor, sizes and settings. It replaces Side Sense. {{rom.after:2026-11-15}}",
+     "text": "A floating button, or an edge handle, with a menu of shortcuts and widgets, its own editor, sizes and settings. It replaces Side Sense.",
      "icon": "star"
     },
     {
      "title": "Single hand",
-     "text": "The whole screen at half size, with a size slider or corners only. Tap the empty space to move it; double tap for full screen. {{rom.after:2026-11-15}}",
+     "text": "The whole screen at half size, with a size slider or corners only. Tap the empty space to move it; double tap for full screen.",
      "icon": "minimize"
     },
     {
@@ -72,12 +72,12 @@
    "items": [
     {
      "title": "Power menu",
-     "text": "The N9 power menu. The squircle shutdown spinner {{rom.pending:2026-11-15}}.",
+     "text": "The N9 power menu. The squircle shutdown spinner.",
      "icon": "power"
     },
     {
      "title": "Standby screen",
-     "text": "An N9-style standby screen: the clock, notification icons and items, moving every minute against burn-in. In development.",
+     "text": "An N9-style standby screen: the clock, the weather, notification icons and items, moving every minute against burn-in.",
      "icon": "clock"
     }
    ]
@@ -89,7 +89,7 @@
    "items": [
     {
      "title": "Etesian’s own sounds",
-     "text": "Interface sounds and tones made for Etesian: wind on N9 moments only (long press, edit mode, the status bar, closing), silent taps, and Etesian ringtone, message, mail, calendar and alarm tones. {{rom.after:2026-11-15}}",
+     "text": "Interface sounds and tones made for Etesian: wind on N9 moments only (long press, edit mode, the status bar, closing), silent taps, and Etesian ringtone, message, mail, calendar and alarm tones.",
      "icon": "speaker"
     },
     {
@@ -99,7 +99,7 @@
     },
     {
      "title": "Boot animation",
-     "text": "A water-drop boot animation made for Etesian. {{rom.after:2026-11-15}}",
+     "text": "A water-drop boot animation made for Etesian.",
      "icon": "play"
     }
    ]

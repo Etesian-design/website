@@ -9,7 +9,7 @@
   {
    "type": "text",
    "paragraphs": [
-    "Etesian ROM builds come with the Meeye icon pack by YeyeBBC preinstalled, unmodified and signed by its author, and set as the launcher’s default icon pack {{rom.pending:2026-11-15}}; Settings → Appearance credits it with a link to their work. It is not made by the project. Its icons are licensed CC BY-NC 4.0 (the release’s own LICENSE file says CC BY-NC-ND 4.0). A switch adds N9-style lighting to the icons."
+    "Etesian ROM builds come with the Meeye icon pack by YeyeBBC preinstalled, unmodified and signed by its author, and set as the launcher’s default icon pack; Settings → Appearance credits it with a link to their work. It is not made by the project. Its icons are licensed CC BY-NC 4.0 (the release’s own LICENSE file says CC BY-NC-ND 4.0). A switch adds N9-style lighting to the icons."
    ],
    "note": true
   },
@@ -19,13 +19,13 @@
    "items": [
     {
      "title": "Phone",
-     "text": "The dialer and call screens, with the N9 dial pad {{rom.pending:2026-11-15}}.",
+     "text": "The dialer and call screens, with the N9 dial pad.",
      "icon": "phone",
      "color": "#62B700"
     },
     {
      "title": "Contacts",
-     "text": "Squircle photos, one list with N9 fast scroll, every way to reach someone on their card, and the N9 menu {{rom.pending:2026-11-15}}.",
+     "text": "Squircle photos, one list with N9 fast scroll, every way to reach someone on their card, and the N9 menu.",
      "icon": "person",
      "color": "#007DC9"
     },
@@ -37,7 +37,7 @@
     },
     {
      "title": "Camera",
-     "text": "Aperture. The N9 camera (squircle controls, flash strip, settings panels, zoom slider) is in development, not in a release yet.",
+     "text": "Aperture.",
      "icon": "camera",
      "color": "#3A3A3C"
     },
@@ -49,7 +49,7 @@
     },
     {
      "title": "Files",
-     "text": "DocumentsUI, restyled; it opens on Documents {{rom.pending:2026-11-15}}.",
+     "text": "DocumentsUI, restyled; it opens on Documents.",
      "icon": "folder",
      "color": "#F77219"
     },
@@ -61,19 +61,19 @@
     },
     {
      "title": "Keyboard",
-     "text": "The N9 keyboard look on LatinIME, with the clipboard and autofill chips kept clear of the N9 strip. Key click in and out {{rom.pending:2026-11-15}}.",
+     "text": "The N9 keyboard look on LatinIME, with the clipboard and autofill chips kept clear of the N9 strip. Key click in and out.",
      "icon": "edit",
      "color": "#505050"
     },
     {
      "title": "Settings",
-     "text": "Every stock option in N9 lists, and pull down to search. N9 selection sheets {{rom.pending:2026-11-15}}.",
+     "text": "Every stock option in N9 lists, and pull down to search. N9 selection sheets.",
      "icon": "settings",
      "color": "#505050"
     },
     {
      "title": "Glance",
-     "text": "Search everything, and the news. Built into the ROM {{rom.pending:2026-11-15}}; also released as a standalone app.",
+     "text": "Search everything, and the news. Built into the ROM; also released as a standalone app.",
      "icon": "search",
      "color": "#0067BC"
     }

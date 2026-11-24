@@ -258,7 +258,7 @@
    "heading": "With the Etesian launcher",
    "paragraphs": [
     "On Etesian, Glance is built into the ROM from source and signed with the ROM’s platform key. That lets it share a permission with the launcher, which then shows the News view (Settings → Home screen views → News puts the news left of the other views, with each story’s picture) and Glance’s results under the apps in the Applications search. The launcher opens results through Glance, the only app able to start app shortcuts, fire notifications’ own actions and lend its file access. With the platform key Glance can also show app shortcuts and switch on its own notification access.",
-    "This needs an Etesian build with Glance built in {{rom.pending:2026-11-15}}."
+    "This needs an Etesian build with Glance built in."
    ]
   },
   {

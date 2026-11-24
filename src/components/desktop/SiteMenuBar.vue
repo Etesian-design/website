@@ -14,7 +14,7 @@ defineProps<{ app: string; active?: 'events' | 'status' | null; count?: number }
 const emit = defineEmits<{ events: []; status: []; select: [id: string] }>();
 const { time, shortDate } = useClock();
 const MENUS: ShellMenu[] = [
-  { label: 'Go', items: [{ id: 'doc:overview', label: 'About Etesian', icon: 'star' }, { id: 'doc:progress', label: 'Follow progress', icon: 'info' }, { id: 'classic', label: 'Back to the website', icon: 'globe', divider: true }] },
+  { label: 'Go', items: [{ id: 'doc:overview', label: 'About Etesian', icon: 'star' }, { id: 'classic', label: 'Back to the website', icon: 'globe', divider: true }] },
   { label: 'Explore', items: listed('menu').filter((d) => d.id !== 'overview').map((d) => ({ id: `doc:${d.id}`, label: d.title, icon: d.icon })) },
   { label: 'View', items: [{ id: 'main', label: 'Overview', icon: 'grid', keys: 'Super' }, { id: 'windows', label: 'Windows', icon: 'window', keys: 'Super+Tab' }, { id: 'launcher', label: 'Search', icon: 'search', keys: 'Super+Space' }, { id: 'events', label: 'Events', icon: 'calendar', keys: 'Super+N' },
     { id: 'try-phone', label: 'Interactive phone', icon: 'phone', divider: true }, { id: 'phone-view', label: 'Phone layout', icon: 'phone' }] },

@@ -1,10 +1,10 @@
 {
  "rom": {
   "repo": "Etesian-design/android_vendor_etesian",
-  "label": "Etesian for the F(x)tec Pro1-X",
+  "label": "Etesian for phones",
   "assets": [
-   "^etesian-.+-pro1x\\.zip$",
-   "^etesian-.+-pro1x\\.zip\\.sha256$"
+   "^etesian-.+\\.zip$",
+   "^etesian-.+\\.zip\\.sha256$"
   ]
  },
  "glance": {

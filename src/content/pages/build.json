@@ -21,7 +21,7 @@
     "`git clone https://github.com/Etesian-design/android_vendor_etesian vendor/etesian`",
     "`echo '$(call inherit-product, vendor/etesian/etesian.mk)' >> vendor/extra/product.mk`",
     "`vendor/etesian/patches/apply.sh`, and again after every repo sync.",
-    "`brunch <device>`, for example `brunch pro1x`, the reference device."
+    "`brunch <device>`, for example `brunch pro1x`."
    ]
   },
   {

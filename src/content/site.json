@@ -21,7 +21,7 @@
    "label": "Phone",
    "icon": "phone",
    "color": "#1C51AF",
-   "summary": "A LineageOS 24 ROM, built for the F(x)tec Pro1-X: gestures, home views, lock screen.",
+   "summary": "A LineageOS 24 ROM: gestures, home views, lock screen.",
    "path": "/phone",
    "show": {
     "desktop": true,
@@ -128,23 +128,8 @@
    "label": "Download",
    "icon": "data",
    "color": "#62B700",
-   "summary": "Published releases: the Pro1-X ROM, Glance and Cloud Companion.",
+   "summary": "Published releases: the phone ROM, Glance and Cloud Companion.",
    "path": "/download",
-   "show": {
-    "desktop": true,
-    "phone": true,
-    "classic": true,
-    "menu": true
-   }
-  },
-  {
-   "id": "progress",
-   "title": "Progress",
-   "label": "Progress",
-   "icon": "info",
-   "color": "#3A3A3C",
-   "summary": "What is released, what is built but not released, and what is planned.",
-   "path": "/progress",
    "show": {
     "desktop": true,
     "phone": true,
@@ -245,13 +230,6 @@
     "text": "Beyond the phone and desktop: a coherent system for your own work.",
     "icon": "edit",
     "color": "#821DDE"
-   },
-   {
-    "page": "progress",
-    "title": "Progress",
-    "text": "What is released and what is built but not released.",
-    "icon": "info",
-    "color": "#3A3A3C"
    }
   ],
   "calendar": [

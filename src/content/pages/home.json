@@ -33,12 +33,12 @@
     },
     {
      "title": "Edit mode anywhere",
-     "text": "Long-press anywhere in Events to edit, with N9 menus for feeds and groups. {{rom.after:2026-11-15}}",
+     "text": "Long-press anywhere in Events to edit, with N9 menus for feeds and groups.",
      "icon": "edit"
     },
     {
      "title": "Mark feed posts read",
-     "text": "In edit mode, swipe a feed post away to mark it read. {{rom.after:2026-11-15}}",
+     "text": "In edit mode, swipe a feed post away to mark it read.",
      "icon": "check"
     }
    ]
@@ -60,7 +60,7 @@
     },
     {
      "title": "Search everything",
-     "text": "With Glance built in, the Applications search also finds contacts, messages, settings, files and more. {{rom.after:2026-11-15}}",
+     "text": "With Glance built in, the Applications search also finds contacts, messages, settings, files and more.",
      "icon": "search"
     }
    ]
@@ -157,7 +157,7 @@
    "items": [
     {
      "title": "The News view",
-     "text": "An optional view left of the others with Glance’s ranked news, stories with their pictures. Settings → Home screen views → News. {{rom.after:2026-11-15}}",
+     "text": "An optional view left of the others with Glance’s ranked news, stories with their pictures. Settings → Home screen views → News.",
      "icon": "globe"
     }
    ]

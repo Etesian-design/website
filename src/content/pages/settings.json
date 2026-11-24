@@ -41,17 +41,17 @@
    "items": [
     {
      "title": "Home screen views",
-     "text": "The Widgets view, and the News view (News view {{rom.pending:2026-11-15}}).",
+     "text": "The Widgets view, and the News view.",
      "icon": "home"
     },
     {
      "title": "Gestures",
-     "text": "Where each side swipe leaves the app, and whether swiping in goes Back (off by default). {{rom.after:2026-11-15}}",
+     "text": "Where each side swipe leaves the app, and whether swiping in goes Back (off by default).",
      "icon": "back"
     },
     {
      "title": "Breeze and single hand",
-     "text": "The Breeze button, its menu and sizes; single hand mode. {{rom.after:2026-11-15}}",
+     "text": "The Breeze button, its menu and sizes; single hand mode.",
      "icon": "star"
     }
    ]

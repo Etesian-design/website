@@ -4,10 +4,10 @@
    "type": "hero",
    "eyebrow": "Etesian for LineageOS 24",
    "title": "The phone, in detail.",
-   "lead": "Gestures, the lock screen, notifications and settings on Etesian for LineageOS 24. Published builds exist for the F(x)tec Pro1-X only.",
+   "lead": "Gestures, the lock screen, notifications and settings on Etesian for LineageOS 24. Builds for each supported phone are on the Download page.",
    "actions": [
     {
-     "label": "Download for the Pro1-X",
+     "label": "Download",
      "target": "download",
      "primary": true
     },
@@ -22,20 +22,13 @@
    ]
   },
   {
-   "type": "text",
-   "paragraphs": [
-    "The latest published ROM is version {{rom.version}} ({{rom.date}}). Work built since then is marked “not in a release yet” until a newer release is published."
-   ],
-   "note": true
-  },
-  {
    "type": "features",
    "heading": "The edges in detail",
    "color": "#1C51AF",
    "items": [
     {
      "title": "Swipe in from the left or right edge",
-     "text": "Leaves the app: it keeps running and waits in Open applications. Each side can be set to go to a different home view {{rom.pending:2026-11-15}}.",
+     "text": "Leaves the app: it keeps running and waits in Open applications. Each side can be set to go to a different home view.",
      "icon": "back"
     },
     {
@@ -45,7 +38,7 @@
     },
     {
      "title": "Your own edges",
-     "text": "The N9’s way is the default. Give the bottom and one side a view of their own and it leaves the row of home views, coming in only from that edge, from an app or the home screen: the bottom can always bring Applications, as on Sailfish {{rom.pending:2026-11-22}}.",
+     "text": "The N9’s way is the default. Give the bottom and one side a view of their own and it leaves the row of home views, coming in only from that edge, from an app or the home screen: the bottom can always bring Applications, as on Sailfish.",
      "icon": "settings"
     }
    ]
@@ -63,7 +56,7 @@
    "type": "hero",
    "eyebrow": "Etesian for LineageOS 24",
    "title": "Every pixel on your phone belongs to what you are doing.",
-   "lead": "Swipe from any edge to step out of an app, take in everything new at once, and let your work fill the display. Built on LineageOS 24, Etesian is currently available for the F(x)tec Pro1-X and OnePlus 7 Pro."
+   "lead": "Swipe from any edge to step out of an app, take in everything new at once, and let your work fill the display. Built on LineageOS 24."
   },
   {
    "type": "features",
@@ -126,7 +119,7 @@
     },
     {
      "title": "Widgets and News",
-     "text": "Optional views: Belle-style widgets, and Glance’s news (News view {{rom.pending:2026-11-15}}).",
+     "text": "Optional views: Belle-style widgets, and Glance’s news.",
      "icon": "clock"
     }
    ]
