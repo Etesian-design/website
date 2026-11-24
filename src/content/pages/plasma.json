@@ -4,7 +4,7 @@
    "type": "hero",
    "eyebrow": "KDE Plasma 6.6 and newer",
    "title": "Etesian on KDE Plasma, in detail.",
-   "lead": "What the Plasma desktop gets, how to install it from source for the current user, and what is still to come. There are no packages or releases yet.",
+   "lead": "What the Plasma desktop gets, and how to install it from source for the current user. It installs from source; there are no packages.",
    "actions": [
     {
      "label": "Get it on GitHub",
@@ -91,10 +91,10 @@
   },
   {
    "type": "text",
-   "heading": "Not finished yet",
+   "heading": "Limits",
    "paragraphs": [
-    "Your own calendars, and people and mail in search, need KDE PIM. The Mail widget reads KMail only. Only some apps get their actions in the header, and KDE apps have no Back button.",
-    "Apps outside Etesian's icon set (it covers the KDE apps, LibreOffice and the common desktop ones) keep their own icons."
+    "Your own calendars need KDE PIM. Kate, KWrite, Dolphin, Okular and Gwenview get their toolbars in the header; other apps keep their own.",
+    "Apps outside Etesian's icon set (it covers about two thousand: the KDE apps, LibreOffice and the common desktop ones) keep their own icons."
    ]
   }
  ],
@@ -169,12 +169,12 @@
     },
     {
      "title": "Belle desktop widgets",
-     "text": "Flip clock, word clock, feeds and a mail widget over KMail’s inboxes.",
+     "text": "Flip clock, word clock, feeds and a mail widget over Thunderbird’s or KMail’s inboxes.",
      "icon": "clock"
     },
     {
      "title": "The whole look",
-     "text": "Colours from the design tokens, icons, cursors, sounds, wallpaper, splash and login screen.",
+     "text": "Colours from the design tokens, N9-style icons for apps, folders and files, the controls inside apps, cursors, sounds, wallpaper, splash and login screen.",
      "icon": "photo"
     },
     {
@@ -182,13 +182,6 @@
      "text": "An Etesian theme for Thunderbird, generated from the same tokens.",
      "icon": "mail"
     }
-   ]
-  },
-  {
-   "type": "text",
-   "heading": "Still to come",
-   "paragraphs": [
-    "People and mail in search need KDE PIM. The mail widget reads KMail only for now. Apps with toolbars that hold more than file and edit actions keep their own toolbar."
    ]
   },
   {
